@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>End to End Projects – mysqlnotebook1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">End to End Projects</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sumendar"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/sumendar"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+
+
+
+<section id="mysql-check-sample-notebook-for-preview-md-its-a-file-from-jupytext-synched-myst-markdow-with-same-name-ipynb-notebook" class="level1">
+<h1>MySQL Check (Sample Notebook for preview md: Its a file from jupytext synched Myst markdow with same name ipynb notebook)</h1>
+<blockquote class="blockquote">
+<p>A tutorial of SQL Basic Scripting.</p>
+</blockquote>
+<ul>
+<li>toc: true</li>
+<li>badges: true</li>
+<li>comments: true</li>
+<li>categories: [SQL]</li>
+</ul>
+</section>
+<section id="resources" class="level1">
+<h1><strong>Resources:</strong></h1>
+<ul>
+<li>https://www.educba.com/data-science/data-science-tutorials/mysql-tutorial/<br>
+</li>
+<li>https://www.w3schools.com/mysql/default.asp</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>USE world<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> <span class="im">from</span> city limit <span class="dv">5</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Commands completed successfully</p>
+<p>(5 row(s) affected)</p>
+<p>Total execution time: 00:00:00.016</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Name</th>
+<th>CountryCode</th>
+<th>District</th>
+<th>Population</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Kabul</td>
+<td>AFG</td>
+<td>Kabol</td>
+<td>1780000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Qandahar</td>
+<td>AFG</td>
+<td>Qandahar</td>
+<td>237500</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Herat</td>
+<td>AFG</td>
+<td>Herat</td>
+<td>186800</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Mazar-e-Sharif</td>
+<td>AFG</td>
+<td>Balkh</td>
+<td>127800</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Amsterdam</td>
+<td>NLD</td>
+<td>Noord-Holland</td>
+<td>731200</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># LECTURE: Creating a Database - Part I</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>CREATE DATABASE IF NOT EXISTS Sales<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>CREATE SCHEMA IF NOT EXISTS Sales<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Commands completed successfully</p>
+<p>Commands completed successfully</p>
+<p>Total execution time: 00:00:00.019</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>USE Sales<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Commands completed successfully</p>
+<p>Total execution time: 00:00:00.007</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>CREATE TABLE sales</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    purchase_number INT NOT NULL PRIMARY KEY AUTO_INCREMENT,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    date_of_purchase DATE NOT NULL,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    customer_id INT,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    item_code VARCHAR(<span class="dv">10</span>) NOT NULL</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Total execution time: 00:00:00.012</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>MYSQL:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>•   Data base concepts(Database, DBMS, RDMS)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>•   Installing MYSQL server <span class="kw">and</span> Workbench</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>•   Select Command</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>•   Distinct Keyword</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>•   SQL <span class="kw">is</span> <span class="kw">not</span> Case Sensitive</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>•   Where Clause</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>•   Using Relational operators <span class="kw">in</span> where clause condition</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>•   Using logical operators(AND, OR, NOT)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>•   Between Operator</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>•   Order by Clause(ASC, DESC)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>•   Using Between operator <span class="cf">with</span> Text</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>•   In operator</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>•   Like operator <span class="kw">and</span> wildcard characters</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>•   Aliases <span class="cf">for</span> table column names</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>•   Limit keyword</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>•   Breaking the lengthy SQL statement into Multiple lines</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>•   My SQL Built <span class="kw">in</span> functions</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>•   Arithmetic Operators</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>•   Creating, viewing, describing, deleting <span class="kw">and</span> using databases</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>•   Creating tables <span class="kw">and</span> inserting records into the table</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>•   Data Types</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>•   Null values, <span class="kw">is</span> null <span class="kw">and</span> <span class="kw">is</span> <span class="kw">not</span> null </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>•   Delete statement</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>•   Update statement <span class="kw">and</span> <span class="bu">set</span> keyword</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>•   Rename statement <span class="kw">and</span> To keyword</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>•   Alter statement ,Add ,Modify column ,rename <span class="kw">and</span> drop column</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>•   Set auto commit</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>•   Commit statement</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>•   Rollback statement</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>•   Truncate statement</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>•   Single line <span class="kw">and</span> multiline comments</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>•   Group by clause</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>•   Having Clause</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>•   Set operators(union, union <span class="bu">all</span>, intersect <span class="kw">and</span> minus operator)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>•   Joins(inner join, left join, right join, full join, <span class="va">self</span> join)</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>•   Sub Query(Types of sub query)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>•   Integrity Constraints(Not null, unique, primary <span class="kw">and</span> foreign key, check, default)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>•   Auto increment</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>•   Insert into </span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>•   Case, when ,then <span class="kw">and</span> end keyword</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>•   Delimiter</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>•   Views</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>•   Indexes</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>•   Proceedures</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>•   Any Doubts <span class="kw">and</span> Practice assignments on my SQL</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>ca you please explain definition <span class="kw">and</span> query <span class="cf">for</span> each step i have entered <span class="kw">in</span> the above points one by one till end point <span class="kw">in</span> MYSQL language <span class="cf">for</span> a novice person <span class="cf">with</span> simple queries <span class="kw">and</span> easy to understandable definition <span class="kw">and</span> small explanation to <span class="bu">all</span> above without excluding <span class="bu">any</span>?</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>Sure, I<span class="st">'d be happy to help! Here are the definitions and queries for each of the topics you'</span>ve listed:</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>Database Concepts:</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>A database <span class="kw">is</span> an organized collection of data, <span class="cf">while</span> a DBMS (Database Management System) <span class="kw">is</span> software that manages the database. An RDBMS (Relational Database Management System) <span class="kw">is</span> a <span class="bu">type</span> of DBMS that stores data <span class="kw">in</span> tables that are related to each other by primary <span class="kw">and</span> foreign keys.</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>Installing MYSQL server <span class="kw">and</span> Workbench:</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>To install MYSQL server, you can download it <span class="im">from</span> the official MYSQL website <span class="kw">and</span> follow the installation wizard. MYSQL Workbench <span class="kw">is</span> a graphical user interface <span class="cf">for</span> managing databases <span class="kw">and</span> can also be downloaded <span class="im">from</span> the official MYSQL website.</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>Select Command:</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>The SELECT statement <span class="kw">is</span> used to retrieve data <span class="im">from</span> a database. For example, to select <span class="bu">all</span> columns <span class="im">from</span> a table called <span class="st">"users"</span>, you would use the following query:</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM users<span class="op">;</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>Distinct Keyword:</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>The DISTINCT keyword <span class="kw">is</span> used to select unique values <span class="im">from</span> a column. For example, to select unique values <span class="im">from</span> a column called <span class="st">"city"</span> <span class="kw">in</span> a table called <span class="st">"customers"</span>, you would use the following query:</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT city FROM customers<span class="op">;</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>SQL <span class="kw">is</span> <span class="kw">not</span> Case Sensitive:</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>SQL <span class="kw">is</span> <span class="kw">not</span> case sensitive, which means that keywords such <span class="im">as</span> SELECT <span class="kw">and</span> select are equivalent.</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>Where Clause:</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>The WHERE clause <span class="kw">is</span> used to <span class="bu">filter</span> the results of a SELECT statement based on a specified condition. For example, to select <span class="bu">all</span> records <span class="im">from</span> a table called <span class="st">"orders"</span> where the <span class="st">"status"</span> column <span class="kw">is</span> equal to <span class="st">"shipped"</span>, you would use the following query:</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM orders WHERE status <span class="op">=</span> <span class="st">'shipped'</span><span class="op">;</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>Using Relational Operators <span class="kw">in</span> Where Clause Condition:</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>Relational operators such <span class="im">as</span> <span class="op">=</span>, <span class="op">&lt;</span>, <span class="op">&gt;</span>, <span class="op">&lt;=</span>, <span class="op">&gt;=</span>, <span class="kw">and</span> <span class="op">&lt;&gt;</span> can be used <span class="kw">in</span> the WHERE clause to compare values. For example, to select <span class="bu">all</span> records <span class="im">from</span> a table called <span class="st">"products"</span> where the <span class="st">"price"</span> column <span class="kw">is</span> greater than <span class="dv">10</span>, you would use the following query:</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM products WHERE price <span class="op">&gt;</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>Using Logical Operators (AND, OR, NOT):</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>Logical operators such <span class="im">as</span> AND, OR, <span class="kw">and</span> NOT can be used <span class="kw">in</span> the WHERE clause to combine conditions. For example, to select <span class="bu">all</span> records <span class="im">from</span> a table called <span class="st">"orders"</span> where the <span class="st">"status"</span> column <span class="kw">is</span> equal to <span class="st">"shipped"</span> <span class="kw">and</span> the <span class="st">"total"</span> column <span class="kw">is</span> greater than <span class="dv">100</span>, you would use the following query:</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM orders WHERE status <span class="op">=</span> <span class="st">'shipped'</span> AND total <span class="op">&gt;</span> <span class="dv">100</span><span class="op">;</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>Between Operator:</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>The BETWEEN operator <span class="kw">is</span> used <span class="kw">in</span> the WHERE clause to select values within a <span class="bu">range</span>. For example, to select <span class="bu">all</span> records <span class="im">from</span> a table called <span class="st">"sales"</span> where the <span class="st">"date"</span> column <span class="kw">is</span> between January <span class="dv">1</span>, <span class="dv">2022</span> <span class="kw">and</span> March <span class="dv">31</span>, <span class="dv">2022</span>, you would use the following query:</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM sales WHERE date BETWEEN <span class="st">'2022-01-01'</span> AND <span class="st">'2022-03-31'</span><span class="op">;</span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>Order by Clause (ASC, DESC):</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>The ORDER BY clause <span class="kw">is</span> used to sort the results of a SELECT statement <span class="kw">in</span> ascending (ASC) <span class="kw">or</span> descending (DESC) order. For example, to select <span class="bu">all</span> records <span class="im">from</span> a table called <span class="st">"customers"</span> <span class="kw">and</span> order them by last name <span class="kw">in</span> descending order, you would use the following query:</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM customers ORDER BY last_name DESC<span class="op">;</span></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>Using Between Operator <span class="cf">with</span> Text:</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>The BETWEEN operator can also be used <span class="cf">with</span> text values. For example, to select <span class="bu">all</span> records <span class="im">from</span> a table called <span class="st">"employees"</span> where the <span class="st">"name"</span> column <span class="kw">is</span> between <span class="st">"Alice"</span> <span class="kw">and</span> <span class="st">"Bob"</span>, you would use the following query:</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM employees WHERE name</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>Sumendar</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>you ended at <span class="dv">11</span><span class="er">th</span> point, could you please <span class="cf">continue</span> <span class="cf">with</span> remaining steps <span class="im">from</span> below <span class="cf">for</span> the same MySQL <span class="cf">for</span> a beginner to understand definition <span class="kw">and</span> queries of each below:</span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>In operator</span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>•   Like operator <span class="kw">and</span> wildcard characters</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>•   Aliases <span class="cf">for</span> table column names</span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>•   Limit keyword</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>•   Breaking the lengthy SQL statement into Multiple lines</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>•   My SQL Built <span class="kw">in</span> functions</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>•   Arithmetic Operators</span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>•   Creating, viewing, describing, deleting <span class="kw">and</span> using databases</span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>•   Creating tables <span class="kw">and</span> inserting records into the table</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>•   Data Types</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>•   Null values, <span class="kw">is</span> null <span class="kw">and</span> <span class="kw">is</span> <span class="kw">not</span> null </span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>•   Delete statement</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>•   Update statement <span class="kw">and</span> <span class="bu">set</span> keyword</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>•   Rename statement <span class="kw">and</span> To keyword</span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>•   Alter statement ,Add ,Modify column ,rename <span class="kw">and</span> drop column</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>•   Set auto commit</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>•   Commit statement</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>•   Rollback statement</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>•   Truncate statement</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>•   Single line <span class="kw">and</span> multiline comments</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>•   Group by clause</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>•   Having Clause</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>•   Set operators(union, union <span class="bu">all</span>, intersect <span class="kw">and</span> minus operator)</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>•   Joins(inner join, left join, right join, full join, <span class="va">self</span> join)</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>•   Sub Query(Types of sub query)</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>•   Integrity Constraints(Not null, unique, primary <span class="kw">and</span> foreign key, check, default)</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>•   Auto increment</span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>•   Insert into </span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>•   Case, when ,then <span class="kw">and</span> end keyword</span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>•   Delimiter</span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>•   Views</span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>•   Indexes</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>•   Proceedures</span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>•   Any Doubts <span class="kw">and</span> Practice assignments on my SQL</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>Sure, I apologize <span class="cf">for</span> missing that. Here are explanations <span class="kw">and</span> examples <span class="cf">for</span> the remaining points:</span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>In operator:</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>The IN operator allows you to specify multiple values <span class="kw">in</span> a WHERE clause. It <span class="kw">is</span> used to check whether a value <span class="kw">is</span> included <span class="kw">in</span> a <span class="bu">list</span> of values <span class="kw">or</span> <span class="kw">not</span>.</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>Example: To retrieve the details of <span class="bu">all</span> employees whose department <span class="kw">is</span> either <span class="st">'HR'</span> <span class="kw">or</span> <span class="st">'IT'</span>, we can use the following query:</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM employees WHERE department IN (<span class="st">'HR'</span>, <span class="st">'IT'</span>)<span class="op">;</span></span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>Like operator <span class="kw">and</span> wildcard characters:</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>The LIKE operator <span class="kw">is</span> used to search <span class="cf">for</span> patterns <span class="kw">in</span> columns. It <span class="kw">is</span> often used <span class="cf">with</span> wildcard characters <span class="st">'%'</span> <span class="kw">and</span> <span class="st">''</span>. The <span class="st">'%'</span> character matches zero <span class="kw">or</span> more characters, <span class="cf">while</span> <span class="st">''</span> matches exactly one character.</span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>Example: To retrieve the details of <span class="bu">all</span> employees whose name starts <span class="cf">with</span> <span class="st">'J'</span>, we can use the following query:</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM employees WHERE name LIKE <span class="st">'J%'</span><span class="op">;</span></span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>Aliases <span class="cf">for</span> table column names:</span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>An alias <span class="kw">is</span> a temporary name assigned to a table <span class="kw">or</span> column. It can make queries more readable <span class="kw">and</span> understandable.</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>Example: To retrieve the details of <span class="bu">all</span> employees along <span class="cf">with</span> their salaries, we can use the following query <span class="cf">with</span> aliases:</span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>vbnet</span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>SELECT name AS EmployeeName, salary AS EmployeeSalary FROM employees<span class="op">;</span></span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>Limit keyword:</span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>The LIMIT keyword <span class="kw">is</span> used to limit the number of records returned <span class="kw">in</span> a query result.</span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>Example: To retrieve the details of the first five employees, we can use the following query:</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM employees LIMIT <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>Breaking the lengthy SQL statement into Multiple lines:</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>A lengthy SQL statement can be broken into multiple lines to improve its readability.</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>Example: To retrieve the details of <span class="bu">all</span> employees whose age <span class="kw">is</span> greater than <span class="kw">or</span> equal to <span class="dv">25</span> <span class="kw">and</span> salary <span class="kw">is</span> greater than <span class="kw">or</span> equal to <span class="dv">50000</span>, we can use the following query <span class="cf">with</span> line breaks:</span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> </span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>FROM employees </span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a>WHERE age <span class="op">&gt;=</span> <span class="dv">25</span> </span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>AND salary <span class="op">&gt;=</span> <span class="dv">50000</span><span class="op">;</span></span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>My SQL Built<span class="op">-</span><span class="kw">in</span> functions:</span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>MySQL provides a number of built<span class="op">-</span><span class="kw">in</span> functions to manipulate data. Some common ones include COUNT(), SUM(), AVG(), MAX(), MIN(), etc.</span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a>Example: To retrieve the total number of employees <span class="kw">in</span> the employees table, we can use the COUNT() function:</span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>SELECT COUNT(<span class="op">*</span>) FROM employees<span class="op">;</span></span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a>Arithmetic Operators:</span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>MySQL supports arithmetic operators such <span class="im">as</span> <span class="op">+</span>, <span class="op">-</span>, <span class="op">*</span>, <span class="op">/</span>, <span class="op">%</span>.</span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>Example: To retrieve the details of <span class="bu">all</span> employees whose salary <span class="kw">is</span> more than twice their age, we can use the following query:</span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM employees WHERE salary <span class="op">&gt;</span> <span class="dv">2</span> <span class="op">*</span> age<span class="op">;</span></span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a>Creating, viewing, describing, deleting <span class="kw">and</span> using databases:</span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a>A database <span class="kw">is</span> a collection of tables <span class="kw">and</span> other objects that are used to store <span class="kw">and</span> manage data. MySQL provides various commands to create, view, describe, delete <span class="kw">and</span> use databases.</span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a>Example: To create a new database named <span class="st">'mydatabase'</span>, we can use the following query:</span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a>CREATE DATABASE mydatabase<span class="op">;</span></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a>Creating tables <span class="kw">and</span> inserting records into the table:</span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>A table <span class="kw">is</span> a collection of data that <span class="kw">is</span> organized <span class="kw">in</span> a specific <span class="bu">format</span>. MySQL provides commands to create tables <span class="kw">and</span> insert records into the tables.</span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a>Example: To create a new table named <span class="st">'employees'</span> <span class="cf">with</span> columns <span class="st">'name'</span>, <span class="st">'age'</span>, <span class="st">'department'</span> <span class="kw">and</span> <span class="st">'salary'</span>, we can use the following query:</span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>    name VARCHAR(<span class="dv">50</span>),</span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>    age INT,</span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a>    department VARCHAR(<span class="dv">50</span>),</span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>    salary DECIMAL(<span class="dv">10</span>,<span class="dv">2</span>)</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>To insert a record into the employees table, we can use the following query:</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>INSERT INTO employees (name, age, department, salary) VALUES (<span class="st">'John Doe'</span>, <span class="dv">30</span>, <span class="st">'IT'</span>, <span class="dv">60000</span>)<span class="op">;</span></span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>Data Types:</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a>Data types specify the <span class="bu">type</span> of data</span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>Sumendar</span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>you have been missed remaining can you explain below steps till last point <span class="kw">in</span> same mysql <span class="cf">with</span> easy definition <span class="kw">and</span> queries </span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>Null values, <span class="kw">is</span> null <span class="kw">and</span> <span class="kw">is</span> <span class="kw">not</span> null </span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>•   Delete statement</span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a>•   Update statement <span class="kw">and</span> <span class="bu">set</span> keyword</span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a>•   Rename statement <span class="kw">and</span> To keyword</span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a>•   Alter statement ,Add ,Modify column ,rename <span class="kw">and</span> drop column</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>•   Set auto commit</span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a>•   Commit statement</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>•   Rollback statement</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>•   Truncate statement</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>•   Single line <span class="kw">and</span> multiline comments</span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>•   Group by clause</span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>•   Having Clause</span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a>•   Set operators(union, union <span class="bu">all</span>, intersect <span class="kw">and</span> minus operator)</span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a>•   Joins(inner join, left join, right join, full join, <span class="va">self</span> join)</span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a>•   Sub Query(Types of sub query)</span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a>•   Integrity Constraints(Not null, unique, primary <span class="kw">and</span> foreign key, check, default)</span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a>•   Auto increment</span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>•   Insert into </span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a>•   Case, when ,then <span class="kw">and</span> end keyword</span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a>•   Delimiter</span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a>•   Views</span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a>•   Indexes</span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a>•   Proceedures</span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a>•   Any Doubts <span class="kw">and</span> Practice assignments on my SQL</span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a>Sure, I apologize <span class="cf">for</span> the mistake earlier. I will <span class="cf">continue</span> <span class="im">from</span> where I left off:</span>
+<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a>Null values, <span class="kw">is</span> null <span class="kw">and</span> <span class="kw">is</span> <span class="kw">not</span> null:</span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>In SQL, a null value represents a missing <span class="kw">or</span> unknown value. The IS NULL <span class="kw">and</span> IS NOT NULL operators are used to check <span class="cf">for</span> null values <span class="kw">in</span> a column.</span>
+<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a>To select <span class="bu">all</span> rows where a column <span class="kw">is</span> null, you can use the IS NULL operator like this:</span>
+<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM my_table WHERE my_column IS NULL<span class="op">;</span></span>
+<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a>To select <span class="bu">all</span> rows where a column <span class="kw">is</span> <span class="kw">not</span> null, you can use the IS NOT NULL operator like this:</span>
+<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM my_table WHERE my_column IS NOT NULL<span class="op">;</span></span>
+<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a>Delete statement:</span>
+<span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a>The DELETE statement <span class="kw">is</span> used to delete one <span class="kw">or</span> more rows <span class="im">from</span> a table. The basic syntax <span class="cf">for</span> the DELETE statement <span class="kw">is</span> <span class="im">as</span> follows:</span>
+<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>DELETE FROM table_name WHERE condition<span class="op">;</span></span>
+<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a>For example, to delete <span class="bu">all</span> rows <span class="im">from</span> a table where the age column <span class="kw">is</span> greater than <span class="dv">30</span>, you would use the following statement:</span>
+<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a>DELETE FROM my_table WHERE age <span class="op">&gt;</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a>Update statement <span class="kw">and</span> <span class="bu">set</span> keyword:</span>
+<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a>The UPDATE statement <span class="kw">is</span> used to modify one <span class="kw">or</span> more columns <span class="kw">in</span> one <span class="kw">or</span> more rows <span class="kw">in</span> a table. The basic syntax <span class="cf">for</span> the UPDATE statement <span class="kw">is</span> <span class="im">as</span> follows:</span>
+<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a>UPDATE table_name SET column1 <span class="op">=</span> value1, column2 <span class="op">=</span> value2, ... WHERE condition<span class="op">;</span></span>
+<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a>For example, to update the age column to <span class="dv">30</span> <span class="cf">for</span> <span class="bu">all</span> rows where the name column <span class="kw">is</span> <span class="st">'John'</span>, you would use the following statement:</span>
+<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a>UPDATE my_table SET age <span class="op">=</span> <span class="dv">30</span> WHERE name <span class="op">=</span> <span class="st">'John'</span><span class="op">;</span></span>
+<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a>Rename statement <span class="kw">and</span> To keyword:</span>
+<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a>The RENAME statement <span class="kw">is</span> used to rename a table <span class="kw">or</span> a column <span class="kw">in</span> a table. The basic syntax <span class="cf">for</span> the RENAME statement <span class="kw">is</span> <span class="im">as</span> follows:</span>
+<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a>css</span>
+<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a>ALTER TABLE table_name RENAME TO new_table_name<span class="op">;</span></span>
+<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a>For example, to rename a table called old_table to new_table, you would use the following statement:</span>
+<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a>css</span>
+<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a>ALTER TABLE old_table RENAME TO new_table<span class="op">;</span></span>
+<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a>To rename a column <span class="kw">in</span> a table, you would use the following statement:</span>
+<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a>ALTER TABLE my_table RENAME COLUMN old_column_name TO new_column_name<span class="op">;</span></span>
+<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a>Alter statement, Add, Modify column, rename <span class="kw">and</span> drop column:</span>
+<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>The ALTER statement <span class="kw">is</span> used to modify the structure of a table, such <span class="im">as</span> adding <span class="kw">or</span> modifying columns, renaming columns, <span class="kw">or</span> dropping columns.</span>
+<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a>To add a new column to a table, you would use the following statement:</span>
+<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a>ALTER TABLE my_table ADD new_column_name data_type<span class="op">;</span></span>
+<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a>To modify the data <span class="bu">type</span> of an existing column, you would use the following statement:</span>
+<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a>ALTER TABLE my_table MODIFY column_name new_data_type<span class="op">;</span></span>
+<span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a>To rename a column <span class="kw">in</span> a table, you would use the following statement:</span>
+<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-280"><a href="#cb5-280" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-281"><a href="#cb5-281" aria-hidden="true" tabindex="-1"></a>ALTER TABLE my_table RENAME COLUMN old_column_name TO new_column_name<span class="op">;</span></span>
+<span id="cb5-282"><a href="#cb5-282" aria-hidden="true" tabindex="-1"></a>To drop a column <span class="im">from</span> a table, you would use the following statement:</span>
+<span id="cb5-283"><a href="#cb5-283" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-284"><a href="#cb5-284" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-285"><a href="#cb5-285" aria-hidden="true" tabindex="-1"></a>ALTER TABLE my_table DROP column_name<span class="op">;</span></span>
+<span id="cb5-286"><a href="#cb5-286" aria-hidden="true" tabindex="-1"></a>Set auto commit:</span>
+<span id="cb5-287"><a href="#cb5-287" aria-hidden="true" tabindex="-1"></a>Auto<span class="op">-</span>commit <span class="kw">is</span> a feature <span class="kw">in</span> MySQL that automatically commits the current transaction after each SQL statement. To enable auto<span class="op">-</span>commit, you can use the following statement:</span>
+<span id="cb5-288"><a href="#cb5-288" aria-hidden="true" tabindex="-1"></a>java</span>
+<span id="cb5-289"><a href="#cb5-289" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-290"><a href="#cb5-290" aria-hidden="true" tabindex="-1"></a>SET autocommit <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-291"><a href="#cb5-291" aria-hidden="true" tabindex="-1"></a>To disable auto<span class="op">-</span>commit, you can use the following statement:</span>
+<span id="cb5-292"><a href="#cb5-292" aria-hidden="true" tabindex="-1"></a>java</span>
+<span id="cb5-293"><a href="#cb5-293" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-294"><a href="#cb5-294" aria-hidden="true" tabindex="-1"></a>SET autocommit <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-295"><a href="#cb5-295" aria-hidden="true" tabindex="-1"></a>Commit statement:</span>
+<span id="cb5-296"><a href="#cb5-296" aria-hidden="true" tabindex="-1"></a>The COMMIT statement <span class="kw">is</span> used to permanently save the changes made to a database.</span>
+<span id="cb5-297"><a href="#cb5-297" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-298"><a href="#cb5-298" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-299"><a href="#cb5-299" aria-hidden="true" tabindex="-1"></a>COMMIT<span class="op">;</span></span>
+<span id="cb5-300"><a href="#cb5-300" aria-hidden="true" tabindex="-1"></a>Rollback statement:</span>
+<span id="cb5-301"><a href="#cb5-301" aria-hidden="true" tabindex="-1"></a>The ROLLBACK statement <span class="kw">is</span> used to undo changes made to a database <span class="kw">in</span> the current transaction.</span>
+<span id="cb5-302"><a href="#cb5-302" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-303"><a href="#cb5-303" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-304"><a href="#cb5-304" aria-hidden="true" tabindex="-1"></a>ROLLBACK<span class="op">;</span></span>
+<span id="cb5-305"><a href="#cb5-305" aria-hidden="true" tabindex="-1"></a>Truncate statement:</span>
+<span id="cb5-306"><a href="#cb5-306" aria-hidden="true" tabindex="-1"></a>The TRUNCATE statement <span class="kw">is</span> used to remove <span class="bu">all</span></span>
+<span id="cb5-307"><a href="#cb5-307" aria-hidden="true" tabindex="-1"></a>Sumendar</span>
+<span id="cb5-308"><a href="#cb5-308" aria-hidden="true" tabindex="-1"></a>can you complete remaining till end of <span class="bu">all</span> points below?</span>
+<span id="cb5-309"><a href="#cb5-309" aria-hidden="true" tabindex="-1"></a>•   Single line <span class="kw">and</span> multiline comments</span>
+<span id="cb5-310"><a href="#cb5-310" aria-hidden="true" tabindex="-1"></a>•   Group by clause</span>
+<span id="cb5-311"><a href="#cb5-311" aria-hidden="true" tabindex="-1"></a>•   Having Clause</span>
+<span id="cb5-312"><a href="#cb5-312" aria-hidden="true" tabindex="-1"></a>•   Set operators(union, union <span class="bu">all</span>, intersect <span class="kw">and</span> minus operator)</span>
+<span id="cb5-313"><a href="#cb5-313" aria-hidden="true" tabindex="-1"></a>•   Joins(inner join, left join, right join, full join, <span class="va">self</span> join)</span>
+<span id="cb5-314"><a href="#cb5-314" aria-hidden="true" tabindex="-1"></a>•   Sub Query(Types of sub query)</span>
+<span id="cb5-315"><a href="#cb5-315" aria-hidden="true" tabindex="-1"></a>•   Integrity Constraints(Not null, unique, primary <span class="kw">and</span> foreign key, check, default)</span>
+<span id="cb5-316"><a href="#cb5-316" aria-hidden="true" tabindex="-1"></a>•   Auto increment</span>
+<span id="cb5-317"><a href="#cb5-317" aria-hidden="true" tabindex="-1"></a>•   Insert into </span>
+<span id="cb5-318"><a href="#cb5-318" aria-hidden="true" tabindex="-1"></a>•   Case, when ,then <span class="kw">and</span> end keyword</span>
+<span id="cb5-319"><a href="#cb5-319" aria-hidden="true" tabindex="-1"></a>•   Delimiter</span>
+<span id="cb5-320"><a href="#cb5-320" aria-hidden="true" tabindex="-1"></a>•   Views</span>
+<span id="cb5-321"><a href="#cb5-321" aria-hidden="true" tabindex="-1"></a>•   Indexes</span>
+<span id="cb5-322"><a href="#cb5-322" aria-hidden="true" tabindex="-1"></a>•   Proceedures</span>
+<span id="cb5-323"><a href="#cb5-323" aria-hidden="true" tabindex="-1"></a>Sure, I can <span class="cf">continue</span> <span class="cf">with</span> the remaining points. Here are the explanations <span class="kw">and</span> examples <span class="cf">for</span> each:</span>
+<span id="cb5-324"><a href="#cb5-324" aria-hidden="true" tabindex="-1"></a>Single Line <span class="kw">and</span> Multiline Comments:</span>
+<span id="cb5-325"><a href="#cb5-325" aria-hidden="true" tabindex="-1"></a>Comments <span class="kw">in</span> SQL are used to write a description <span class="kw">or</span> explanation of the code, which makes it easier <span class="cf">for</span> others to understand the code. There are two types of comments <span class="kw">in</span> SQL: single<span class="op">-</span>line comments <span class="kw">and</span> multiline comments.</span>
+<span id="cb5-326"><a href="#cb5-326" aria-hidden="true" tabindex="-1"></a>Single<span class="op">-</span>line comments start <span class="cf">with</span> two hyphens (<span class="op">--</span>). Anything that follows after the double hyphen <span class="kw">is</span> ignored by the SQL engine. For example:</span>
+<span id="cb5-327"><a href="#cb5-327" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-328"><a href="#cb5-328" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-329"><a href="#cb5-329" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> This <span class="kw">is</span> a single<span class="op">-</span>line comment</span>
+<span id="cb5-330"><a href="#cb5-330" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM mytable<span class="op">;</span></span>
+<span id="cb5-331"><a href="#cb5-331" aria-hidden="true" tabindex="-1"></a>Multiline comments start <span class="cf">with</span> a forward<span class="op">-</span>slash <span class="kw">and</span> an asterisk (<span class="op">/</span>) <span class="kw">and</span> end <span class="cf">with</span> an asterisk <span class="kw">and</span> a forward<span class="op">-</span>slash (<span class="op">/</span>). Anything that <span class="kw">is</span> enclosed between these two characters <span class="kw">is</span> ignored by the SQL engine. For example:</span>
+<span id="cb5-332"><a href="#cb5-332" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-333"><a href="#cb5-333" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-334"><a href="#cb5-334" aria-hidden="true" tabindex="-1"></a><span class="op">/*</span></span>
+<span id="cb5-335"><a href="#cb5-335" aria-hidden="true" tabindex="-1"></a>This <span class="kw">is</span> a multiline comment.</span>
+<span id="cb5-336"><a href="#cb5-336" aria-hidden="true" tabindex="-1"></a>It can span multiple lines.</span>
+<span id="cb5-337"><a href="#cb5-337" aria-hidden="true" tabindex="-1"></a><span class="op">*/</span></span>
+<span id="cb5-338"><a href="#cb5-338" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM mytable<span class="op">;</span></span>
+<span id="cb5-339"><a href="#cb5-339" aria-hidden="true" tabindex="-1"></a>Group By Clause:</span>
+<span id="cb5-340"><a href="#cb5-340" aria-hidden="true" tabindex="-1"></a>The GROUP BY clause <span class="kw">is</span> used <span class="cf">with</span> aggregate functions like SUM, COUNT, MAX, MIN, <span class="kw">and</span> AVG to group the result<span class="op">-</span><span class="bu">set</span> by one <span class="kw">or</span> more columns. This clause <span class="kw">is</span> used <span class="kw">in</span> a SELECT statement <span class="kw">and</span> <span class="kw">is</span> typically used to summarize data by grouping related records together. For example:</span>
+<span id="cb5-341"><a href="#cb5-341" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-342"><a href="#cb5-342" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-343"><a href="#cb5-343" aria-hidden="true" tabindex="-1"></a>SELECT department, SUM(salary) FROM employees GROUP BY department<span class="op">;</span></span>
+<span id="cb5-344"><a href="#cb5-344" aria-hidden="true" tabindex="-1"></a>In this example, we are selecting the department <span class="kw">and</span> the total salary of <span class="bu">all</span> employees <span class="kw">in</span> each department. The GROUP BY clause groups the result by department.</span>
+<span id="cb5-345"><a href="#cb5-345" aria-hidden="true" tabindex="-1"></a>Having Clause:</span>
+<span id="cb5-346"><a href="#cb5-346" aria-hidden="true" tabindex="-1"></a>The HAVING clause <span class="kw">is</span> used to <span class="bu">filter</span> the results of a GROUP BY clause. It allows you to specify a condition that must be met <span class="cf">for</span> a group of records to be included <span class="kw">in</span> the result. For example:</span>
+<span id="cb5-347"><a href="#cb5-347" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-348"><a href="#cb5-348" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-349"><a href="#cb5-349" aria-hidden="true" tabindex="-1"></a>SELECT department, SUM(salary) FROM employees GROUP BY department HAVING SUM(salary) <span class="op">&gt;</span> <span class="dv">100000</span><span class="op">;</span></span>
+<span id="cb5-350"><a href="#cb5-350" aria-hidden="true" tabindex="-1"></a>In this example, we are selecting the department <span class="kw">and</span> the total salary of <span class="bu">all</span> employees <span class="kw">in</span> each department. The HAVING clause filters the results to only show departments <span class="cf">with</span> a total salary greater than <span class="fl">100000.</span></span>
+<span id="cb5-351"><a href="#cb5-351" aria-hidden="true" tabindex="-1"></a>Set Operators (UNION, UNION ALL, INTERSECT, <span class="kw">and</span> MINUS):</span>
+<span id="cb5-352"><a href="#cb5-352" aria-hidden="true" tabindex="-1"></a>Set operators are used to combine the results of two <span class="kw">or</span> more SELECT statements. There are four <span class="bu">set</span> operators <span class="kw">in</span> SQL: UNION, UNION ALL, INTERSECT, <span class="kw">and</span> MINUS.</span>
+<span id="cb5-353"><a href="#cb5-353" aria-hidden="true" tabindex="-1"></a>UNION: combines the results of two SELECT statements <span class="kw">and</span> removes duplicate rows.</span>
+<span id="cb5-354"><a href="#cb5-354" aria-hidden="true" tabindex="-1"></a>UNION ALL: combines the results of two SELECT statements <span class="kw">and</span> includes <span class="bu">all</span> rows, including duplicates.</span>
+<span id="cb5-355"><a href="#cb5-355" aria-hidden="true" tabindex="-1"></a>INTERSECT: returns only the rows that are common to the results of two SELECT statements.</span>
+<span id="cb5-356"><a href="#cb5-356" aria-hidden="true" tabindex="-1"></a>MINUS: returns the rows <span class="im">from</span> the first SELECT statement that are <span class="kw">not</span> <span class="kw">in</span> the second SELECT statement.</span>
+<span id="cb5-357"><a href="#cb5-357" aria-hidden="true" tabindex="-1"></a>For example:</span>
+<span id="cb5-358"><a href="#cb5-358" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-359"><a href="#cb5-359" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-360"><a href="#cb5-360" aria-hidden="true" tabindex="-1"></a>SELECT column1 FROM table1 UNION SELECT column1 FROM table2<span class="op">;</span></span>
+<span id="cb5-361"><a href="#cb5-361" aria-hidden="true" tabindex="-1"></a>This example combines the results of two SELECT statements that both select column1 <span class="im">from</span> two different tables.</span>
+<span id="cb5-362"><a href="#cb5-362" aria-hidden="true" tabindex="-1"></a>Joins (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN):</span>
+<span id="cb5-363"><a href="#cb5-363" aria-hidden="true" tabindex="-1"></a>Joins are used to combine rows <span class="im">from</span> two <span class="kw">or</span> more tables based on a related column between them. There are different types of joins <span class="kw">in</span> SQL, including:</span>
+<span id="cb5-364"><a href="#cb5-364" aria-hidden="true" tabindex="-1"></a>INNER JOIN: returns only the matching rows <span class="im">from</span> both tables.</span>
+<span id="cb5-365"><a href="#cb5-365" aria-hidden="true" tabindex="-1"></a>LEFT JOIN: returns <span class="bu">all</span> the rows <span class="im">from</span> the left table <span class="kw">and</span> matching rows <span class="im">from</span> the right table.</span>
+<span id="cb5-366"><a href="#cb5-366" aria-hidden="true" tabindex="-1"></a>RIGHT JOIN: returns <span class="bu">all</span> the rows <span class="im">from</span> the right table <span class="kw">and</span> matching rows <span class="im">from</span> the left table.</span>
+<span id="cb5-367"><a href="#cb5-367" aria-hidden="true" tabindex="-1"></a>FULL JOIN: returns <span class="bu">all</span> the rows <span class="im">from</span> both tables, including <span class="bu">any</span> non<span class="op">-</span>matching rows.</span>
+<span id="cb5-368"><a href="#cb5-368" aria-hidden="true" tabindex="-1"></a>SELF JOIN: a join <span class="kw">in</span> which a table <span class="kw">is</span> joined <span class="cf">with</span> itself.</span>
+<span id="cb5-369"><a href="#cb5-369" aria-hidden="true" tabindex="-1"></a>For example:</span>
+<span id="cb5-370"><a href="#cb5-370" aria-hidden="true" tabindex="-1"></a>sql</span>
+<span id="cb5-371"><a href="#cb5-371" aria-hidden="true" tabindex="-1"></a>Copy code</span>
+<span id="cb5-372"><a href="#cb5-372" aria-hidden="true" tabindex="-1"></a>SELECT orders.order_id, customers.customer_name FROM orders INNER JOIN customers ON orders.customer_id <span class="op">=</span> customers.customer_id<span class="op">;</span></span>
+<span id="cb5-373"><a href="#cb5-373" aria-hidden="true" tabindex="-1"></a>This example selects the order ID <span class="kw">and</span> customer name <span class="im">from</span> the orders <span class="kw">and</span> customers tables, where the customer ID <span class="kw">in</span> the</span>
+<span id="cb5-374"><a href="#cb5-374" aria-hidden="true" tabindex="-1"></a>Sumendar</span>
+<span id="cb5-375"><a href="#cb5-375" aria-hidden="true" tabindex="-1"></a>can you please conclude remaining below <span class="im">as</span> too till end <span class="kw">in</span> the same way?</span>
+<span id="cb5-376"><a href="#cb5-376" aria-hidden="true" tabindex="-1"></a>Sub Query(Types of sub query)</span>
+<span id="cb5-377"><a href="#cb5-377" aria-hidden="true" tabindex="-1"></a>•   Integrity Constraints(Not null, unique, primary <span class="kw">and</span> foreign key, check, default)</span>
+<span id="cb5-378"><a href="#cb5-378" aria-hidden="true" tabindex="-1"></a>•   Auto increment</span>
+<span id="cb5-379"><a href="#cb5-379" aria-hidden="true" tabindex="-1"></a>•   Insert into </span>
+<span id="cb5-380"><a href="#cb5-380" aria-hidden="true" tabindex="-1"></a>•   Case, when ,then <span class="kw">and</span> end keyword</span>
+<span id="cb5-381"><a href="#cb5-381" aria-hidden="true" tabindex="-1"></a>•   Delimiter</span>
+<span id="cb5-382"><a href="#cb5-382" aria-hidden="true" tabindex="-1"></a>•   Views</span>
+<span id="cb5-383"><a href="#cb5-383" aria-hidden="true" tabindex="-1"></a>•   Indexes</span>
+<span id="cb5-384"><a href="#cb5-384" aria-hidden="true" tabindex="-1"></a>•   Proceedures</span>
+<span id="cb5-385"><a href="#cb5-385" aria-hidden="true" tabindex="-1"></a>Sub Query(Types of subquery):</span>
+<span id="cb5-386"><a href="#cb5-386" aria-hidden="true" tabindex="-1"></a>A subquery, also known <span class="im">as</span> an inner query, <span class="kw">is</span> a query that <span class="kw">is</span> nested inside another query. It <span class="kw">is</span> used to retrieve data that will be used <span class="im">as</span> part of the criteria <span class="kw">in</span> the main query. There are two types of subqueries:</span>
+<span id="cb5-387"><a href="#cb5-387" aria-hidden="true" tabindex="-1"></a>Single<span class="op">-</span>row subquery: This <span class="bu">type</span> of subquery <span class="kw">is</span> used to retrieve a single value, which <span class="kw">is</span> used <span class="im">as</span> part of the criteria <span class="kw">in</span> the main query.</span>
+<span id="cb5-388"><a href="#cb5-388" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-389"><a href="#cb5-389" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span></span>
+<span id="cb5-390"><a href="#cb5-390" aria-hidden="true" tabindex="-1"></a>FROM employees</span>
+<span id="cb5-391"><a href="#cb5-391" aria-hidden="true" tabindex="-1"></a>WHERE salary <span class="op">&gt;</span> (SELECT AVG(salary) FROM employees)<span class="op">;</span></span>
+<span id="cb5-392"><a href="#cb5-392" aria-hidden="true" tabindex="-1"></a>In this example, the subquery retrieves the average salary of <span class="bu">all</span> employees, which <span class="kw">is</span> then used <span class="im">as</span> part of the criteria <span class="kw">in</span> the main query to retrieve <span class="bu">all</span> employees <span class="cf">with</span> a salary greater than the average.</span>
+<span id="cb5-393"><a href="#cb5-393" aria-hidden="true" tabindex="-1"></a>Multiple<span class="op">-</span>row subquery: This <span class="bu">type</span> of subquery <span class="kw">is</span> used to retrieve multiple rows, which are then used <span class="im">as</span> part of the criteria <span class="kw">in</span> the main query.</span>
+<span id="cb5-394"><a href="#cb5-394" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-395"><a href="#cb5-395" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span></span>
+<span id="cb5-396"><a href="#cb5-396" aria-hidden="true" tabindex="-1"></a>FROM employees</span>
+<span id="cb5-397"><a href="#cb5-397" aria-hidden="true" tabindex="-1"></a>WHERE department_id IN (SELECT department_id FROM departments WHERE location_id <span class="op">=</span> <span class="dv">1700</span>)<span class="op">;</span></span>
+<span id="cb5-398"><a href="#cb5-398" aria-hidden="true" tabindex="-1"></a>In this example, the subquery retrieves <span class="bu">all</span> department IDs <span class="im">from</span> the departments table that have a location ID of <span class="dv">1700</span>, which <span class="kw">is</span> then used <span class="im">as</span> part of the criteria <span class="kw">in</span> the main query to retrieve <span class="bu">all</span> employees who work <span class="kw">in</span> those departments.</span>
+<span id="cb5-399"><a href="#cb5-399" aria-hidden="true" tabindex="-1"></a>Integrity Constraints(Not null, unique, primary <span class="kw">and</span> foreign key, check, default):</span>
+<span id="cb5-400"><a href="#cb5-400" aria-hidden="true" tabindex="-1"></a>Integrity constraints are used to ensure data accuracy <span class="kw">and</span> consistency <span class="kw">in</span> the database. They are rules that must be followed by the data <span class="kw">in</span> the database.</span>
+<span id="cb5-401"><a href="#cb5-401" aria-hidden="true" tabindex="-1"></a>NOT NULL: This constraint ensures that a column cannot have a null value.</span>
+<span id="cb5-402"><a href="#cb5-402" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-403"><a href="#cb5-403" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-404"><a href="#cb5-404" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span> INT PRIMARY KEY,</span>
+<span id="cb5-405"><a href="#cb5-405" aria-hidden="true" tabindex="-1"></a>name VARCHAR(<span class="dv">50</span>) NOT NULL,</span>
+<span id="cb5-406"><a href="#cb5-406" aria-hidden="true" tabindex="-1"></a>age INT NOT NULL</span>
+<span id="cb5-407"><a href="#cb5-407" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-408"><a href="#cb5-408" aria-hidden="true" tabindex="-1"></a>UNIQUE: This constraint ensures that each value <span class="kw">in</span> a column <span class="kw">is</span> unique.</span>
+<span id="cb5-409"><a href="#cb5-409" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-410"><a href="#cb5-410" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-411"><a href="#cb5-411" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span> INT PRIMARY KEY,</span>
+<span id="cb5-412"><a href="#cb5-412" aria-hidden="true" tabindex="-1"></a>email VARCHAR(<span class="dv">50</span>) UNIQUE</span>
+<span id="cb5-413"><a href="#cb5-413" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-414"><a href="#cb5-414" aria-hidden="true" tabindex="-1"></a>PRIMARY KEY: This constraint ensures that each row <span class="kw">in</span> a table <span class="kw">is</span> uniquely identified by a specific column <span class="kw">or</span> columns.</span>
+<span id="cb5-415"><a href="#cb5-415" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-416"><a href="#cb5-416" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-417"><a href="#cb5-417" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span> INT PRIMARY KEY,</span>
+<span id="cb5-418"><a href="#cb5-418" aria-hidden="true" tabindex="-1"></a>name VARCHAR(<span class="dv">50</span>),</span>
+<span id="cb5-419"><a href="#cb5-419" aria-hidden="true" tabindex="-1"></a>age INT</span>
+<span id="cb5-420"><a href="#cb5-420" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-421"><a href="#cb5-421" aria-hidden="true" tabindex="-1"></a>FOREIGN KEY: This constraint ensures that the values <span class="kw">in</span> a column of one table match the values <span class="kw">in</span> a column of another table.</span>
+<span id="cb5-422"><a href="#cb5-422" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-423"><a href="#cb5-423" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-424"><a href="#cb5-424" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span> INT PRIMARY KEY,</span>
+<span id="cb5-425"><a href="#cb5-425" aria-hidden="true" tabindex="-1"></a>name VARCHAR(<span class="dv">50</span>),</span>
+<span id="cb5-426"><a href="#cb5-426" aria-hidden="true" tabindex="-1"></a>department_id INT,</span>
+<span id="cb5-427"><a href="#cb5-427" aria-hidden="true" tabindex="-1"></a>FOREIGN KEY (department_id) REFERENCES departments(<span class="bu">id</span>)</span>
+<span id="cb5-428"><a href="#cb5-428" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-429"><a href="#cb5-429" aria-hidden="true" tabindex="-1"></a>CHECK: This constraint ensures that the values <span class="kw">in</span> a column meet a specific condition.</span>
+<span id="cb5-430"><a href="#cb5-430" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-431"><a href="#cb5-431" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-432"><a href="#cb5-432" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span> INT PRIMARY KEY,</span>
+<span id="cb5-433"><a href="#cb5-433" aria-hidden="true" tabindex="-1"></a>name VARCHAR(<span class="dv">50</span>),</span>
+<span id="cb5-434"><a href="#cb5-434" aria-hidden="true" tabindex="-1"></a>age INT,</span>
+<span id="cb5-435"><a href="#cb5-435" aria-hidden="true" tabindex="-1"></a>CONSTRAINT age_check CHECK (age <span class="op">&gt;=</span> <span class="dv">18</span>)</span>
+<span id="cb5-436"><a href="#cb5-436" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-437"><a href="#cb5-437" aria-hidden="true" tabindex="-1"></a>DEFAULT: This constraint sets a default value <span class="cf">for</span> a column <span class="cf">if</span> no value <span class="kw">is</span> specified.</span>
+<span id="cb5-438"><a href="#cb5-438" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-439"><a href="#cb5-439" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-440"><a href="#cb5-440" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span> INT PRIMARY KEY,</span>
+<span id="cb5-441"><a href="#cb5-441" aria-hidden="true" tabindex="-1"></a>name VARCHAR(<span class="dv">50</span>),</span>
+<span id="cb5-442"><a href="#cb5-442" aria-hidden="true" tabindex="-1"></a>age INT DEFAULT <span class="dv">18</span></span>
+<span id="cb5-443"><a href="#cb5-443" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-444"><a href="#cb5-444" aria-hidden="true" tabindex="-1"></a>Auto Increment:</span>
+<span id="cb5-445"><a href="#cb5-445" aria-hidden="true" tabindex="-1"></a>Auto increment <span class="kw">is</span> a feature that automatically increments the value of a column by <span class="dv">1</span> each time a new row <span class="kw">is</span> inserted into a table. It <span class="kw">is</span> commonly used <span class="cf">for</span> primary key columns to ensure that each row has a unique identifier.</span>
+<span id="cb5-446"><a href="#cb5-446" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-447"><a href="#cb5-447" aria-hidden="true" tabindex="-1"></a>CREATE TABLE employees (</span>
+<span id="cb5-448"><a href="#cb5-448" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span> INT PRIMARY KEY AUTO_INCREMENT,</span>
+<span id="cb5-449"><a href="#cb5-449" aria-hidden="true" tabindex="-1"></a>name VARCHAR(<span class="dv">50</span>),</span>
+<span id="cb5-450"><a href="#cb5-450" aria-hidden="true" tabindex="-1"></a>age INT</span>
+<span id="cb5-451"><a href="#cb5-451" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-452"><a href="#cb5-452" aria-hidden="true" tabindex="-1"></a>Insert into:</span>
+<span id="cb5-453"><a href="#cb5-453" aria-hidden="true" tabindex="-1"></a>The INSERT INTO statement <span class="kw">is</span> used to insert new rows into a table.</span>
+<span id="cb5-454"><a href="#cb5-454" aria-hidden="true" tabindex="-1"></a>Example:</span>
+<span id="cb5-455"><a href="#cb5-455" aria-hidden="true" tabindex="-1"></a>INSERT INTO employees (name, age) VALUES (<span class="st">'John'</span>, <span class="dv">25</span>)<span class="op">;</span></span>
+<span id="cb5-456"><a href="#cb5-456" aria-hidden="true" tabindex="-1"></a>This statement inserts a new row into the employees table <span class="cf">with</span> the values <span class="st">'John'</span> <span class="kw">and</span> <span class="dv">25</span> <span class="kw">in</span> the name <span class="kw">and</span> age columns, respectively.</span>
+<span id="cb5-457"><a href="#cb5-457" aria-hidden="true" tabindex="-1"></a>Case, When, Then, <span class="kw">and</span> End Keyword:</span>
+<span id="cb5-458"><a href="#cb5-458" aria-hidden="true" tabindex="-1"></a>The CASE statement <span class="kw">is</span> used to conditionally execute a <span class="bu">set</span> of statements based on a specific condition. It has the following syntax:</span>
+<span id="cb5-459"><a href="#cb5-459" aria-hidden="true" tabindex="-1"></a>CASE</span>
+<span id="cb5-460"><a href="#cb5-460" aria-hidden="true" tabindex="-1"></a>WHEN condition1 THEN</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

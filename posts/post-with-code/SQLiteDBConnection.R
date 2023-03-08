@@ -1,0 +1,6 @@
+library(DBI)
+library(RSQLite)
+library(dplyr)
+portaldb <- dbConnect(SQLite(),"C:/Users/Administrator/Documents/GitHub/endtoendprojects/posts/post-with-code/portal_mammals.sqlite")
+portaldb <- dbConnect(RSQLite::SQLite(),"C:/Users/Administrator/Documents/GitHub/endtoendprojects/posts/post-with-code/portal_mammals.sqlite")
+dbListTables(portaldb)
