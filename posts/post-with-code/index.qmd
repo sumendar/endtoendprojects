@@ -214,12 +214,12 @@ plt.show()
 ```
 ### Tableau Embed
 
-**Embedding Tableau Public Views in iFrame source:** https://kb.tableau.com/articles/howto/embedding-tableau-public-views-in-iframes
+**Embedding Tableau Public Views in iFrame source:**
 
-<iframe src="https://public.tableau.com/views/LiteracyStory-IronVizStudent2022/Dashboard1?:showVizHome=no&amp;:embed=true"  width="1035" height="545">
+<iframe src="https://public.tableau.com/views/_16783238630490/TelanganaMap?:showVizHome=no&amp;:embed=true" width="1200" height="645">
 
 </iframe>
 
 ### Power BI Embed
-**Embedding Power BI Report in iFrame source:**
-<iframe title="Retail Analysis Sample" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=3c39e898-69bf-48d1-b1bf-6e1c3d002e32&autoAuth=true&ctid=ae3b8cb6-b13b-4a99-b88d-91dd3741be50" frameborder="0" allowFullScreen="true"></iframe>
+
+**Embedding Power BI Report in iFrame source:** <iframe title="Retail Analysis Sample" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=3c39e898-69bf-48d1-b1bf-6e1c3d002e32&autoAuth=true&ctid=ae3b8cb6-b13b-4a99-b88d-91dd3741be50" frameborder="0" allowFullScreen="true"></iframe>

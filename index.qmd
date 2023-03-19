@@ -1,5 +1,5 @@
 ---
-title: <span style="text-align:center;"><sub><sup><sup>This blog has been set up for upcoming end-to-end data science, and machine learning projects with AI-related tools</sup></sup></sub></span>
+title: <span style="text-align:center;"><sub><sup><sup>end to end projects</sup></sup></sub></span>
 listing:
   contents: posts
   sort: "date desc"

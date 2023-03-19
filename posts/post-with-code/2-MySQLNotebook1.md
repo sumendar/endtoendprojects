@@ -1,4 +1,4 @@
-# MySQL Check (Sample Notebook for preview md: Its a file from jupytext synched Myst markdow with same name ipynb notebook)
+# MySQL Check (Sample Notebook for preview md: Its a file from jupytext synched Myst markdow with same name ipynb notebook) 
 
 > A tutorial of SQL Basic Scripting.
 

@@ -2,30 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.endtoendprojects.com/about.html</loc>
-    <lastmod>2023-03-08T21:50:48.099Z</lastmod>
+    <lastmod>2023-03-19T03:22:38.021Z</lastmod>
   </url>
   <url>
     <loc>https://www.endtoendprojects.com/index.html</loc>
-    <lastmod>2023-03-08T21:50:49.700Z</lastmod>
+    <lastmod>2023-03-19T03:22:39.478Z</lastmod>
   </url>
   <url>
     <loc>https://www.endtoendprojects.com/posts/post-with-code/1-SQLServerNotebook.html</loc>
-    <lastmod>2023-03-08T21:50:51.476Z</lastmod>
+    <lastmod>2023-03-19T03:22:41.188Z</lastmod>
   </url>
   <url>
     <loc>https://www.endtoendprojects.com/posts/post-with-code/2-MySQLNotebook.html</loc>
-    <lastmod>2023-03-08T21:50:52.483Z</lastmod>
+    <lastmod>2023-03-19T03:22:42.543Z</lastmod>
   </url>
   <url>
     <loc>https://www.endtoendprojects.com/posts/post-with-code/2-MySQLNotebook1.html</loc>
-    <lastmod>2023-03-08T21:50:54.082Z</lastmod>
+    <lastmod>2023-03-19T03:22:44.730Z</lastmod>
   </url>
   <url>
     <loc>https://www.endtoendprojects.com/posts/post-with-code/index.html</loc>
-    <lastmod>2023-03-08T21:50:56.192Z</lastmod>
+    <lastmod>2023-03-19T03:22:46.885Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.endtoendprojects.com/posts/post-with-code2/Telangana_Census.html</loc>
+    <lastmod>2023-03-19T03:22:47.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.endtoendprojects.com/posts/post-with-code3/Telangana_Aggri_Commodities.html</loc>
+    <lastmod>2023-03-19T03:22:49.289Z</lastmod>
   </url>
   <url>
     <loc>https://www.endtoendprojects.com/posts/welcome/index.html</loc>
-    <lastmod>2023-03-08T21:50:57.335Z</lastmod>
+    <lastmod>2023-03-19T03:22:50.699Z</lastmod>
   </url>
 </urlset>
