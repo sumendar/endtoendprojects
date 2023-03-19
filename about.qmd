@@ -16,7 +16,7 @@ about:
       text: Github
       href: https://github.com/sumendar
     - icon: link
-      text: Blog
+      text: Myblog
       href: https://karupakala.netlify.app
 ---
 
