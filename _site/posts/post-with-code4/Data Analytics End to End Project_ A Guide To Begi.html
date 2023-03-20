@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>End to End Projects - Data Analytics End to End Project: A Guide To Beginners in Data Analytics | by Prateek Gaurav | Medium</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">End to End Projects</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sumendar"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/sumendar"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Data Analytics End to End Project: A Guide To Beginners in Data Analytics | by Prateek Gaurav | Medium</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+
+
+
+
+<section id="data-analytics-end-to-end-project-a-guide-to-beginners-in-data-analytics" class="level1">
+<h1>Data Analytics End to End Project: A Guide To Beginners in Data Analytics</h1>
+<p>Data Science is indeed a hot topic for the last few years since it was mentioned as the sexiest job of the 21st Century. Indeed Data Science is awesome and has a lot of scopes, I will compare this scenario to what the computer industry was in the 1900s and early 2000s, it is similar to the Data Science industry right now. A lot of people from different fields are switching into Analytics and Data Science field, a lot of fresh graduates are trying to get a job in this field but the companies expect the hires should have prior experience in this field or they should have worked on some similar projects. I wanted to write this article to help such people using my past experience. This article contains the use of almost every important tool and knowledge used in the Data Analytics project in the industry except for the use of Microsoft Excel, which I believe is a very crucial skill if you want to work in the Analytics field.</p>
+<p>The steps of Data Science are as follows in the mentioned order: 1. Problem Statement 2. Data Collection 3. Data Cleaning 4. Data Analysis and Visualization 5. Modelling (Machine Learning Part) I wanted to name this article as Data Science End to End Project. But I thought that will not be a good idea as I will not be discussing the modeling part in this article. Hence I named this as Data Analytics End to End Project as it covers almost every part of a Data Analysis process from Data Collection to Data Analysis.</p>
+<p>Here are the steps we will follow in this article: 1. We will come up with a Problem Statement. 2. We will collect the data using an API which will run on a cronjob every hour on an EC2 virtual machine and store the data collected on AWS RDS. 3. Then we will see how to clean this data. 4. Finally using Tableau, we will try to find some insights from this data.</p>
+<p>This will be an end-to-end project which will start from a problem statement to getting the insight. You can follow these steps to replicate the same project or maybe come up with your own problem statement, find the API to get data for that problem to collect the data (the source of data collection might be different. You can use web scraping or survey or any other source), create a database either on cloud or local system and finally use this data to find the insights using Python or Tableau.</p>
+<section id="learn-more-about-data-science-from-udacity." class="level2">
+<h2 class="anchored" data-anchor-id="learn-more-about-data-science-from-udacity."><a href="https://imp.i115008.net/QOvQ13">Learn more about Data Science from Udacity.</a></h2>
+<p>** This is an affiliate link, meaning if you enroll in any course on Udacity using my URL, I will get a referral bonus.</p>
+</section>
+</section>
+<section id="step-1-problem-statement" class="level1">
+<h1>Step 1: Problem Statement</h1>
+<p>I started this project in the month of September 2019. I wanted to do a project where I will cover every part of the Data Analysis process. When you work in organizations, you don’t really get to work on end-to-end projects.</p>
+<p>The problem statement might be coming from an MBA guy or senior management in the company. The data collection part will be taken care of by a different team. There might be a different team for Data Cleaning Process. Finally, a different team for using this cleaned data to do data visualization or analysis.</p>
+<p>But if you are in a startup, the scenario might be different. You will be responsible for multiple roles in this process. But if you know the A to Z of this process and have the hands-on experience, it will be beneficial. A startup would like to hire you as you will be able to manage multiple roles. A big organization would be happy to hire you, as they will be able to use you in multiple roles as per the client’s requirement.</p>
+<p>Coming back to the project which I started in September 2019. The hot topic in India around the Month of October/November is Pollution. In late September and October each year, farmers mainly in Punjab and Haryana burn an estimated 35 million tons of crop waste from their paddy fields after harvesting as a low-cost straw-disposal practice to reduce the turnaround time between harvesting and sowing for the second (winter) crop. Also, during this period festivals like Dussehra and Diwali are celebrated in India. During these festivals, a lot of crackers are burnt which also affects the pollution level. In cities like Delhi, the PM 2.5 level goes above 999 which is a very serious issue. I wanted to understand the effect of different times and events on the pollution level in different parts of India.</p>
+<p>So, in short, my problem statement was: <strong>To understand the effect of different times and events on the pollution level in different parts of India.</strong></p>
+</section>
+<section id="step-2-data-collection" class="level1">
+<h1>Step 2: Data Collection</h1>
+<p>There are a lot of ways to collect the data like:</p>
+<ol type="1">
+<li>Through API — Mostly this is a cleaned form of data and does not require further cleaning.</li>
+<li>Web Scraping — Most of the time you will need to spend a good amount of time cleaning such data.</li>
+<li>Transactional Data</li>
+<li>Online Marketing Analytics Data (Customer Journey, etc.)</li>
+<li>Surveys and Interviews, etc.. etc…</li>
+</ol>
+<p>The best way to get the data for Data Analysis or Visualization according to me would be to <strong>use an API</strong> as mostly they are clean. But if you are an offline or online store like Walmart or Amazon, you will be having huge transactional data. A good DBA would make sure to keep this data in the cleaned format, so an Analyst will only have to query the data according to the requirement from this huge pile of data and do the analysis. Even the Online Marketing Analytics or Survey Data will be in a cleaned format, but methods like Web Scraping can consume a lot of time in Data Cleaning. You can write all the cleaning codes in the script only so that the final scraped output you get is clean and ready to use. The biggest pain is cleaning the text data, I have worked on it can be really frustrating sometimes.</p>
+<p>So for this article, I have used an API provided by the Government Of India on their website https://data.gov.in/, I found this API where they were providing Air Pollution data for about 1200 places across different cities and states in India on an hourly basis. Different metrics like PM2.5, PM10, NO2, NH3, SO2, CO, and Ozone’s Maximum, Minimum, and Average values were collected.</p>
+<p>This data was provided on an hourly basis, so if you hit this API at 3 PM, it will provide you the data collected till 2 PM for the 1200 places, but if you hit this API at 5 PM you will get the data for 4 PM. Hence you cannot get the past data from this API, so you have to create a DB to append the new data every hour.</p>
+</section>
+<section id="a.-collecting-the-data-in-database-or-google-sheets" class="level1">
+<h1>2a. Collecting the Data in Database or Google Sheets</h1>
+<p>There are two ways you can collect this data. Either you can use Google Sheets as your Database and keep on appending the new data or you can create a Database using AWS RDS. Initially, I started with using Google Sheets as it is free, but Since I was planning to collect the Air Pollution data for about a year, using Google Sheets was not a good idea. I was collecting about 900K rows of data every month.</p>
+<section id="how-to-collect-data-using-api-in-python" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-collect-data-using-api-in-python">How To Collect Data Using API In Python</h2>
+<p>I would not bother writing this article again as I have already explained this in one of my articles, please check this out:</p>
+<p>Fetching Data Through API in Python</p>
+<p>How To Read And Write Data To Google Sheets Using Python</p>
+<p>I have also written a detailed article for the same, Please check this out:</p>
+<p>Reading And Writing Data in Google Sheets Using Python</p>
+<p>I will suggest if your data is not going to be too huge and somewhere up to 500K to 800K rows of data, then you can definitely use Google Sheets. It is free and you can continue to collect the data as long as you want.</p>
+</section>
+<section id="how-to-create-a-database-on-aws-rds-and-connect-to-workbench" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-create-a-database-on-aws-rds-and-connect-to-workbench">How To Create a Database on AWS RDS and Connect To Workbench</h2>
+<p>In order to go to the next step of writing a Python Script to collect the data from the API, convert that to a Data frame and store append that data into a database, we will need to create a database first on AWS RDS. If you plan on using google sheets to collect your data, you can check out the article I have shared above in order to learn how to store data into google sheets using Python. In order to create a Database on AWS RDS, you will need to Sign Up for AWS, and if you are using AWS for the first time, you can use a lot of services on AWS for free for a year. That is really amazing, In fact, the data I collected for about a year, was during the free access time I had on my account. Check out this video made by me in order to see how you can create a database on RDS and connect that to Workbench on your system.</p>
+</section>
+<section id="how-to-collect-data-using-api-and-store-that-in-a-database-on-aws-rds" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-collect-data-using-api-and-store-that-in-a-database-on-aws-rds">How To Collect Data Using API and Store That In a Database On AWS RDS</h2>
+<p>If you decide to use create a MySQL Database on AWS RDS and want to store the data there, you should check out this code:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Import all required packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pygsheets</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> timedelta</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>urlData <span class="op">=</span>requests.get(<span class="st">"https://api.data.gov.in/resource/use-your-key"</span>).content</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Converting the data to pandas dataframe.</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> pd.read_csv(io.StringIO(urlData.decode(<span class="st">'utf-8'</span>)))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Replace with proper name.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> rawData.replace(to_replace <span class="op">=</span><span class="st">"Andhra_Pradesh"</span>, value <span class="op">=</span><span class="st">"Andhra Pradesh"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> rawData.replace(to_replace <span class="op">=</span><span class="st">"West_Bengal"</span>, value <span class="op">=</span><span class="st">"West Bengal"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> rawData.replace(to_replace <span class="op">=</span><span class="st">"Uttar_Pradesh"</span>, value <span class="op">=</span><span class="st">"Uttar Pradesh"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Append blank row in the end of the dataframe.</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> rawData.append(pd.Series(), ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> dt.datetime.utcnow()<span class="op">+</span>timedelta(hours<span class="op">=</span><span class="dv">4</span>, minutes<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> now.strftime(<span class="st">'</span><span class="sc">%d</span><span class="st">-%m-%Y %H:00:00'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>rawData[<span class="st">'Measure_time'</span>] <span class="op">=</span> now</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># changing columns using .columns() </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>rawData.columns <span class="op">=</span> [<span class="st">'Id'</span>, <span class="st">'Country'</span>, <span class="st">'State'</span>, <span class="st">'City'</span>, </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Station'</span>, <span class="st">'Last Update'</span>, <span class="st">'Pollution ID'</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">'Pollutant Min'</span>, <span class="st">'Pollutant Max'</span>, <span class="st">'Pollutant Avg'</span>, <span class="st">'Pollutant Unit'</span>, <span class="st">'Measure_Time'</span>] </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#Connection To Your Online Database begins</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>engine <span class="op">=</span> create_engine(<span class="st">"mysql://user:password@server"</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>.<span class="bu">format</span>(user <span class="op">=</span> <span class="st">"your username"</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>pw <span class="op">=</span> <span class="st">"your password"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>db<span class="op">=</span><span class="st">"your database name"</span>))</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">#Insert whole DF into MySQL</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">'hourly_air_pollution'</span>, con<span class="op">=</span>engine, if_exists<span class="op">=</span><span class="st">'append'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="b.-putting-the-python-script-on-a-virtual-machine-on-aws-ec2" class="level1">
+<h1>2b. Putting The Python Script On a Virtual Machine on AWS EC2</h1>
+<p>Once we have our python script ready for either getting the data and putting it on a Database on AWS RDS or on Google Sheets as per our requirement and wish, we need to put this script on a cloud platform. This script needs to run every hour and putting this on a Windows Task Scheduler or on a Cronjob on our local system will not be a good idea as our local system will not be on 24*7 (most probably), so we will need to set up a Virtual Machine on Cloud. You can use any cloud platform to achieve this task, but I will show you how to do this on AWS. I have created a video to explain this task, it will take merely 5–10 minutes if you are doing this for the first time, but if you know how to do it, it will take less than 2 minutes to set up a new Virtual Machine on EC2 and connect this via SSH to your local system.</p>
+<section id="starting-a-virtual-machine-on-ec2-and-connecting-to-local-system-via-ssh-using-gitbash" class="level2">
+<h2 class="anchored" data-anchor-id="starting-a-virtual-machine-on-ec2-and-connecting-to-local-system-via-ssh-using-gitbash">Starting A Virtual Machine On EC2 and Connecting to Local System Via SSH Using Gitbash</h2>
+</section>
+<section id="creating-and-putting-your-python-script-on-cronjob-on-aws-machine" class="level2">
+<h2 class="anchored" data-anchor-id="creating-and-putting-your-python-script-on-cronjob-on-aws-machine">Creating And Putting Your Python Script On Cronjob On AWS Machine</h2>
+<p>So till now, here is our progress:</p>
+<ul>
+<li>We have the Problem Statement ready.</li>
+<li>We found an API to get the data for our problem statement. In order to collect the data, we either created a Database on AWS RDS or used a Google Sheet.</li>
+<li>We wrote Python code to get the data from the API and append it in the Google Sheet or the Database.</li>
+<li>We have put this script on AWS Machine on cronjob to make sure we are getting the data properly every hour.</li>
+</ul>
+</section>
+</section>
+<section id="step-3-data-cleaning" class="level1">
+<h1>Step 3: Data Cleaning</h1>
+<p>The good thing here for me is I can skip this step as I am collecting my data using an API. The data collected from the API are mostly in a cleaned format and you don’t have to spend time cleaning them. In my case, this is what my data looked like in the database:</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*kQAoTGXPy8rVKoespIVq1Q.png" class="img-fluid"></p>
+<p>Air Pollution Data Output</p>
+<p>As you can see in the image, this is a pretty cleaned version of the data and I can use this for Analysis and Visualization without any further changes.</p>
+<p>But in general Data Cleaning is a very huge topic and it can completely vary on the type of data you are dealing with. You might have to do the cleaning while collecting the data, this type of cleaning will be done in the code, like in my Python code where I was collecting the Air Pollution data, I had to do a bit of Cleaning. I wanted to use this Data in Tableau for Data Visualization, but the name of a few states was not coming in the correct format, because of this Tableau will not understand the names of the states and hence will not plot the locations correctly in India’s Map. Eg: Andhra Pradesh was coming as Andhra_Pradesh so on, so I wrote a small piece of code for this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Replace with proper name.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> rawData.replace(to_replace <span class="op">=</span><span class="st">"Andhra_Pradesh"</span>, value <span class="op">=</span><span class="st">"Andhra Pradesh"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> rawData.replace(to_replace <span class="op">=</span><span class="st">"West_Bengal"</span>, value <span class="op">=</span><span class="st">"West Bengal"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rawData <span class="op">=</span> rawData.replace(to_replace <span class="op">=</span><span class="st">"Uttar_Pradesh"</span>, value <span class="op">=</span><span class="st">"Uttar Pradesh"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Similarly, you might have to do the cleaning according to your data in the code itself.</p>
+<p>If it is not possible to do the cleaning of the data in the source code, you might have to do this afterward at the time of querying the data from the database.</p>
+<p>I will not deep dive into data cleaning at the moment because it is a very vast topic but I would provide you with links to some good articles which I was able to checkout related to Data Cleaning, I am sure it will be useful: 1. <a href="https://www.upgrad.com/blog/data-cleaning-techniques/">Data Cleaning Techniques: Learn Simple &amp; Effective Ways To Clean Data</a> 2. <a href="https://towardsdatascience.com/the-ultimate-guide-to-data-cleaning-3969843991d4">The Ultimate Guide to Data Cleaning (Medium)</a> 3. <a href="https://elitedatascience.com/data-cleaning">Data Cleaning (Elite Data Science)</a> 4. <a href="https://synthio.com/b2b-blog/5-best-practices-for-data-cleaning/">5 Best Practices For Data Cleaning</a> 5. <a href="https://www.digitalvidya.com/blog/data-cleaning-techniques/">Data Cleaning Techniques</a></p>
+<section id="learn-more-about-data-science-from-udacity.-1" class="level2">
+<h2 class="anchored" data-anchor-id="learn-more-about-data-science-from-udacity.-1"><a href="https://imp.i115008.net/QOvQ13">Learn more about Data Science from Udacity.</a></h2>
+<p>** This is an affiliate link, meaning if you enroll in any course on Udacity using my URL, I will get a referral bonus.</p>
+</section>
+</section>
+<section id="result-the-cleaned-data-for-analysis" class="level1">
+<h1>Result: The Cleaned Data For Analysis</h1>
+<p>After putting in all this effort, you get the cleaned version of your data for your analysis. Voila!!! I started collecting this data on 14th Oct 2019, but for a few days the data was not collected properly and there were few hours of data missing. I continued this collection of the data till September end 2020. In this period I collected a little over 10 million rows of data. I have published that data on the Kaggle Dataset for people to use and do the analysis. This dataset in CSV format was taking up around 1.2 GB, but I also created a .hyper extract (the Tableau data format) which was only about 122 MB files. I have uploaded the CSV and the Hyper file on the Kaggle Dataset website and you can download the same from <a href="https://www.kaggle.com/prateekcoder/ind-hourly-air-pollution-data-oct2019-to-sept2020">here</a>:</p>
+<p>https://www.kaggle.com/prateekcoder/ind-hourly-air-pollution-data-oct2019-to-sept2020</p>
+<p>This dataset can be used to analyze a lot of things like:</p>
+<ol type="1">
+<li>How does the time period burning of crops by Haryana and Punjab Farmers affect air pollution?</li>
+<li>Affect of festivals like Diwali and Dussehra on the air pollution level.</li>
+<li>Is the pollution level less in winter months like January and February compared to November and December?</li>
+<li>What was the effect of the Pandemic on the air pollution levels across India? ( This decreased drastically, we all know that but the detailed data will give you the exact picture.)</li>
+</ol>
+</section>
+<section id="step-4-data-analysis" class="level1">
+<h1>Step 4: Data Analysis</h1>
+<p>Now we have the cleaned version of the data, I have provided the link to the CSV format and the Hyper format of the data. Now I will suggest you guys use this data to extract some insight from the data using the tools of your choice, it can be Excel, Python, Tableau, or any other tool. Being a Data Analyst the end goal is to solve the business problem, tools are just a medium to reach the destination.</p>
+<p>For reference, let me show you a quick tableau Dashboard I built:</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*2g1nt55SzrgpQ0JTXfDFCA.png" class="img-fluid"></p>
+<p>Tableau Dashboard</p>
+<p><a href="https://public.tableau.com/views/AirPollutionDataAnalysis/AirPollutionDataAnalysis?:language=en&amp;:embed=y&amp;:embed_code_version=3&amp;:loadOrderID=0&amp;:display_count=y&amp;publish=yes&amp;:origin=viz_share_link">https://public.tableau.com/views/AirPollutionDataAnalysis/AirPollutionDataAnalysis?:language=en&amp;:embed=y&amp;:embed_code_version=3&amp;:loadOrderID=0&amp;:display_count=y&amp;publish=yes&amp;:origin=viz_share_link</a></p>
+<p>Now I built this Dashboard in 4–5 minutes and a few quick insights that I can derive from this visual are:</p>
+<ol type="1">
+<li>The average PM 2.5 level in Delhi dropped from 388 in December 2020 to 74.6 in April 2020.</li>
+<li>After major Unlocks in Delhi in August, the PM 2.5 level can be seen increasing significantly.</li>
+<li>There was no major effect of lockdown on pollutant metric Ozone as the highest average value can be seen in May 2020. So we will need to dig deeper to find the variables having a good correlation with Ozone pollutant id.</li>
+</ol>
+<p>There is other information as well that can be drawn from the visual and a much better and more informative Dashboard can be built using this data. I will leave that for you guys to brainstorm and come up with something better.</p>
+<p>I hope this article helps, Happy Learning!!!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
