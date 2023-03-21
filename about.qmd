@@ -20,4 +20,4 @@ about:
       href: https://karupakala.netlify.app
 ---
 
-This website was created for the upcoming end-to-end data analytics, data science, and machine learning project initiatives in <a href="https://www.psa.gov.in/technology-frontiers/artificial-intelligence-ai-enabled-technologies/261" target="_blank">artificial intelligence(AI)</a>, for the general public, which can enable solutions for socio-economic challenges and real-world industry use-cases in education, agriculture, retail, healthcare, transportation, and other fields.
+This website was created for the upcoming end-to-end data analytics, data science, and machine learning project initiatives in <a href="https://www.psa.gov.in/technology-frontiers/artificial-intelligence-ai-enabled-technologies/261" target="_blank">artificial intelligence(AI)</a>, for the general public, which can enable solutions for socio-economic challenges and real-world industry use-cases in education, agriculture, retail, marketing, healthcare, constructions, sports, transportation and other fields.
