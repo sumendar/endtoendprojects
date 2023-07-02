@@ -15,9 +15,9 @@ about:
     - icon: github
       text: Github
       href: https://github.com/sumendar
-    - icon: link
-      text: MyProfile
+    - icon: mortarboard-fill
+      text: Portfolio [admin]
       href: https://karupakala.netlify.app
 ---
 
-This website was created for the upcoming end-to-end data analytics, data science, and machine learning project initiatives in <a href="https://www.psa.gov.in/technology-frontiers/artificial-intelligence-ai-enabled-technologies/261" target="_blank">artificial intelligence(AI)</a>, for the general public, which can enable solutions for socio-economic challenges and real-world industry use-cases in education, agriculture, retail, marketing, healthcare, constructions, sports, transportation and other fields.
+This website is for the general public to provide end-to-end data analytics, data science, machine learning projects, and case study initiatives in <a href="https://www.psa.gov.in/technology-frontiers/artificial-intelligence-ai-enabled-technologies/261" target="_blank">artificial intelligence(AI)</a>, If I have a story to tell with data, I will tell here! which can enable to find solutions for real-world industry problems and business use cases to achieve socio-economic empowerment in education, agriculture, healthcare, retail, sports, marketing, finance, telecom, communications, media, entertainment, manufacturing, transportation, constructions, and other areas.

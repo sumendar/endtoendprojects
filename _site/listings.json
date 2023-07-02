@@ -2,12 +2,28 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/1-SQLServerNotebook.html",
+      "/posts/post-with-code6/IPL2023_Analysis.html",
+      "/posts/HealthCentresTS/HealthCentresInTS.html",
+      "/posts/CollegesListInTS/CollegesListInTS.html",
+      "/posts/post-with-code7/KCR-Kits-Aug21-Mar23.html",
+      "/posts/post-with-code4/Telangana_Past_MPTC_Election_Results.html",
+      "/posts/post-with-code5/పార్టీల వారీగా మొత్తం MPTCల సంఖ్య.html",
+      "/posts/post-with-code5/World_Population_Count.html",
       "/posts/post-with-code2/Telangana_Census.html",
       "/posts/post-with-code3/Telangana_Aggri_Commodities.html",
+      "/posts/post-with-code/1-SQLServerNotebook.html",
       "/posts/post-with-code/index.html",
+      "/posts/post-with-code5/Sample.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/posts/CollegesListInTS/CollegesListInTS.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/HealthCentresTS/HealthCentresInTS.html",
+    "items": []
   },
   {
     "listing": "/posts/post-with-code/1-SQLServerNotebook.html",
@@ -19,6 +35,22 @@
   },
   {
     "listing": "/posts/post-with-code3/Telangana_Aggri_Commodities.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/post-with-code4/Telangana_Past_MPTC_Election_Results.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/post-with-code5/World_Population_Count.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/post-with-code5/పార్టీల వారీగా మొత్తం MPTCల సంఖ్య.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/post-with-code7/KCR-Kits-Aug21-Mar23.html",
     "items": []
   }
 ]

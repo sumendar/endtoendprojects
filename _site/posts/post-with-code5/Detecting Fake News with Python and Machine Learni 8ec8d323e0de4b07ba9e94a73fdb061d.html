@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>End to End Projects – detecting-fake-news-with-python-and-machine-learni-8ec8d323e0de4b07ba9e94a73fdb061d</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">End to End Projects</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sumendar"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/sumendar"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+
+
+
+<section id="detecting-fake-news-with-python-and-machine-learning---dataflair" class="level1">
+<h1>Detecting Fake News with Python and Machine Learning - DataFlair</h1>
+<p><a href="https://data-flair.training/blogs/advanced-python-project-detecting-fake-news/">https://data-flair.training/blogs/advanced-python-project-detecting-fake-news/</a></p>
+<p>Do you trust all the news you hear from social media?</p>
+<p>All news are not real, right?</p>
+<p>How will you detect fake news?</p>
+<p>The answer is Python. By practicing this advanced python project of detecting fake news, you will easily make a difference between real and fake news.</p>
+<p>Before moving ahead in this machine learning project, get aware of the terms related to it like fake news, tfidfvectorizer, PassiveAggressive Classifier.</p>
+<p>Also, I like to add that DataFlair has published a <strong><em>series of machine learning Projects</em></strong> where you will get interesting and open-source advanced ml projects. Do check, and then share your experience through comments. Here is the list of top Python projects:</p>
+<ol type="1">
+<li>Fake News Detection Python Project</li>
+<li><a href="https://data-flair.training/blogs/python-machine-learning-project-detecting-parkinson-disease/">Parkinson’s Disease Detection Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/project-in-python-colour-detection/">Color Detection Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/python-mini-project-speech-emotion-recognition/">Speech Emotion Recognition Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/project-in-python-breast-cancer-classification/">Breast Cancer Classification Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/python-project-gender-age-detection/">Age and Gender Detection Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/python-deep-learning-project-handwritten-digit-recognition/">Handwritten Digit Recognition Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/python-chatbot-project/">Chatbot Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/python-project-driver-drowsiness-detection-system/">Driver Drowsiness Detection Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/python-project-traffic-signs-recognition/">Traffic Signs Recognition Python Project</a></li>
+<li><a href="https://data-flair.training/blogs/python-based-project-image-caption-generator-cnn/">Image Caption Generator Python Project</a></li>
+</ol>
+<section id="what-is-fake-news" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-fake-news">What is Fake News?</h3>
+<p>A type of yellow journalism, fake news encapsulates pieces of news that may be hoaxes and is generally spread through social media and other online media. This is often done to further or impose certain ideas and is often achieved with political agendas. Such news items may contain false and/or exaggerated claims, and may end up being viralized by algorithms, and users may end up in a filter bubble.</p>
+</section>
+<section id="what-is-a-tfidfvectorizer" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-tfidfvectorizer">What is a TfidfVectorizer?</h3>
+<p><strong>TF (Term Frequency):</strong> The number of times a word appears in a document is its Term Frequency. A higher value means a term appears more often than others, and so, the document is a good match when the term is part of the search terms.</p>
+<p><strong>IDF (Inverse Document Frequency):</strong> Words that occur many times a document, but also occur many times in many others, may be irrelevant. IDF is a measure of how significant a term is in the entire corpus.</p>
+<p>The TfidfVectorizer converts a collection of raw documents into a matrix of TF-IDF features.</p>
+</section>
+<section id="what-is-a-passiveaggressiveclassifier" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-passiveaggressiveclassifier">What is a PassiveAggressiveClassifier?</h3>
+<p>Passive Aggressive algorithms are online learning algorithms. Such an algorithm remains passive for a correct classification outcome, and turns aggressive in the event of a miscalculation, updating and adjusting. Unlike most other algorithms, it does not converge. Its purpose is to make updates that correct the loss, causing very little change in the norm of the weight vector.</p>
+</section>
+<section id="detecting-fake-news-with-python" class="level3">
+<h3 class="anchored" data-anchor-id="detecting-fake-news-with-python">Detecting Fake News with Python</h3>
+<p>To build a model to accurately classify a piece of news as REAL or FAKE.</p>
+</section>
+<section id="about-detecting-fake-news-with-python" class="level3">
+<h3 class="anchored" data-anchor-id="about-detecting-fake-news-with-python">About Detecting Fake News with Python</h3>
+<p>This advanced python project of detecting fake news deals with fake and real news. Using sklearn, we build a TfidfVectorizer on our dataset. Then, we initialize a PassiveAggressive Classifier and fit the model. In the end, the accuracy score and the confusion matrix tell us how well our model fares.</p>
+</section>
+<section id="the-fake-news-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="the-fake-news-dataset">The fake news Dataset</h3>
+<p>The dataset we’ll use for this python project- we’ll call it news.csv. This dataset has a shape of 7796×4. The first column identifies the news, the second and third are the title and text, and the fourth column has labels denoting whether the news is REAL or FAKE. The dataset takes up 29.2MB of space and you can <strong><em><a href="https://drive.google.com/file/d/1er9NJTLUA3qnRuyhfzuN0XUsoIC4a-_q/view">download it here</a></em></strong>.</p>
+</section>
+<section id="project-prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="project-prerequisites">Project Prerequisites</h3>
+<p>You’ll need to install the following libraries with pip:</p>
+<p>You’ll need to install Jupyter Lab to run your code. Get to your command prompt and run the following command:</p>
+<p>You’ll see a new browser window open up; create a new console and use it to run your code. To run multiple lines of code at once, press Shift+Enter.</p>
+</section>
+<section id="steps-for-detecting-fake-news-with-python" class="level3">
+<h3 class="anchored" data-anchor-id="steps-for-detecting-fake-news-with-python">Steps for detecting fake news with Python</h3>
+<p>Follow the below steps for detecting fake news and complete your first advanced Python Project –</p>
+<ol type="1">
+<li>Make necessary imports:</li>
+</ol>
+<p><strong>Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Detecting Fake News with Python and Machine Learni 8ec8d323e0de4b07ba9e94a73fdb061d/python-projects-imports-data.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Detecting%20Fake%20News%20with%20Python%20and%20Machine%20Learni%208ec8d323e0de4b07ba9e94a73fdb061d/python-projects-imports-data.png</figcaption><p></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Now, let’s read the data into a DataFrame, and get the shape of the data and the first 5 records.</li>
+</ol>
+<p><strong>Output Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Detecting Fake News with Python and Machine Learni 8ec8d323e0de4b07ba9e94a73fdb061d/python-projects-read-data.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Detecting%20Fake%20News%20with%20Python%20and%20Machine%20Learni%208ec8d323e0de4b07ba9e94a73fdb061d/python-projects-read-data.png</figcaption><p></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>And get the labels from the DataFrame.</li>
+</ol>
+<p><strong>Output Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Detecting Fake News with Python and Machine Learni 8ec8d323e0de4b07ba9e94a73fdb061d/python-projects-get-labels-.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Detecting%20Fake%20News%20with%20Python%20and%20Machine%20Learni%208ec8d323e0de4b07ba9e94a73fdb061d/python-projects-get-labels-.png</figcaption><p></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Split the dataset into training and testing sets.</li>
+</ol>
+<p><strong>Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Detecting Fake News with Python and Machine Learni 8ec8d323e0de4b07ba9e94a73fdb061d/split-dataset-in-python-projects.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Detecting%20Fake%20News%20with%20Python%20and%20Machine%20Learni%208ec8d323e0de4b07ba9e94a73fdb061d/split-dataset-in-python-projects.png</figcaption><p></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Let’s initialize a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html">TfidfVectorizer</a> with stop words from the English language and a maximum document frequency of 0.7 (terms with a higher document frequency will be discarded). Stop words are the most common words in a language that are to be filtered out before processing the natural language data. And a TfidfVectorizer turns a collection of raw documents into a matrix of TF-IDF features.</li>
+</ol>
+<p>Now, fit and transform the vectorizer on the train set, and transform the vectorizer on the test set.</p>
+<p><strong>Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Detecting Fake News with Python and Machine Learni 8ec8d323e0de4b07ba9e94a73fdb061d/python-projects-tfidf.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Detecting%20Fake%20News%20with%20Python%20and%20Machine%20Learni%208ec8d323e0de4b07ba9e94a73fdb061d/python-projects-tfidf.png</figcaption><p></p>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Next, we’ll initialize a PassiveAggressiveClassifier. This is. We’ll fit this on tfidf_train and y_train.</li>
+</ol>
+<p>Then, we’ll predict on the <a href="https://github.com/GeorgeMcIntire/fake_real_news_dataset">test set</a> from the TfidfVectorizer and calculate the accuracy with accuracy_score() from sklearn.metrics.</p>
+<p><strong>Output Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Detecting Fake News with Python and Machine Learni 8ec8d323e0de4b07ba9e94a73fdb061d/passive-aggressive-calssifier-in-python-projects.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Detecting%20Fake%20News%20with%20Python%20and%20Machine%20Learni%208ec8d323e0de4b07ba9e94a73fdb061d/passive-aggressive-calssifier-in-python-projects.png</figcaption><p></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>We got an accuracy of 92.82% with this model. Finally, let’s print out a confusion matrix to gain insight into the number of false and true negatives and positives.</li>
+</ol>
+<p><strong>Output Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Detecting Fake News with Python and Machine Learni 8ec8d323e0de4b07ba9e94a73fdb061d/confusion-matrix-python-projects.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Detecting%20Fake%20News%20with%20Python%20and%20Machine%20Learni%208ec8d323e0de4b07ba9e94a73fdb061d/confusion-matrix-python-projects.png</figcaption><p></p>
+</figure>
+</div>
+<p>So with this model, we have 589 true positives, 587 true negatives, 42 false positives, and 49 false negatives.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Today, we learned to detect fake news with Python. We took a political dataset, implemented a TfidfVectorizer, initialized a PassiveAggressiveClassifier, and fit our model. We ended up obtaining an accuracy of 92.82% in magnitude.</p>
+<p>Hope you enjoyed the fake news detection python project. Keep visiting DataFlair for more interesting python, data science, and machine learning projects.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

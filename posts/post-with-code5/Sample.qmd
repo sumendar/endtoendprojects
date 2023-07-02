@@ -1,0 +1,796 @@
+---
+title: "Sample"
+title-block-banner: getting-started.png
+author: "Sumendar"
+date: "2023-03-09"
+categories: [news, code, analysis]
+image: "image.jpg"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+engine: python3
+---
+
+# Excel:
+
+## Excel Chart Emeding from Google Drive's Sheet:
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYUPphyFqx0x1pSkh8g9pPLp3wKbBmtMNh0HZ4Rs6lekJvygFaVimjBfK8RhOgoOml_ZNClbgTbj-X/pubhtml?:showVizHome=no&amp;:embed=true" width="1265" height="600" allowFullScreen>
+
+</iframe>
+
+## Only Chart Direct copied from Google Embed Code without File:
+
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYUPphyFqx0x1pSkh8g9pPLp3wKbBmtMNh0HZ4Rs6lekJvygFaVimjBfK8RhOgoOml_ZNClbgTbj-X/pubchart?oid=1435335503&amp;format=interactive">
+
+</iframe>
+
+# R Programming:
+
+::: cell
+``` {.r .cell-code}
+library(dplyr)
+library(ggplot2)
+iris1 <- iris %>% filter(Sepal.Length <= 5.4)
+head(iris1, 4L)
+```
+
+::: {.cell-output .cell-output-stdout}
+      Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+    1          5.1         3.5          1.4         0.2  setosa
+    2          4.9         3.0          1.4         0.2  setosa
+    3          4.7         3.2          1.3         0.2  setosa
+    4          4.6         3.1          1.5         0.2  setosa
+:::
+
+``` {.r .cell-code}
+ggplot(mtcars, aes(factor(cyl), mpg)) + geom_point()
+```
+
+::: cell-output-display
+![](Test_files/figure-html/unnamed-chunk-1-1.png){width="672"}
+:::
+:::
+
+::: cell
+``` {.r .cell-code}
+# install.packages("tidyverse")
+# install.packages("palmerpenguins")
+library(tidyverse)
+```
+
+::: {.cell-output .cell-output-stderr}
+    Warning: package 'tidyverse' was built under R version 4.2.3
+:::
+
+::: {.cell-output .cell-output-stderr}
+    Warning: package 'tidyr' was built under R version 4.2.3
+:::
+
+::: {.cell-output .cell-output-stderr}
+    Warning: package 'readr' was built under R version 4.2.3
+:::
+
+::: {.cell-output .cell-output-stderr}
+    Warning: package 'forcats' was built under R version 4.2.3
+:::
+
+::: {.cell-output .cell-output-stderr}
+    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+    ✔ forcats   1.0.0     ✔ stringr   1.5.0
+    ✔ lubridate 1.9.2     ✔ tibble    3.1.8
+    ✔ purrr     1.0.1     ✔ tidyr     1.3.0
+    ✔ readr     2.1.4     
+    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ✖ dplyr::filter() masks stats::filter()
+    ✖ dplyr::lag()    masks stats::lag()
+    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+:::
+
+``` {.r .cell-code}
+library(palmerpenguins)
+```
+
+::: {.cell-output .cell-output-stderr}
+    Warning: package 'palmerpenguins' was built under R version 4.2.3
+:::
+
+``` {.r .cell-code}
+glimpse(penguins)
+```
+
+::: {.cell-output .cell-output-stdout}
+    Rows: 344
+    Columns: 8
+    $ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
+    $ island            <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…
+    $ bill_length_mm    <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …
+    $ bill_depth_mm     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …
+    $ flipper_length_mm <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…
+    $ body_mass_g       <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
+    $ sex               <fct> male, female, female, NA, female, male, female, male…
+    $ year              <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…
+:::
+:::
+
+::: cell
+``` {.r .cell-code}
+penguins %>% 
+  group_by(species) %>% 
+  summarize(across(where(is.numeric), mean, na.rm = TRUE))
+```
+
+::: {.cell-output .cell-output-stdout}
+    # A tibble: 3 × 6
+      species   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
+      <fct>              <dbl>         <dbl>             <dbl>       <dbl> <dbl>
+    1 Adelie              38.8          18.3              190.       3701. 2008.
+    2 Chinstrap           48.8          18.4              196.       3733. 2008.
+    3 Gentoo              47.5          15.0              217.       5076. 2008.
+:::
+
+``` {.r .cell-code}
+ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
+    geom_point() 
+```
+
+::: cell-output-display
+![](Test_files/figure-html/unnamed-chunk-3-1.png){width="672"}
+:::
+:::
+
+## Inline code in R Programming
+
+The mtcars dataset has 32 rows
+
+The mtcars dataset has an average miles/per gallon of 20.090625
+
+## Interactive Graph in R Programming:
+
+::: cell
+``` {.r .cell-code}
+#install.packages("plotly")
+#install.packages("gapminder")
+#install.packages("ggplot2")
+library(ggplot2)
+library(plotly)
+library(gapminder)
+
+p <- gapminder %>%
+  filter(year==1977) %>%
+  ggplot( aes(gdpPercap, lifeExp, size = pop, color=continent)) +
+  geom_point() +
+  theme_bw()
+
+ggplotly(p)
+```
+
+::: cell-output-display
+```{=html}
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-906982307d829835f253" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-906982307d829835f253">{"x":{"data":[{"x":[4910.416756,3008.647355,1029.161251,3214.857818,743.3870368,556.1032651,1783.432873,1109.374338,1133.98495,1172.603047,795.757282,3259.178978,2517.736547,3081.761022,2785.493582,958.5668124,505.7538077,556.8083834,21745.57328,884.7552507,993.2239571,874.6858643,764.7259628,1267.613204,745.3695408,640.3224383,21951.21176,1544.228586,663.2236766,686.3952693,1497.492223,3710.982963,2370.619976,502.3197334,3876.485958,808.8970728,1981.951806,4319.804067,670.0806011,1737.561657,1561.769116,1348.285159,1450.992513,8028.651439,2202.988423,3781.410618,962.4922932,1532.776998,3120.876811,843.7331372,1588.688299,685.5876821],"y":[58.014,39.483,49.19,59.319,46.137,45.91,49.355,46.775,47.383,50.939,47.804,55.625,52.374,46.519,53.319,42.024,44.535,44.51,52.79,41.842,51.756,40.762,37.465,56.155,52.208,43.764,57.442,46.881,43.767,41.714,50.852,64.93,55.73,42.495,56.437,41.291,44.514,67.064,45,58.55,48.879,36.788,41.974,55.527,47.8,52.537,49.919,52.887,59.837,50.35,51.386,57.674],"text":["gdpPercap:  4910.4168<br />lifeExp: 58.01400<br />pop:  17152804<br />continent: Africa","gdpPercap:  3008.6474<br />lifeExp: 39.48300<br />pop:   6162675<br />continent: Africa","gdpPercap:  1029.1613<br />lifeExp: 49.19000<br />pop:   3168267<br />continent: Africa","gdpPercap:  3214.8578<br />lifeExp: 59.31900<br />pop:    781472<br />continent: Africa","gdpPercap:   743.3870<br />lifeExp: 46.13700<br />pop:   5889574<br />continent: Africa","gdpPercap:   556.1033<br />lifeExp: 45.91000<br />pop:   3834415<br />continent: Africa","gdpPercap:  1783.4329<br />lifeExp: 49.35500<br />pop:   7959865<br />continent: Africa","gdpPercap:  1109.3743<br />lifeExp: 46.77500<br />pop:   2167533<br />continent: Africa","gdpPercap:  1133.9850<br />lifeExp: 47.38300<br />pop:   4388260<br />continent: Africa","gdpPercap:  1172.6030<br />lifeExp: 50.93900<br />pop:    304739<br />continent: Africa","gdpPercap:   795.7573<br />lifeExp: 47.80400<br />pop:  26480870<br />continent: Africa","gdpPercap:  3259.1790<br />lifeExp: 55.62500<br />pop:   1536769<br />continent: Africa","gdpPercap:  2517.7365<br />lifeExp: 52.37400<br />pop:   7459574<br />continent: Africa","gdpPercap:  3081.7610<br />lifeExp: 46.51900<br />pop:    228694<br />continent: Africa","gdpPercap:  2785.4936<br />lifeExp: 53.31900<br />pop:  38783863<br />continent: Africa","gdpPercap:   958.5668<br />lifeExp: 42.02400<br />pop:    192675<br />continent: Africa","gdpPercap:   505.7538<br />lifeExp: 44.53500<br />pop:   2512642<br />continent: Africa","gdpPercap:   556.8084<br />lifeExp: 44.51000<br />pop:  34617799<br />continent: Africa","gdpPercap: 21745.5733<br />lifeExp: 52.79000<br />pop:    706367<br />continent: Africa","gdpPercap:   884.7553<br />lifeExp: 41.84200<br />pop:    608274<br />continent: Africa","gdpPercap:   993.2240<br />lifeExp: 51.75600<br />pop:  10538093<br />continent: Africa","gdpPercap:   874.6859<br />lifeExp: 40.76200<br />pop:   4227026<br />continent: Africa","gdpPercap:   764.7260<br />lifeExp: 37.46500<br />pop:    745228<br />continent: Africa","gdpPercap:  1267.6132<br />lifeExp: 56.15500<br />pop:  14500404<br />continent: Africa","gdpPercap:   745.3695<br />lifeExp: 52.20800<br />pop:   1251524<br />continent: Africa","gdpPercap:   640.3224<br />lifeExp: 43.76400<br />pop:   1703617<br />continent: Africa","gdpPercap: 21951.2118<br />lifeExp: 57.44200<br />pop:   2721783<br />continent: Africa","gdpPercap:  1544.2286<br />lifeExp: 46.88100<br />pop:   8007166<br />continent: Africa","gdpPercap:   663.2237<br />lifeExp: 43.76700<br />pop:   5637246<br />continent: Africa","gdpPercap:   686.3953<br />lifeExp: 41.71400<br />pop:   6491649<br />continent: Africa","gdpPercap:  1497.4922<br />lifeExp: 50.85200<br />pop:   1456688<br />continent: Africa","gdpPercap:  3710.9830<br />lifeExp: 64.93000<br />pop:    913025<br />continent: Africa","gdpPercap:  2370.6200<br />lifeExp: 55.73000<br />pop:  18396941<br />continent: Africa","gdpPercap:   502.3197<br />lifeExp: 42.49500<br />pop:  11127868<br />continent: Africa","gdpPercap:  3876.4860<br />lifeExp: 56.43700<br />pop:    977026<br />continent: Africa","gdpPercap:   808.8971<br />lifeExp: 41.29100<br />pop:   5682086<br />continent: Africa","gdpPercap:  1981.9518<br />lifeExp: 44.51400<br />pop:  62209173<br />continent: Africa","gdpPercap:  4319.8041<br />lifeExp: 67.06400<br />pop:    492095<br />continent: Africa","gdpPercap:   670.0806<br />lifeExp: 45.00000<br />pop:   4657072<br />continent: Africa","gdpPercap:  1737.5617<br />lifeExp: 58.55000<br />pop:     86796<br />continent: Africa","gdpPercap:  1561.7691<br />lifeExp: 48.87900<br />pop:   5260855<br />continent: Africa","gdpPercap:  1348.2852<br />lifeExp: 36.78800<br />pop:   3140897<br />continent: Africa","gdpPercap:  1450.9925<br />lifeExp: 41.97400<br />pop:   4353666<br />continent: Africa","gdpPercap:  8028.6514<br />lifeExp: 55.52700<br />pop:  27129932<br />continent: Africa","gdpPercap:  2202.9884<br />lifeExp: 47.80000<br />pop:  17104986<br />continent: Africa","gdpPercap:  3781.4106<br />lifeExp: 52.53700<br />pop:    551425<br />continent: Africa","gdpPercap:   962.4923<br />lifeExp: 49.91900<br />pop:  17129565<br />continent: Africa","gdpPercap:  1532.7770<br />lifeExp: 52.88700<br />pop:   2308582<br />continent: Africa","gdpPercap:  3120.8768<br />lifeExp: 59.83700<br />pop:   6005061<br />continent: Africa","gdpPercap:   843.7331<br />lifeExp: 50.35000<br />pop:  11457758<br />continent: Africa","gdpPercap:  1588.6883<br />lifeExp: 51.38600<br />pop:   5216550<br />continent: Africa","gdpPercap:   685.5877<br />lifeExp: 57.67400<br />pop:   6642107<br />continent: Africa"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":[6.32127781530702,5.29612899121632,4.85958274371316,4.29233940761101,5.26165272498491,4.97061767194295,5.5059176412168,4.66704214356912,5.05559917855771,4.06676322554192,6.94049569932146,4.52040583610645,5.45016604603988,4.01129639562885,7.60694585246374,3.97973112975184,4.73782100329548,7.39505365224446,4.26382530133105,4.22383634289638,5.76860640347983,5.03145493864573,4.27878249624843,6.11542223529683,4.44354450304809,4.56187177172394,4.77827606357594,5.51109590728372,5.22907021838905,5.3366454219231,4.49965617393791,4.33879188894232,6.41229679974379,5.82395887424691,4.36004866819238,5.23491359575959,8.62896025232351,4.17122854948148,5.09486783222961,3.77952755905512,5.17905878226218,4.854775454452,5.05045749460444,6.97912565512447,6.31771439639559,4.19891947998289,6.31954665895726,4.69663035294985,5.27632870617264,5.85427629024999,5.17305387000117,5.35482857766587],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Africa","legendgroup":"Africa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[10079.02674,3548.097832,6660.118654,22090.88306,4756.763836,3815.80787,5926.876967,6380.494966,2681.9889,6679.62326,5138.922374,4879.992748,1874.298931,3203.208066,6650.195573,7674.929108,5486.371089,5351.912144,3248.373311,6281.290855,9770.524921,7899.554209,24072.63213,6504.339663,13143.95095],"y":[68.481,50.023,61.489,74.21,67.052,63.837,70.75,72.649,61.788,61.31,56.696,56.029,49.923,57.402,70.11,65.032,57.47,68.681,66.353,58.447,73.44,68.3,73.38,69.481,67.456],"text":["gdpPercap: 10079.0267<br />lifeExp: 68.48100<br />pop:  26983828<br />continent: Americas","gdpPercap:  3548.0978<br />lifeExp: 50.02300<br />pop:   5079716<br />continent: Americas","gdpPercap:  6660.1187<br />lifeExp: 61.48900<br />pop: 114313951<br />continent: Americas","gdpPercap: 22090.8831<br />lifeExp: 74.21000<br />pop:  23796400<br />continent: Americas","gdpPercap:  4756.7638<br />lifeExp: 67.05200<br />pop:  10599793<br />continent: Americas","gdpPercap:  3815.8079<br />lifeExp: 63.83700<br />pop:  25094412<br />continent: Americas","gdpPercap:  5926.8770<br />lifeExp: 70.75000<br />pop:   2108457<br />continent: Americas","gdpPercap:  6380.4950<br />lifeExp: 72.64900<br />pop:   9537988<br />continent: Americas","gdpPercap:  2681.9889<br />lifeExp: 61.78800<br />pop:   5302800<br />continent: Americas","gdpPercap:  6679.6233<br />lifeExp: 61.31000<br />pop:   7278866<br />continent: Americas","gdpPercap:  5138.9224<br />lifeExp: 56.69600<br />pop:   4282586<br />continent: Americas","gdpPercap:  4879.9927<br />lifeExp: 56.02900<br />pop:   5703430<br />continent: Americas","gdpPercap:  1874.2989<br />lifeExp: 49.92300<br />pop:   4908554<br />continent: Americas","gdpPercap:  3203.2081<br />lifeExp: 57.40200<br />pop:   3055235<br />continent: Americas","gdpPercap:  6650.1956<br />lifeExp: 70.11000<br />pop:   2156814<br />continent: Americas","gdpPercap:  7674.9291<br />lifeExp: 65.03200<br />pop:  63759976<br />continent: Americas","gdpPercap:  5486.3711<br />lifeExp: 57.47000<br />pop:   2554598<br />continent: Americas","gdpPercap:  5351.9121<br />lifeExp: 68.68100<br />pop:   1839782<br />continent: Americas","gdpPercap:  3248.3733<br />lifeExp: 66.35300<br />pop:   2984494<br />continent: Americas","gdpPercap:  6281.2909<br />lifeExp: 58.44700<br />pop:  15990099<br />continent: Americas","gdpPercap:  9770.5249<br />lifeExp: 73.44000<br />pop:   3080828<br />continent: Americas","gdpPercap:  7899.5542<br />lifeExp: 68.30000<br />pop:   1039009<br />continent: Americas","gdpPercap: 24072.6321<br />lifeExp: 73.38000<br />pop: 220239000<br />continent: Americas","gdpPercap:  6504.3397<br />lifeExp: 69.48100<br />pop:   2873520<br />continent: Americas","gdpPercap: 13143.9510<br />lifeExp: 67.45600<br />pop:  13503563<br />continent: Americas"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(163,165,0,1)","opacity":1,"size":[6.97047083068522,5.15434238640086,10.3553727984455,6.77543956769576,5.77446910007444,6.85635435789675,4.65435232683653,5.6710443310913,5.18472018302092,5.42956521861593,5.0398270921093,5.23768683822733,5.13057191783969,4.83958883002819,4.66475315834704,8.68911697083458,4.74607251669638,4.59414954550014,4.82688148286866,6.23316601826461,4.84414878929001,4.37991825947829,12.9086371873162,4.80663028657321,6.03320025163606],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(163,165,0,1)"}},"hoveron":"points","name":"Americas","legendgroup":"Americas","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[786.11336,19340.10196,659.8772322,524.9721832,741.2374699,11186.14125,813.337323,1382.702056,11888.59508,14688.23507,13306.61921,16610.37701,2852.351568,4106.301249,4657.22102,59265.47714,8659.696836,3827.921571,1647.511665,371,694.1124398,11848.34392,1175.921193,2373.204287,34167.7626,11210.08948,1348.775651,3195.484582,5596.519826,1961.224635,713.5371196,3682.831494,1829.765177],"y":[38.438,65.593,46.923,31.22,63.96736,73.6,54.208,52.702,57.702,60.413,73.06,75.38,61.134,67.159,64.766,69.343,66.099,65.256,55.491,56.059,46.748,57.367,54.043,60.06,58.69,70.795,65.949,61.195,70.59,62.494,55.764,60.765,44.175],"text":["gdpPercap:   786.1134<br />lifeExp: 38.43800<br />pop:  14880372<br />continent: Asia","gdpPercap: 19340.1020<br />lifeExp: 65.59300<br />pop:    297410<br />continent: Asia","gdpPercap:   659.8772<br />lifeExp: 46.92300<br />pop:  80428306<br />continent: Asia","gdpPercap:   524.9722<br />lifeExp: 31.22000<br />pop:   6978607<br />continent: Asia","gdpPercap:   741.2375<br />lifeExp: 63.96736<br />pop: 943455000<br />continent: Asia","gdpPercap: 11186.1413<br />lifeExp: 73.60000<br />pop:   4583700<br />continent: Asia","gdpPercap:   813.3373<br />lifeExp: 54.20800<br />pop: 634000000<br />continent: Asia","gdpPercap:  1382.7021<br />lifeExp: 52.70200<br />pop: 136725000<br />continent: Asia","gdpPercap: 11888.5951<br />lifeExp: 57.70200<br />pop:  35480679<br />continent: Asia","gdpPercap: 14688.2351<br />lifeExp: 60.41300<br />pop:  11882916<br />continent: Asia","gdpPercap: 13306.6192<br />lifeExp: 73.06000<br />pop:   3495918<br />continent: Asia","gdpPercap: 16610.3770<br />lifeExp: 75.38000<br />pop: 113872473<br />continent: Asia","gdpPercap:  2852.3516<br />lifeExp: 61.13400<br />pop:   1937652<br />continent: Asia","gdpPercap:  4106.3012<br />lifeExp: 67.15900<br />pop:  16325320<br />continent: Asia","gdpPercap:  4657.2210<br />lifeExp: 64.76600<br />pop:  36436000<br />continent: Asia","gdpPercap: 59265.4771<br />lifeExp: 69.34300<br />pop:   1140357<br />continent: Asia","gdpPercap:  8659.6968<br />lifeExp: 66.09900<br />pop:   3115787<br />continent: Asia","gdpPercap:  3827.9216<br />lifeExp: 65.25600<br />pop:  12845381<br />continent: Asia","gdpPercap:  1647.5117<br />lifeExp: 55.49100<br />pop:   1528000<br />continent: Asia","gdpPercap:   371.0000<br />lifeExp: 56.05900<br />pop:  31528087<br />continent: Asia","gdpPercap:   694.1124<br />lifeExp: 46.74800<br />pop:  13933198<br />continent: Asia","gdpPercap: 11848.3439<br />lifeExp: 57.36700<br />pop:   1004533<br />continent: Asia","gdpPercap:  1175.9212<br />lifeExp: 54.04300<br />pop:  78152686<br />continent: Asia","gdpPercap:  2373.2043<br />lifeExp: 60.06000<br />pop:  46850962<br />continent: Asia","gdpPercap: 34167.7626<br />lifeExp: 58.69000<br />pop:   8128505<br />continent: Asia","gdpPercap: 11210.0895<br />lifeExp: 70.79500<br />pop:   2325300<br />continent: Asia","gdpPercap:  1348.7757<br />lifeExp: 65.94900<br />pop:  14116836<br />continent: Asia","gdpPercap:  3195.4846<br />lifeExp: 61.19500<br />pop:   7932503<br />continent: Asia","gdpPercap:  5596.5198<br />lifeExp: 70.59000<br />pop:  16785196<br />continent: Asia","gdpPercap:  1961.2246<br />lifeExp: 62.49400<br />pop:  44148285<br />continent: Asia","gdpPercap:   713.5371<br />lifeExp: 55.76400<br />pop:  50533506<br />continent: Asia","gdpPercap:  3682.8315<br />lifeExp: 60.76500<br />pop:   1261091<br />continent: Asia","gdpPercap:  1829.7652<br />lifeExp: 44.17500<br />pop:   8403990<br />continent: Asia"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,125,1)","opacity":1,"size":[6.14601109401926,4.06189233680308,9.29441811927379,5.39475462377927,22.6771653543307,5.08426676230058,19.2706113323364,10.9715821633898,7.43994831281003,5.89270757284543,4.9155533082844,10.342652961876,4.61658106384004,6.25889092142746,7.4890188516279,4.41106157328659,4.85034613145665,5.97722629927717,4.51816213431315,7.2295116202132,6.06899974449858,4.36894912815136,9.21575428359059,7.98702151037774,5.52430918996644,4.70007429187427,6.08413180764231,5.50291508915639,6.29375367739212,7.86362869673143,8.14954658274176,4.44626602186696,5.5539430462659],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,125,1)"}},"hoveron":"points","name":"Asia","legendgroup":"Asia","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3533.00391,19749.4223,19117.97448,3528.481305,7612.240438,11305.38517,14800.16062,20422.9015,15605.42283,18292.63514,20512.92123,14195.52428,11674.83737,19654.96247,11150.98113,14255.98475,9595.929905,21209.0592,23311.34939,9508.141454,10172.48572,9356.39724,12980.66956,10922.66404,15277.03017,13236.92117,18855.72521,26982.29052,4269.122326,17428.74846],"y":[68.93,72.17,72.8,69.86,70.81,70.64,70.71,74.69,72.52,73.83,72.5,73.68,69.95,76.11,72.03,73.48,73.066,75.24,75.37,70.67,70.41,69.46,70.3,70.45,70.97,74.39,75.44,75.39,59.507,72.76],"text":["gdpPercap:  3533.0039<br />lifeExp: 68.93000<br />pop:   2509048<br />continent: Europe","gdpPercap: 19749.4223<br />lifeExp: 72.17000<br />pop:   7568430<br />continent: Europe","gdpPercap: 19117.9745<br />lifeExp: 72.80000<br />pop:   9821800<br />continent: Europe","gdpPercap:  3528.4813<br />lifeExp: 69.86000<br />pop:   4086000<br />continent: Europe","gdpPercap:  7612.2404<br />lifeExp: 70.81000<br />pop:   8797022<br />continent: Europe","gdpPercap: 11305.3852<br />lifeExp: 70.64000<br />pop:   4318673<br />continent: Europe","gdpPercap: 14800.1606<br />lifeExp: 70.71000<br />pop:  10161915<br />continent: Europe","gdpPercap: 20422.9015<br />lifeExp: 74.69000<br />pop:   5088419<br />continent: Europe","gdpPercap: 15605.4228<br />lifeExp: 72.52000<br />pop:   4738902<br />continent: Europe","gdpPercap: 18292.6351<br />lifeExp: 73.83000<br />pop:  53165019<br />continent: Europe","gdpPercap: 20512.9212<br />lifeExp: 72.50000<br />pop:  78160773<br />continent: Europe","gdpPercap: 14195.5243<br />lifeExp: 73.68000<br />pop:   9308479<br />continent: Europe","gdpPercap: 11674.8374<br />lifeExp: 69.95000<br />pop:  10637171<br />continent: Europe","gdpPercap: 19654.9625<br />lifeExp: 76.11000<br />pop:    221823<br />continent: Europe","gdpPercap: 11150.9811<br />lifeExp: 72.03000<br />pop:   3271900<br />continent: Europe","gdpPercap: 14255.9847<br />lifeExp: 73.48000<br />pop:  56059245<br />continent: Europe","gdpPercap:  9595.9299<br />lifeExp: 73.06600<br />pop:    560073<br />continent: Europe","gdpPercap: 21209.0592<br />lifeExp: 75.24000<br />pop:  13852989<br />continent: Europe","gdpPercap: 23311.3494<br />lifeExp: 75.37000<br />pop:   4043205<br />continent: Europe","gdpPercap:  9508.1415<br />lifeExp: 70.67000<br />pop:  34621254<br />continent: Europe","gdpPercap: 10172.4857<br />lifeExp: 70.41000<br />pop:   9662600<br />continent: Europe","gdpPercap:  9356.3972<br />lifeExp: 69.46000<br />pop:  21658597<br />continent: Europe","gdpPercap: 12980.6696<br />lifeExp: 70.30000<br />pop:   8686367<br />continent: Europe","gdpPercap: 10922.6640<br />lifeExp: 70.45000<br />pop:   4827803<br />continent: Europe","gdpPercap: 15277.0302<br />lifeExp: 70.97000<br />pop:   1746919<br />continent: Europe","gdpPercap: 13236.9212<br />lifeExp: 74.39000<br />pop:  36439000<br />continent: Europe","gdpPercap: 18855.7252<br />lifeExp: 75.44000<br />pop:   8251648<br />continent: Europe","gdpPercap: 26982.2905<br />lifeExp: 75.39000<br />pop:   6316424<br />continent: Europe","gdpPercap:  4269.1223<br />lifeExp: 59.50700<br />pop:  42404033<br />continent: Europe","gdpPercap: 17428.7485<br />lifeExp: 72.76000<br />pop:  56179000<br />continent: Europe"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,176,246,1)","opacity":1,"size":[4.73711086274366,5.46245399673978,5.69923465730081,5.00994841135964,5.59538443706805,5.04523525790558,5.73248147708556,5.15554006271282,5.10659105931128,8.26207702648979,9.21603585103979,5.64793676344929,5.77801236958701,4.00561540333621,4.87759423629259,8.38266622872152,4.20280449359801,6.06235892227666,5.00334741211677,7.39523452347783,5.68347312501541,6.63718460047671,5.58381321630558,5.11921103857739,4.57227899402677,7.48917192574021,5.53761739047554,5.31519777193933,7.78197424302696,8.38758788519898],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,176,246,1)"}},"hoveron":"points","name":"Europe","legendgroup":"Europe","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18334.19751,16233.7177],"y":[73.49,72.22],"text":["gdpPercap: 18334.1975<br />lifeExp: 73.49000<br />pop:  14074100<br />continent: Oceania","gdpPercap: 16233.7177<br />lifeExp: 72.22000<br />pop:   3164900<br />continent: Oceania"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(231,107,243,1)","opacity":1,"size":[6.08061917751821,4.85899251590851],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(231,107,243,1)"}},"hoveron":"points","name":"Oceania","legendgroup":"Oceania","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-2573.723857,62210.200997],"tickmode":"array","ticktext":["0","20000","40000","60000"],"tickvals":[0,20000,40000,60000],"categoryorder":"array","categoryarray":["0","20000","40000","60000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"gdpPercap","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[28.9755,78.3545],"tickmode":"array","ticktext":["30","40","50","60","70"],"tickvals":[30,40,50,60,70],"categoryorder":"array","categoryarray":["30","40","50","60","70"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"lifeExp","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"pop<br />continent","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3f284898792f":{"x":{},"y":{},"size":{},"colour":{},"type":"scatter"}},"cur_data":"3f284898792f","visdat":{"3f284898792f":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+```
+:::
+:::
+
+# SQL within R (MySQL):
+
+::: cell
+``` {.r .cell-code}
+#install.packages("RMySQL")
+
+library(RMySQL)
+```
+
+::: {.cell-output .cell-output-stderr}
+    Warning: package 'RMySQL' was built under R version 4.2.3
+:::
+
+::: {.cell-output .cell-output-stderr}
+    Loading required package: DBI
+:::
+
+``` {.r .cell-code}
+mysqlconnection = dbConnect(RMySQL::MySQL(),
+                            dbname='world',
+                            host='localhost',
+                            port=3306,
+                            user='root',
+                            password='sumendar')
+result = dbSendQuery(mysqlconnection, "select * from city") # write query to acces the records from a particular table.
+data.frame = fetch(result, n = 5)
+print(data.frame)
+```
+
+::: {.cell-output .cell-output-stdout}
+      ID           Name CountryCode      District Population
+    1  1          Kabul         AFG         Kabol    1780000
+    2  2       Qandahar         AFG      Qandahar     237500
+    3  3          Herat         AFG         Herat     186800
+    4  4 Mazar-e-Sharif         AFG         Balkh     127800
+    5  5      Amsterdam         NLD Noord-Holland     731200
+:::
+:::
+
+# SQL within R (PostgreSQL):
+
+::: cell
+``` {.r .cell-code}
+library(DBI)
+library(RPostgres)
+con <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  dbname = 'tutorialdb',
+  host = 'localhost',
+  port = 5432,
+  user = 'postgres',
+  password = 'sumendar' # insert your password here
+)
+DBI::dbGetQuery(con, 'SELECT customer_id, name, location, email FROM customers LIMIT 3')
+```
+
+::: {.cell-output .cell-output-stdout}
+      customer_id    name  location                      email
+    1           1 Orlando Australia                           
+    2           2   Keith     India keith0@adventure-works.com
+    3           3   Donna   Germany donna0@adventure-works.com
+:::
+:::
+
+# SQL within R (SQL Server):
+
+**How to connect R to SQL Server to Query Your Database:**\
+https://medium.com/@sebastiansm7/how-to-connect-r-to-sql-server-to-query-your-databse-de986a640a0d
+
+::: cell
+``` {.r .cell-code}
+#install.packages("DBI")
+#install.packages("ODBC")
+library(DBI)
+library(odbc)
+```
+
+::: {.cell-output .cell-output-stderr}
+    Warning: package 'odbc' was built under R version 4.2.3
+:::
+
+``` {.r .cell-code}
+con <- dbConnect(odbc::odbc(), ".")
+```
+:::
+
+::: cell
+``` {.r .cell-code}
+data1 <- dbGetQuery(con,'select * from Training.dbo.City')
+head(data1)
+```
+
+::: {.cell-output .cell-output-stdout}
+      CityID CityCode   CityName PopulationDensity
+    1      1      ADI  Ahmedabad              High
+    2      2      BLR  Bangalore              High
+    3      3      CHD Chandigarh               Low
+    4      4      CHN    Chennai              High
+    5      5      DDN   Dehradun            Medium
+    6      6      DEL      Delhi              High
+:::
+:::
+
+# SQL within R (SQLite):
+
+::: cell
+``` {.r .cell-code}
+library(DBI)
+# Create an ephemeral in-memory RSQLite database
+con <- dbConnect(RSQLite::SQLite(), ":memory:")
+
+dbListTables(con)
+```
+
+::: {.cell-output .cell-output-stdout}
+    character(0)
+:::
+:::
+
+::: cell
+``` {.r .cell-code}
+library(DBI)
+# Create existed RSQLite database file connections
+con <- dbConnect(RSQLite::SQLite(), "C:\\sqlite\\data\\chinook_database\\chinook.db")
+dbListTables(con)
+```
+
+::: {.cell-output .cell-output-stdout}
+     [1] "albums"          "artists"         "customers"       "employees"      
+     [5] "genres"          "invoice_items"   "invoices"        "media_types"    
+     [9] "playlist_track"  "playlists"       "sqlite_sequence" "sqlite_stat1"   
+    [13] "tracks"         
+:::
+:::
+
+::: cell
+``` {.r .cell-code}
+dbListFields(con, "employees")
+```
+
+::: {.cell-output .cell-output-stdout}
+     [1] "EmployeeId" "LastName"   "FirstName"  "Title"      "ReportsTo" 
+     [6] "BirthDate"  "HireDate"   "Address"    "City"       "State"     
+    [11] "Country"    "PostalCode" "Phone"      "Fax"        "Email"     
+:::
+:::
+
+::: cell
+``` {.r .cell-code}
+dbReadTable(con, "employees")
+```
+
+::: {.cell-output .cell-output-stdout}
+      EmployeeId LastName FirstName               Title ReportsTo
+    1          1    Adams    Andrew     General Manager        NA
+    2          2  Edwards     Nancy       Sales Manager         1
+    3          3  Peacock      Jane Sales Support Agent         2
+    4          4     Park  Margaret Sales Support Agent         2
+    5          5  Johnson     Steve Sales Support Agent         2
+    6          6 Mitchell   Michael          IT Manager         1
+    7          7     King    Robert            IT Staff         6
+    8          8 Callahan     Laura            IT Staff         6
+                BirthDate            HireDate                     Address
+    1 1962-02-18 00:00:00 2002-08-14 00:00:00         11120 Jasper Ave NW
+    2 1958-12-08 00:00:00 2002-05-01 00:00:00                825 8 Ave SW
+    3 1973-08-29 00:00:00 2002-04-01 00:00:00               1111 6 Ave SW
+    4 1947-09-19 00:00:00 2003-05-03 00:00:00            683 10 Street SW
+    5 1965-03-03 00:00:00 2003-10-17 00:00:00                7727B 41 Ave
+    6 1973-07-01 00:00:00 2003-10-17 00:00:00        5827 Bowness Road NW
+    7 1970-05-29 00:00:00 2004-01-02 00:00:00 590 Columbia Boulevard West
+    8 1968-01-09 00:00:00 2004-03-04 00:00:00                 923 7 ST NW
+            City State Country PostalCode             Phone               Fax
+    1   Edmonton    AB  Canada    T5K 2N1 +1 (780) 428-9482 +1 (780) 428-3457
+    2    Calgary    AB  Canada    T2P 2T3 +1 (403) 262-3443 +1 (403) 262-3322
+    3    Calgary    AB  Canada    T2P 5M5 +1 (403) 262-3443 +1 (403) 262-6712
+    4    Calgary    AB  Canada    T2P 5G3 +1 (403) 263-4423 +1 (403) 263-4289
+    5    Calgary    AB  Canada    T3B 1Y7  1 (780) 836-9987  1 (780) 836-9543
+    6    Calgary    AB  Canada    T3B 0C5 +1 (403) 246-9887 +1 (403) 246-9899
+    7 Lethbridge    AB  Canada    T1K 5N8 +1 (403) 456-9986 +1 (403) 456-8485
+    8 Lethbridge    AB  Canada    T1H 1Y8 +1 (403) 467-3351 +1 (403) 467-8772
+                         Email
+    1   andrew@chinookcorp.com
+    2    nancy@chinookcorp.com
+    3     jane@chinookcorp.com
+    4 margaret@chinookcorp.com
+    5    steve@chinookcorp.com
+    6  michael@chinookcorp.com
+    7   robert@chinookcorp.com
+    8    laura@chinookcorp.com
+:::
+:::
+
+::: cell
+``` {.r .cell-code}
+# You can fetch all results:
+res <- dbSendQuery(con, "SELECT * FROM employees WHERE Title = 'IT Staff'")
+dbFetch(res)
+```
+
+::: {.cell-output .cell-output-stdout}
+      EmployeeId LastName FirstName    Title ReportsTo           BirthDate
+    1          7     King    Robert IT Staff         6 1970-05-29 00:00:00
+    2          8 Callahan     Laura IT Staff         6 1968-01-09 00:00:00
+                 HireDate                     Address       City State Country
+    1 2004-01-02 00:00:00 590 Columbia Boulevard West Lethbridge    AB  Canada
+    2 2004-03-04 00:00:00                 923 7 ST NW Lethbridge    AB  Canada
+      PostalCode             Phone               Fax                  Email
+    1    T1K 5N8 +1 (403) 456-9986 +1 (403) 456-8485 robert@chinookcorp.com
+    2    T1H 1Y8 +1 (403) 467-3351 +1 (403) 467-8772  laura@chinookcorp.com
+:::
+:::
+
+# Python Programming:
+
+## Markdown echo:false cell:
+
+::: cell
+::: {.cell-output .cell-output-stdout}
+    <IPython.core.display.Markdown object>
+:::
+:::
+
+::: cell
+``` {.python .cell-code}
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+fruits = ['apple', 'blueberry', 'cherry', 'orange']
+counts = [40, 100, 30, 55]
+bar_labels = ['red', 'blue', '_red', 'orange']
+bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
+
+ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
+```
+
+::: {.cell-output .cell-output-stdout}
+    <BarContainer object of 4 artists>
+:::
+
+``` {.python .cell-code}
+ax.set_ylabel('fruit supply')
+ax.set_title('Fruit supply by kind and color')
+ax.legend(title='Fruit color')
+
+plt.show()
+```
+
+::: cell-output-display
+![](Test_files/figure-html/unnamed-chunk-15-1.png){width="672"}
+:::
+:::
+
+## Interactive Graph in Python Programming:
+
+::: cell
+``` {.python .cell-code}
+import plotly.express as px
+import plotly.io as pio
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", 
+                 color="species", 
+                 marginal_y="violin", marginal_x="box", 
+                 trendline="ols", template="simple_white")
+fig.show()
+```
+
+::: cell-output-display
+```{=html}
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="3c4662aa-b3a7-4104-a4e0-c3b2aabbf647" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("3c4662aa-b3a7-4104-a4e0-c3b2aabbf647")) {                    Plotly.newPlot(                        "3c4662aa-b3a7-4104-a4e0-c3b2aabbf647",                        [{"hovertemplate":"species=setosa<br>sepal_width=%{x}<br>sepal_length=%{y}<extra></extra>","legendgroup":"setosa","marker":{"color":"#1F77B4","symbol":"circle"},"mode":"markers","name":"setosa","orientation":"v","showlegend":true,"x":[3.5,3.0,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3.0,3.0,4.0,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3.0,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.1,3.0,3.4,3.5,2.3,3.2,3.5,3.8,3.0,3.8,3.2,3.7,3.3],"xaxis":"x","y":[5.1,4.9,4.7,4.6,5.0,5.4,4.6,5.0,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5.0,5.0,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5.0,5.5,4.9,4.4,5.1,5.0,4.5,4.4,5.0,5.1,4.8,5.1,4.6,5.3,5.0],"yaxis":"y","type":"scatter"},{"alignmentgroup":"True","hovertemplate":"species=setosa<br>sepal_width=%{x}<extra></extra>","legendgroup":"setosa","marker":{"color":"#1F77B4","symbol":"circle"},"name":"setosa","notched":true,"offsetgroup":"setosa","showlegend":false,"x":[3.5,3.0,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3.0,3.0,4.0,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3.0,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.1,3.0,3.4,3.5,2.3,3.2,3.5,3.8,3.0,3.8,3.2,3.7,3.3],"xaxis":"x3","yaxis":"y3","type":"box"},{"alignmentgroup":"True","hovertemplate":"species=setosa<br>sepal_length=%{y}<extra></extra>","legendgroup":"setosa","marker":{"color":"#1F77B4","symbol":"circle"},"name":"setosa","offsetgroup":"setosa","scalegroup":"y","showlegend":false,"xaxis":"x2","y":[5.1,4.9,4.7,4.6,5.0,5.4,4.6,5.0,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5.0,5.0,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5.0,5.5,4.9,4.4,5.1,5.0,4.5,4.4,5.0,5.1,4.8,5.1,4.6,5.3,5.0],"yaxis":"y2","type":"violin"},{"hovertemplate":"<b>OLS trendline</b><br>sepal_length = 0.690854 * sepal_width + 2.64466<br>R<sup>2</sup>=0.557681<br><br>species=setosa<br>sepal_width=%{x}<br>sepal_length=%{y} <b>(trend)</b><extra></extra>","legendgroup":"setosa","marker":{"color":"#1F77B4","symbol":"circle"},"mode":"lines","name":"setosa","showlegend":false,"x":[2.3,2.9,3.0,3.0,3.0,3.0,3.0,3.0,3.1,3.1,3.1,3.1,3.1,3.2,3.2,3.2,3.2,3.2,3.3,3.3,3.4,3.4,3.4,3.4,3.4,3.4,3.4,3.4,3.4,3.5,3.5,3.5,3.5,3.5,3.5,3.6,3.6,3.7,3.7,3.7,3.8,3.8,3.8,3.8,3.9,3.9,4.0,4.1,4.2,4.4],"xaxis":"x","y":[4.233624785627937,4.648137423036916,4.71722286260508,4.71722286260508,4.71722286260508,4.71722286260508,4.71722286260508,4.71722286260508,4.786308302173243,4.786308302173243,4.786308302173243,4.786308302173243,4.786308302173243,4.855393741741407,4.855393741741407,4.855393741741407,4.855393741741407,4.855393741741407,4.92447918130957,4.92447918130957,4.993564620877733,4.993564620877733,4.993564620877733,4.993564620877733,4.993564620877733,4.993564620877733,4.993564620877733,4.993564620877733,4.993564620877733,5.062650060445897,5.062650060445897,5.062650060445897,5.062650060445897,5.062650060445897,5.062650060445897,5.131735500014059,5.131735500014059,5.200820939582224,5.200820939582224,5.200820939582224,5.269906379150386,5.269906379150386,5.269906379150386,5.269906379150386,5.33899181871855,5.33899181871855,5.408077258286713,5.477162697854876,5.54624813742304,5.684419016559367],"yaxis":"y","type":"scatter"},{"hovertemplate":"species=versicolor<br>sepal_width=%{x}<br>sepal_length=%{y}<extra></extra>","legendgroup":"versicolor","marker":{"color":"#FF7F0E","symbol":"circle"},"mode":"markers","name":"versicolor","orientation":"v","showlegend":true,"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2.0,3.0,2.2,2.9,2.9,3.1,3.0,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3.0,2.8,3.0,2.9,2.6,2.4,2.4,2.7,2.7,3.0,3.4,3.1,2.3,3.0,2.5,2.6,3.0,2.6,2.3,2.7,3.0,2.9,2.9,2.5,2.8],"xaxis":"x","y":[7.0,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5.0,5.9,6.0,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6.0,5.7,5.5,5.5,5.8,6.0,5.4,6.0,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5.0,5.6,5.7,5.7,6.2,5.1,5.7],"yaxis":"y","type":"scatter"},{"alignmentgroup":"True","hovertemplate":"species=versicolor<br>sepal_width=%{x}<extra></extra>","legendgroup":"versicolor","marker":{"color":"#FF7F0E","symbol":"circle"},"name":"versicolor","notched":true,"offsetgroup":"versicolor","showlegend":false,"x":[3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2.0,3.0,2.2,2.9,2.9,3.1,3.0,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3.0,2.8,3.0,2.9,2.6,2.4,2.4,2.7,2.7,3.0,3.4,3.1,2.3,3.0,2.5,2.6,3.0,2.6,2.3,2.7,3.0,2.9,2.9,2.5,2.8],"xaxis":"x3","yaxis":"y3","type":"box"},{"alignmentgroup":"True","hovertemplate":"species=versicolor<br>sepal_length=%{y}<extra></extra>","legendgroup":"versicolor","marker":{"color":"#FF7F0E","symbol":"circle"},"name":"versicolor","offsetgroup":"versicolor","scalegroup":"y","showlegend":false,"xaxis":"x2","y":[7.0,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5.0,5.9,6.0,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6.0,5.7,5.5,5.5,5.8,6.0,5.4,6.0,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5.0,5.6,5.7,5.7,6.2,5.1,5.7],"yaxis":"y2","type":"violin"},{"hovertemplate":"<b>OLS trendline</b><br>sepal_length = 0.865078 * sepal_width + 3.53973<br>R<sup>2</sup>=0.276582<br><br>species=versicolor<br>sepal_width=%{x}<br>sepal_length=%{y} <b>(trend)</b><extra></extra>","legendgroup":"versicolor","marker":{"color":"#FF7F0E","symbol":"circle"},"mode":"lines","name":"versicolor","showlegend":false,"x":[2.0,2.2,2.2,2.3,2.3,2.3,2.4,2.4,2.4,2.5,2.5,2.5,2.5,2.6,2.6,2.6,2.7,2.7,2.7,2.7,2.7,2.8,2.8,2.8,2.8,2.8,2.8,2.9,2.9,2.9,2.9,2.9,2.9,2.9,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.1,3.1,3.1,3.2,3.2,3.2,3.3,3.4],"xaxis":"x","y":[5.269890155440416,5.442905699481867,5.442905699481867,5.5294134715025915,5.5294134715025915,5.5294134715025915,5.615921243523317,5.615921243523317,5.615921243523317,5.702429015544043,5.702429015544043,5.702429015544043,5.702429015544043,5.788936787564769,5.788936787564769,5.788936787564769,5.875444559585494,5.875444559585494,5.875444559585494,5.875444559585494,5.875444559585494,5.961952331606219,5.961952331606219,5.961952331606219,5.961952331606219,5.961952331606219,5.961952331606219,6.048460103626945,6.048460103626945,6.048460103626945,6.048460103626945,6.048460103626945,6.048460103626945,6.048460103626945,6.13496787564767,6.13496787564767,6.13496787564767,6.13496787564767,6.13496787564767,6.13496787564767,6.13496787564767,6.13496787564767,6.221475647668395,6.221475647668395,6.221475647668395,6.307983419689121,6.307983419689121,6.307983419689121,6.394491191709847,6.480998963730572],"yaxis":"y","type":"scatter"},{"hovertemplate":"species=virginica<br>sepal_width=%{x}<br>sepal_length=%{y}<extra></extra>","legendgroup":"virginica","marker":{"color":"#2CA02C","symbol":"circle"},"mode":"markers","name":"virginica","orientation":"v","showlegend":true,"x":[3.3,2.7,3.0,2.9,3.0,3.0,2.5,2.9,2.5,3.6,3.2,2.7,3.0,2.5,2.8,3.2,3.0,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3.0,2.8,3.0,2.8,3.8,2.8,2.8,2.6,3.0,3.4,3.1,3.0,3.1,3.1,3.1,2.7,3.2,3.3,3.0,2.5,3.0,3.4,3.0],"xaxis":"x","y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6.0,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6.0,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"yaxis":"y","type":"scatter"},{"alignmentgroup":"True","hovertemplate":"species=virginica<br>sepal_width=%{x}<extra></extra>","legendgroup":"virginica","marker":{"color":"#2CA02C","symbol":"circle"},"name":"virginica","notched":true,"offsetgroup":"virginica","showlegend":false,"x":[3.3,2.7,3.0,2.9,3.0,3.0,2.5,2.9,2.5,3.6,3.2,2.7,3.0,2.5,2.8,3.2,3.0,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3.0,2.8,3.0,2.8,3.8,2.8,2.8,2.6,3.0,3.4,3.1,3.0,3.1,3.1,3.1,2.7,3.2,3.3,3.0,2.5,3.0,3.4,3.0],"xaxis":"x3","yaxis":"y3","type":"box"},{"alignmentgroup":"True","hovertemplate":"species=virginica<br>sepal_length=%{y}<extra></extra>","legendgroup":"virginica","marker":{"color":"#2CA02C","symbol":"circle"},"name":"virginica","offsetgroup":"virginica","scalegroup":"y","showlegend":false,"xaxis":"x2","y":[6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6.0,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6.0,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"yaxis":"y2","type":"violin"},{"hovertemplate":"<b>OLS trendline</b><br>sepal_length = 0.901534 * sepal_width + 3.90684<br>R<sup>2</sup>=0.209057<br><br>species=virginica<br>sepal_width=%{x}<br>sepal_length=%{y} <b>(trend)</b><extra></extra>","legendgroup":"virginica","marker":{"color":"#2CA02C","symbol":"circle"},"mode":"lines","name":"virginica","showlegend":false,"x":[2.2,2.5,2.5,2.5,2.5,2.6,2.6,2.7,2.7,2.7,2.7,2.8,2.8,2.8,2.8,2.8,2.8,2.8,2.8,2.9,2.9,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.1,3.1,3.1,3.1,3.2,3.2,3.2,3.2,3.2,3.3,3.3,3.3,3.4,3.4,3.6,3.8,3.8],"xaxis":"x","y":[5.890212315058282,6.1606726580589495,6.1606726580589495,6.1606726580589495,6.1606726580589495,6.250826105725839,6.250826105725839,6.340979553392728,6.340979553392728,6.340979553392728,6.340979553392728,6.431133001059617,6.431133001059617,6.431133001059617,6.431133001059617,6.431133001059617,6.431133001059617,6.431133001059617,6.431133001059617,6.5212864487265065,6.5212864487265065,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.611439896393396,6.701593344060285,6.701593344060285,6.701593344060285,6.701593344060285,6.791746791727174,6.791746791727174,6.791746791727174,6.791746791727174,6.791746791727174,6.881900239394063,6.881900239394063,6.881900239394063,6.972053687060952,6.972053687060952,7.1523605823947305,7.332667477728508,7.332667477728508],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"rgb(36,36,36)"},"error_y":{"color":"rgb(36,36,36)"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"baxis":{"endlinecolor":"rgb(36,36,36)","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"rgb(36,36,36)"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"histogram2d"}],"histogram":[{"marker":{"line":{"color":"white","width":0.6}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"rgb(237,237,237)"},"line":{"color":"white"}},"header":{"fill":{"color":"rgb(217,217,217)"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":1,"tickcolor":"rgb(36,36,36)","ticks":"outside"}},"colorscale":{"diverging":[[0.0,"rgb(103,0,31)"],[0.1,"rgb(178,24,43)"],[0.2,"rgb(214,96,77)"],[0.3,"rgb(244,165,130)"],[0.4,"rgb(253,219,199)"],[0.5,"rgb(247,247,247)"],[0.6,"rgb(209,229,240)"],[0.7,"rgb(146,197,222)"],[0.8,"rgb(67,147,195)"],[0.9,"rgb(33,102,172)"],[1.0,"rgb(5,48,97)"]],"sequential":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]],"sequentialminus":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]]},"colorway":["#1F77B4","#FF7F0E","#2CA02C","#D62728","#9467BD","#8C564B","#E377C2","#7F7F7F","#BCBD22","#17BECF"],"font":{"color":"rgb(36,36,36)"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","radialaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"zaxis":{"backgroundcolor":"white","gridcolor":"rgb(232,232,232)","gridwidth":2,"linecolor":"rgb(36,36,36)","showbackground":true,"showgrid":false,"showline":true,"ticks":"outside","zeroline":false,"zerolinecolor":"rgb(36,36,36)"}},"shapedefaults":{"fillcolor":"black","line":{"width":0},"opacity":0.3},"ternary":{"aaxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"baxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"},"bgcolor":"white","caxis":{"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside"}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"},"yaxis":{"automargin":true,"gridcolor":"rgb(232,232,232)","linecolor":"rgb(36,36,36)","showgrid":false,"showline":true,"ticks":"outside","title":{"standoff":15},"zeroline":false,"zerolinecolor":"rgb(36,36,36)"}}},"xaxis":{"anchor":"y","domain":[0.0,0.7363],"title":{"text":"sepal_width"}},"yaxis":{"anchor":"x","domain":[0.0,0.7326],"title":{"text":"sepal_length"}},"xaxis2":{"anchor":"y2","domain":[0.7413,1.0],"matches":"x2","showticklabels":false,"showline":false,"ticks":""},"yaxis2":{"anchor":"x2","domain":[0.0,0.7326],"matches":"y","showticklabels":false},"xaxis3":{"anchor":"y3","domain":[0.0,0.7363],"matches":"x","showticklabels":false},"yaxis3":{"anchor":"x3","domain":[0.7426,1.0],"matches":"y3","showticklabels":false,"showline":false,"ticks":""},"xaxis4":{"anchor":"y4","domain":[0.7413,1.0],"matches":"x2","showticklabels":false,"showline":false,"ticks":""},"yaxis4":{"anchor":"x4","domain":[0.7426,1.0],"matches":"y3","showticklabels":false,"showline":false,"ticks":""},"legend":{"title":{"text":"species"},"tracegroupgap":0},"margin":{"t":60}},                        {"responsive": true}                    )                };                            </script>        </div>
+```
+:::
+:::
+
+# SQL within Python (SQLite with SQLite3 module)
+
+::: cell
+``` {.python .cell-code}
+import sqlite3 # this package is used to communicate with sqlite3
+import pandas as pd
+
+# Connect to the database
+con = sqlite3.connect('chinook.db')
+# Run SQL          
+sql_query = pd.read_sql('SELECT * FROM invoice_items', con)
+# Convert SQL to DataFrame
+df = pd.DataFrame(sql_query)
+print(df)
+```
+
+::: {.cell-output .cell-output-stdout}
+          InvoiceLineId  InvoiceId  TrackId  UnitPrice  Quantity
+    0                 1          1        2       0.99         1
+    1                 2          1        4       0.99         1
+    2                 3          2        6       0.99         1
+    3                 4          2        8       0.99         1
+    4                 5          2       10       0.99         1
+    ...             ...        ...      ...        ...       ...
+    2235           2236        411     3136       0.99         1
+    2236           2237        411     3145       0.99         1
+    2237           2238        411     3154       0.99         1
+    2238           2239        411     3163       0.99         1
+    2239           2240        412     3177       1.99         1
+
+    [2240 rows x 5 columns]
+:::
+:::
+
+# SQL within Python (SQLite with SQLAlchemy)
+
+::: cell
+``` {.python .cell-code}
+#!pip install sqlalchemy or conda install sqlalchemy 
+import sqlalchemy as db
+# datasource downloaded from https://github.com/lerocha/chinook-database/tree/master/ChinookDatabase/DataSources
+# datasource downloaded from local drive path C:/sqlite/data/chinook_database/
+# engine = db.create_engine("sqlite:///Chinook_Sqlite.sqlite")
+engine1 = db.create_engine("sqlite:///C:/sqlite/data/chinook_database/chinook.db")
+# read it as a dataframe
+import pandas as pd
+df = pd.read_sql_table('albums', engine1)
+print(df.head())
+```
+
+::: {.cell-output .cell-output-stdout}
+       AlbumId                                  Title  ArtistId
+    0        1  For Those About To Rock We Salute You         1
+    1        2                      Balls to the Wall         2
+    2        3                      Restless and Wild         2
+    3        4                      Let There Be Rock         1
+    4        5                               Big Ones         3
+:::
+
+``` {.python .cell-code}
+connection = engine1.connect()
+metadata = db.MetaData()
+customers = db.Table('customers', metadata, autoload=True, autoload_with=engine1)
+print(type(customers))
+```
+
+::: {.cell-output .cell-output-stdout}
+    <class 'sqlalchemy.sql.schema.Table'>
+:::
+
+``` {.python .cell-code}
+print(customers.columns.keys())
+```
+
+::: {.cell-output .cell-output-stdout}
+    ['CustomerId', 'FirstName', 'LastName', 'Company', 'Address', 'City', 'State', 'Country', 'PostalCode', 'Phone', 'Fax', 'Email', 'SupportRepId']
+:::
+:::
+
+# SQL within Python (MySQL Server with SQLAlchemy)
+
+::: cell
+``` {.python .cell-code}
+# IMPORT THE SQALCHEMY LIBRARY's CREATE_ENGINE METHOD
+from sqlalchemy import create_engine
+
+# DEFINE THE DATABASE CREDENTIALS
+user = 'root'
+password = 'sumendar'   # you can change your pswrd whatever u gave while installing MySQL
+host = '127.0.0.1'
+port = 3306
+database = 'world'
+
+# PYTHON FUNCTION TO CONNECT TO THE MYSQL DATABASE AND
+# RETURN THE SQLACHEMY ENGINE OBJECT
+def get_connection():
+    return create_engine(
+        url="mysql+pymysql://{0}:{1}@{2}:{3}/{4}".format(
+            user, password, host, port, database
+        )
+    )
+
+
+if __name__ == '__main__':
+
+    try:
+        
+        # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
+        engine2 = get_connection()
+        print(
+            f"Connection to the {host} for user {user} created successfully.")
+    except Exception as ex:
+        print("Connection could not be made due to the following error: \n", ex)
+```
+
+::: {.cell-output .cell-output-stdout}
+    Connection to the 127.0.0.1 for user root created successfully.
+:::
+
+``` {.python .cell-code}
+connection = engine2.connect()
+metadata = db.MetaData()
+city = db.Table('city', metadata, autoload=True, autoload_with=engine2)
+print(city.columns.keys())
+```
+
+::: {.cell-output .cell-output-stdout}
+    ['ID', 'Name', 'CountryCode', 'District', 'Population']
+:::
+
+``` {.python .cell-code}
+print(type(city))
+```
+
+::: {.cell-output .cell-output-stdout}
+    <class 'sqlalchemy.sql.schema.Table'>
+:::
+
+``` {.python .cell-code}
+city1  = pd.read_sql_table(city, connection)
+print(city1)    
+```
+
+::: {.cell-output .cell-output-stdout}
+            ID            Name CountryCode       District  Population
+    0        1           Kabul         AFG          Kabol     1780000
+    1        2        Qandahar         AFG       Qandahar      237500
+    2        3           Herat         AFG          Herat      186800
+    3        4  Mazar-e-Sharif         AFG          Balkh      127800
+    4        5       Amsterdam         NLD  Noord-Holland      731200
+    ...    ...             ...         ...            ...         ...
+    4074  4075      Khan Yunis         PSE     Khan Yunis      123175
+    4075  4076          Hebron         PSE         Hebron      119401
+    4076  4077        Jabaliya         PSE     North Gaza      113901
+    4077  4078          Nablus         PSE         Nablus      100231
+    4078  4079           Rafah         PSE          Rafah       92020
+
+    [4079 rows x 5 columns]
+:::
+:::
+
+# SQL within Python (PostgreSQL with SQLAlchemy)
+
+::: cell
+``` {.python .cell-code}
+# IMPORT THE SQALCHEMY LIBRARY's CREATE_ENGINE METHOD
+from sqlalchemy import create_engine
+
+# DEFINE THE DATABASE CREDENTIALS
+user = 'postgres'
+password = 'sumendar'
+host = '127.0.0.1'
+port = 5432
+database = 'tutorialdb'
+
+# PYTHON FUNCTION TO CONNECT TO THE POSTGRESQL DATABASE AND
+# RETURN THE SQLACHEMY ENGINE OBJECT
+def get_connection():
+    return create_engine(
+        url="postgresql://{0}:{1}@{2}:{3}/{4}".format(
+            user, password, host, port, database
+        )
+    )
+
+
+if __name__ == '__main__':
+
+    try:
+        # GET THE CONNECTION OBJECT (ENGINE) FOR THE DATABASE
+        engine3 = get_connection()
+        print(
+            f"Connection to the {host} for user {user} created successfully.")
+    except Exception as ex:
+        print("Connection could not be made due to the following error: \n", ex)
+```
+
+::: {.cell-output .cell-output-stdout}
+    Connection to the 127.0.0.1 for user postgres created successfully.
+:::
+
+``` {.python .cell-code}
+connection = engine3.connect()
+metadata = db.MetaData()
+customers = db.Table('customers', metadata, autoload=True, autoload_with=engine3)
+print(type(customers))
+```
+
+::: {.cell-output .cell-output-stdout}
+    <class 'sqlalchemy.sql.schema.Table'>
+:::
+
+``` {.python .cell-code}
+print(customers.columns.keys())
+```
+
+::: {.cell-output .cell-output-stdout}
+    ['customer_id', 'name', 'location', 'email']
+:::
+
+``` {.python .cell-code}
+df = pd.read_sql_query('select * from "customers"',con=engine3)
+print(df.head())
+```
+
+::: {.cell-output .cell-output-stdout}
+       customer_id     name       location                       email
+    0            1  Orlando      Australia                            
+    1            2    Keith          India  keith0@adventure-works.com
+    2            3    Donna        Germany  donna0@adventure-works.com
+    3            4    Janet  United States  janet1@adventure-works.com
+:::
+:::
+
+# SQL within Python (SQLServer with SQLAlchemy)
+
+::: cell
+``` {.python .cell-code}
+#import pyodbc
+import sqlalchemy as sal
+from sqlalchemy import create_engine
+import pandas as pd
+Server = 'INHYDLP8LM08R1'
+Database = 'Training'
+Driver = 'ODBC Driver 17 for SQL Server'
+Database_Con = f'mssql://@{Server}/{Database}?driver={Driver}' 
+engine4 = create_engine(Database_Con)
+con =engine4.connect()
+df = pd.read_sql_query("select * from [dbo].[City]", con)
+df
+```
+
+::: {.cell-output .cell-output-stdout}
+        CityID CityCode    CityName PopulationDensity
+    0        1      ADI   Ahmedabad              High
+    1        2      BLR   Bangalore              High
+    2        3      CHD  Chandigarh               Low
+    3        4      CHN     Chennai              High
+    4        5      DDN    Dehradun            Medium
+    5        6      DEL       Delhi              High
+    6        7      JPR      Jaipur            Medium
+    7        8      KOL     Kolkata              High
+    8        9      MUM      Mumbai              High
+    9       10      MYS      Mysore               Low
+    10      11      PDY  Puducherry               Low
+    11      12      RNC      Ranchi            Medium
+:::
+:::
+
+# SQL within Python (MySQL Server with `pymysql` package)
+
+::: cell
+``` {.python .cell-code}
+import pymysql
+import pandas as pd
+
+conn=pymysql.connect(host='localhost',port=int(3306),user='root',passwd='sumendar',db='imdb')
+
+df=pd.read_sql_query("SELECT * FROM imdb.movie",conn)
+```
+
+::: {.cell-output .cell-output-stdout}
+    C:\Users\ADMINI~1\ANACON~1\lib\site-packages\pandas\io\sql.py:762: UserWarning:
+
+    pandas only support SQLAlchemy connectable(engine/connection) ordatabase string URI or sqlite3 DBAPI2 connectionother DBAPI2 objects are not tested, please consider using SQLAlchemy
+:::
+
+``` {.python .cell-code}
+print(type(df))
+```
+
+::: {.cell-output .cell-output-stdout}
+    <class 'pandas.core.frame.DataFrame'>
+:::
+
+``` {.python .cell-code}
+df.head()    
+```
+
+::: {.cell-output .cell-output-stdout}
+              id  ...        production_company
+    0  tt0012494  ...          Decla-Bioscop AG
+    1  tt0038733  ...               The Archers
+    2  tt0060908  ...                 Fildebroc
+    3  tt0069049  ...  Royal Road Entertainment
+    4  tt0071145  ...    Blaze Film Enterprises
+
+    [5 rows x 9 columns]
+:::
+:::
+
+# SQL within Python (MySQL Server with `mysql.connector` package)
+
+::: cell
+``` {.python .cell-code}
+# try later for this
+```
+:::
+
+# Azure Data Studio(md/ipynb) for SQL
+
+## MySQL, SQL Server and PostgreSQL Coding (Direct copied from Azure Data Studio After executing output got there then pasted here)
+
+::: cell
+``` {.python .cell-code}
+# try later for this
+```
+:::
+
+# Tableau Chart Embed:
+
+**Embedding Tableau Public Views in iFrame source:**
+
+<iframe src="https://public.tableau.com/views/_16786203366870/TelanganaMap?:showVizHome=no&amp;:embed=true" width="1200" height="645">
+
+</iframe>
+
+# Power BI Chart Embed:
+
+**Embedding Power BI Report in iFrame source:**
+
+<iframe title="Retail Analysis Sample" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=3c39e898-69bf-48d1-b1bf-6e1c3d002e32&amp;autoAuth=true&amp;ctid=ae3b8cb6-b13b-4a99-b88d-91dd3741be50" frameborder="0" allowFullScreen="true">
+
+</iframe>
+
+# Various Media Contents Embed

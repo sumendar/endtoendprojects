@@ -15,7 +15,6 @@ format:
     page-layout: full
     theme: cosmo
     css: styles.css
-
     
 editor: visual
 

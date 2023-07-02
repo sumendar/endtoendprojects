@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>End to End Projects - Project in R - Uber Data Analysis Project - DataFlair</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">End to End Projects</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sumendar"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/sumendar"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Project in R - Uber Data Analysis Project - DataFlair</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+
+
+
+
+<p><a href="#content">Skip to content</a></p>
+<ul>
+<li><a href="https://data-flair.training/blogs/">Blog Home</a></li>
+<li><a href="#">Data Science</a></li>
+<li><a href="#">Categories</a></li>
+<li><a href="https://data-flair.training/">Free Courses</a></li>
+</ul>
+<p>Search for:</p>
+<section id="project-in-r-uber-data-analysis-project" class="level1">
+<h1>Project in R – Uber Data Analysis Project</h1>
+<p>We offer you a brighter future with FREE online courses <a href="https://data-flair.training/">Start Now!!</a></p>
+<p>Welcome to part 2 of R and Data Science Projects designed by DataFlair. In our series of R projects, we are trying to use all the concepts related to Machine learning, AI and Data Science.</p>
+<p>We recommend you to follow all the steps given in the projects so that you will master the technology rapidly. In today’s R project, we will analyze the <strong><em>Uber Pickups in New York City dataset</em></strong>. This is more of a data visualization project that will guide you towards using the ggplot2 library for understanding the data and for developing an intuition for understanding the customers who avail the trips. So, before we start, take a quick revision to <strong><em><a href="https://data-flair.training/blogs/data-visualization-in-r/">data visualization concepts</a></em></strong>.</p>
+<section id="r-data-science-project-uber-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="r-data-science-project-uber-data-analysis">R Data Science Project – Uber Data Analysis</h2>
+<p>Talking about our Uber data analysis project, data storytelling is an important component of <a href="https://techvidvan.com/tutorials/machine-learning-tutorial/"><strong><em>Machine Learning</em></strong></a>&nbsp;through which companies are able to understand the background of various operations. With the help of visualization, companies can avail the benefit of understanding the complex data and gain insights that would help them to craft decisions. You will learn how to implement the ggplot2 on the Uber Pickups dataset and at the end, master the art of data visualization in R.</p>
+<p><strong><em>You can download the dataset utilized in this project here –</em></strong> <a href="https://drive.google.com/file/d/1emopjfEkTt59jJoBH9L9bSdmlDC4AR87/view"><strong>Uber Dataset</strong></a></p>
+<section id="importing-the-essential-packages" class="level3">
+<h3 class="anchored" data-anchor-id="importing-the-essential-packages">1. Importing the Essential Packages</h3>
+<p>In the first step of our R project, we will import the essential packages that we will use in this uber data analysis project. Some of the <strong><em>important libraries of R</em></strong> that we will use are –</p>
+<ul>
+<li>ggplot2</li>
+</ul>
+<p>This is the backbone of this project. ggplot2 is the most popular data visualization library that is most widely used for creating aesthetic visualization plots.</p>
+<ul>
+<li>ggthemes</li>
+</ul>
+<p>This is more of an add-on to our main ggplot2 library. With this, we can create better create extra themes and scales with the mainstream ggplot2 package.</p>
+<ul>
+<li>lubridate</li>
+</ul>
+<p>Our dataset involves various time-frames. In order to understand our data in separate time categories, we will make use of the lubridate package.</p>
+<ul>
+<li>dplyr</li>
+</ul>
+<p>This package is the lingua franca of <strong><em><a href="https://data-flair.training/blogs/manipulating-and-processing-data-in-r/">data manipulation in R</a></em></strong>.</p>
+<ul>
+<li>tidyr</li>
+</ul>
+<p>This package will help you to tidy your data. The basic principle of tidyr is to tidy the columns where each variable is present in a column, each observation is represented by a row and each value depicts a cell.</p>
+<ul>
+<li>DT</li>
+</ul>
+<p>With the help of this package, we will be able to interface with the <strong><em><a href="https://data-flair.training/blogs/javascript-tutorials-home/">JavaScript</a></em></strong>Library called – Datatables.</p>
+<ul>
+<li>scales</li>
+</ul>
+<p>With the help of graphical scales, we can automatically map the data to the correct scales with well-placed axes and legends.</p>
+<p>library(ggplot2)</p>
+<p>library(ggthemes)</p>
+<p>library(lubridate)</p>
+<p>library(dplyr)</p>
+<p>library(tidyr)</p>
+<p>library(DT)</p>
+<p>library(scales)</p>
+<p><strong>Input Screenshot 1:</strong></p>
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/1.0-Importing-Libraries-1.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/1.0-Importing-Libraries-1.png" class="img-fluid" alt="Importing Libraries"></a> <strong>Input Screenshot 2:</strong></p>
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/1.1-Importing-Libraries-.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/1.1-Importing-Libraries-.png" class="img-fluid" alt="Importing Libraries in R"></a> <strong>Input Screenshot 3:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/1.2-Importing-Libraries.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/1.2-Importing-Libraries.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">R import libraries</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="creating-vector-of-colors-to-be-implemented-in-our-plots" class="level3">
+<h3 class="anchored" data-anchor-id="creating-vector-of-colors-to-be-implemented-in-our-plots">2. Creating vector of colors to be implemented in our plots</h3>
+<p>In this step of data science project, we will create a vector of our colors that will be included in our plotting functions. You can also select your own set of colors.</p>
+<p><strong>Code:</strong></p>
+<p>colors = c(““#CC1011”, “#665555”, “#05a399”, “#cfcaca”, “#f5e840”, “#0683c9”, “#e075b0”“)</p>
+<p><strong>Input Screenshot 4:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/create-vector-of-colors.jpg"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/create-vector-of-colors.jpg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">create vector of colors</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="reading-the-data-into-their-designated-variables" class="level3">
+<h3 class="anchored" data-anchor-id="reading-the-data-into-their-designated-variables">3. Reading the Data into their designated variables</h3>
+<p>Now, we will read several csv files that contain the data from April 2014 to September 2014. We will store these in corresponding data frames like apr_data, may_data, etc. After we have read the files, we will combine all of this data into a single dataframe called ‘data_2014’.</p>
+<p><strong><em>To master this R Uber data analysis project, you need to know everything related to <a href="https://data-flair.training/blogs/r-data-frame-introduction-operations/">data frames in R</a></em></strong></p>
+<p>Then, in the next step, we will perform the appropriate formatting of Date.Time column. Then, we will proceed to create factors of time objects like day, month, year etc.</p>
+<p><strong>Code:</strong></p>
+<p>apr_data &lt;- read.csv(“uber-raw-data-apr14.csv”)</p>
+<p>may_data &lt;- read.csv(“uber-raw-data-may14.csv”)</p>
+<p>jun_data &lt;- read.csv(“uber-raw-data-jun14.csv”)</p>
+<p>jul_data &lt;- read.csv(“uber-raw-data-jul14.csv”)</p>
+<p>aug_data &lt;- read.csv(“uber-raw-data-aug14.csv”)</p>
+<p>sep_data &lt;- read.csv(“uber-raw-data-sep14.csv”)</p>
+<p>data_2014 &lt;- rbind(apr_data,may_data, jun_data, jul_data, aug_data, sep_data)</p>
+<p>data_2014$Date.Time</p>
+<p>&lt;- as.POSIXct(data_2014$Date.Time, format = “%m/%d/%Y %H:%M:%S”)</p>
+<p>data_2014<span class="math inline">\(Time &lt;\- format(as.POSIXct(data_2014\)</span>Date.Time, format = “%m/%d/%Y %H:%M:%S”), format=“%H:%M:%S”)</p>
+<p>data_2014$Date.Time</p>
+<p>&lt;- ymd_hms(data_2014$Date.Time)</p>
+<p>data_2014<span class="math inline">\(day &lt;\- factor(day(data_2014\)</span>Date.Time))</p>
+<p>data_2014<span class="math inline">\(month &lt;\- factor(month(data_2014\)</span>Date.Time, label = TRUE))</p>
+<p>data_2014<span class="math inline">\(year &lt;\- factor(year(data_2014\)</span>Date.Time))</p>
+<p>data_2014<span class="math inline">\(dayofweek &lt;\- factor(wday(data_2014\)</span>Date.Time, label = TRUE))</p>
+<p><strong>Input Screenshot 5:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/2.1-Reading-FIle.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/2.1-Reading-FIle.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">reading the data</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>data_2014<span class="math inline">\(hour &lt;\- factor(hour(hms(data_2014\)</span>Time)))</p>
+<p>data_2014<span class="math inline">\(minute &lt;\- factor(minute(hms(data_2014\)</span>Time)))</p>
+<p>data_2014<span class="math inline">\(second &lt;\- factor(second(hms(data_2014\)</span>Time)))</p>
+<p><strong>Input Screenshot 6:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/2.2-Reading-FIle.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/2.2-Reading-FIle.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">reading data</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="plotting-the-trips-by-the-hours-in-a-day" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-the-trips-by-the-hours-in-a-day">Plotting the trips by the hours in a day</h3>
+<p>In the next step or R project, we will use the ggplot function to plot the number of trips that the passengers had made in a day. We will also use dplyr to aggregate our data. In the resulting visualizations, we can understand how the number of passengers fares throughout the day. We observe that the number of trips are higher in the evening around 5:00 and 6:00 PM.</p>
+<p>hour_data &lt;- data_2014 %&gt;%</p>
+<p>group_by(hour) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>datatable(hour_data)</p>
+<p><strong>Input Screenshot 7:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.0-Plotting-the-trips-by-the-hours-in-a-day-Code.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.0-Plotting-the-trips-by-the-hours-in-a-day-Code.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Plotting the trips</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.1-Plotting-the-trips-by-the-hours-in-a-day-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.1-Plotting-the-trips-by-the-hours-in-a-day-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(hour_data, aes(hour, Total)) +</p>
+<p>geom_bar( stat = “identity”, fill = “steelblue”, color = “red”) +</p>
+<p>ggtitle(“Trips Every Hour”) +</p>
+<p>theme(legend.position = “none”) +</p>
+<p>scale_y_continuous(labels = comma)</p>
+<p>month_hour &lt;- data_2014 %&gt;%</p>
+<p>group_by(month, hour) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>ggplot(month_hour, aes(hour, Total, fill = month)) +</p>
+<p>geom_bar( stat = “identity”) +</p>
+<p>ggtitle(“Trips by Hour and Month”) +</p>
+<p>scale_y_continuous(labels = comma)</p>
+<p><strong>Input Screenshot 8:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.2-Trips-every-Hour-Plot-Code.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.2-Trips-every-Hour-Plot-Code.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Trips every Hour Plot Code</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Input Screenshot 9:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.3-month_hour.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.3-month_hour.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">month_hour</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Hours-and-Months.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Hours-and-Months.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Hours-in-a-Day-Plot-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Hours-in-a-Day-Plot-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="plotting-data-by-trips-during-every-day-of-the-month" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-data-by-trips-during-every-day-of-the-month">Plotting data by trips during every day of the month</h3>
+<p>In this section of DataFlair R project, we will learn how to plot our data based on every day of the month. We observe from the resulting visualization that 30th of the month had the highest trips in the year which is mostly contributed by the month of April.</p>
+<p><strong>Code:</strong></p>
+<p>day_group &lt;- data_2014 %&gt;%</p>
+<p>group_by(day) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>datatable(day_group)</p>
+<p><strong>Output Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.4-day_group.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.4-day_group.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(day_group, aes(day, Total)) +</p>
+<p>geom_bar( stat = “identity”, fill = “steelblue”) +</p>
+<p>ggtitle(“Trips Every Day”) +</p>
+<p>theme(legend.position = “none”) +</p>
+<p>scale_y_continuous(labels = comma)</p>
+<p><strong>Input Screenshot 10:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.5-Trips-Everyday-Code-Plot.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.5-Trips-Everyday-Code-Plot.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">plotting data by trips</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Every-Day-of-the-Month-Code-Plot-Output1.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Every-Day-of-the-Month-Code-Plot-Output1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>day_month_group &lt;- data_2014 %&gt;%</p>
+<p>group_by(month, day) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>ggplot(day_month_group, aes(day, Total, fill = month)) +</p>
+<p>geom_bar( stat = “identity”) +</p>
+<p>ggtitle(“Trips by Day and Month”) +</p>
+<p>scale_y_continuous(labels = comma) +</p>
+<p>scale_fill_manual(values = colors)</p>
+<p><strong>Input Screenshot 11:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.6-day-month-group.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.6-day-month-group.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">plotting data by trips</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Days-and-Months1.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Days-and-Months1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="number-of-trips-taking-place-during-months-in-a-year" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-trips-taking-place-during-months-in-a-year">Number of Trips taking place during months in a year</h3>
+<p>In this section, we will visualize the number of trips that are taking place each month of the year. In the output visualization, we observe that most trips were made during the month of September. Furthermore, we also obtain visual reports of the number of trips that were made on every day of the week.</p>
+<p><strong>Code:</strong></p>
+<p>month_group &lt;- data_2014 %&gt;%</p>
+<p>group_by(month) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>datatable(month_group)</p>
+<p><strong>Output Screenshot:</strong><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.7-month_group.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.7-month_group.png" class="img-fluid" alt="uber data analysis"></a></p>
+<p><strong>Code:</strong></p>
+<p>ggplot( , aes(month, Total, fill = month)) +</p>
+<p>geom_bar( stat = “identity”) +</p>
+<p>ggtitle(“Trips by Month”) +</p>
+<p>theme(legend.position = “none”) +</p>
+<p>scale_y_continuous(labels = comma) +</p>
+<p>scale_fill_manual(values = colors)</p>
+<p><strong>Input Screenshot 12:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.8-Trips-by-Month-Plot.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.8-Trips-by-Month-Plot.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Trips by Month Plot</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-By-Month.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-By-Month.png" class="img-fluid" alt="Uber data analysis"></a></p>
+<p>month_weekday &lt;- data_2014 %&gt;%</p>
+<p>group_by(month, dayofweek) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>ggplot(month_weekday, aes(month, Total, fill = dayofweek)) +</p>
+<p>geom_bar( stat = “identity”, position = “dodge”) +</p>
+<p>ggtitle(“Trips by Day and Month”) +</p>
+<p>scale_y_continuous(labels = comma) +</p>
+<p>scale_fill_manual(values = colors)</p>
+<p><strong>Input Screenshot 13:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.6-day-month-group-1.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/3.6-day-month-group-1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">day month group</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Days-and-Months.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Days-and-Months.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="finding-out-the-number-of-trips-by-bases" class="level3">
+<h3 class="anchored" data-anchor-id="finding-out-the-number-of-trips-by-bases">Finding out the number of Trips by bases</h3>
+<p>In the following visualization, we plot the number of trips that have been taken by the passengers from each of the bases. There are five bases in all out of which, we observe that B02617 had the highest number of trips. Furthermore, this base had the highest number of trips in the month B02617. Thursday observed highest trips in the three bases – B02598, B02617, B02682.</p>
+<p><strong>Code:</strong></p>
+<p>ggplot(data_2014, aes(Base)) +</p>
+<p>geom_bar(fill = “darkred”) +</p>
+<p>scale_y_continuous(labels = comma) +</p>
+<p>ggtitle(“Trips by Bases”)</p>
+<p><strong>Input Screenshot 14:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.0-Trips-by-Bases.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.0-Trips-by-Bases.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Trips by Bases</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Number-of-Trips-by-Bases-Plot.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Number-of-Trips-by-Bases-Plot.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(data_2014, aes(Base, fill = month)) +</p>
+<p>geom_bar(position = “dodge”) +</p>
+<p>scale_y_continuous(labels = comma) +</p>
+<p>ggtitle(“Trips by Bases and Month”) +</p>
+<p>scale_fill_manual(values = colors)</p>
+<p><strong>Input Screenshot 15:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.1-Trips-by-Bases-and-Months.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.1-Trips-by-Bases-and-Months.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Trips by Bases and Months</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Bases-and-Months-Plot-Output1.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Bases-and-Months-Plot-Output1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(data_2014, aes(Base, fill = dayofweek)) +</p>
+<p>geom_bar(position = “dodge”) +</p>
+<p>scale_y_continuous(labels = comma) +</p>
+<p>ggtitle(“Trips by Bases and DayofWeek”) +</p>
+<p>scale_fill_manual(values = colors)</p>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Bases-and-Days-of-the-Week-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Trips-by-Bases-and-Days-of-the-Week-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="creating-a-heatmap-visualization-of-day-hour-and-month" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-heatmap-visualization-of-day-hour-and-month">Creating a Heatmap visualization of day, hour and month</h3>
+<p>In this section, we will learn how to plot heatmaps using ggplot(). We will plot five heatmap plots –</p>
+<ul>
+<li>First, we will plot <a href="https://en.wikipedia.org/wiki/Heat_map">Heatmap</a> by Hour and Day.</li>
+<li>Second, we will plot Heatmap by Month and Day.</li>
+<li>Third, a Heatmap by Month and Day of the Week.</li>
+<li>Fourth, a Heatmap that delineates Month and Bases.</li>
+<li>Finally, we will plot the heatmap, by bases and day of the week.</li>
+</ul>
+<p><strong>Code:</strong></p>
+<p>day_and_hour &lt;- data_2014 %&gt;%</p>
+<p>group_by(day, hour) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>datatable(day_and_hour)</p>
+<p><strong>Input Screenshot 16:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.2-day_hour_month-code.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.2-day_hour_month-code.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">day_hour_month code</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output Screenshot:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.2-day_hour_month-code-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/4.2-day_hour_month-code-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">uber data analysis</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(day_and_hour, aes(day, hour, fill = Total)) +</p>
+<p>geom_tile(color = “white”) +</p>
+<p>ggtitle(“Heat Map by Hour and Day”)</p>
+<p><strong>Input Screenshot 17:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.0-heatmap-hour_day.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.0-heatmap-hour_day.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">creating heatmap visualization</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/HeatMap-Hour-and-Day-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/HeatMap-Hour-and-Day-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Heat Map Hour and Day</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(day_month_group, aes(day, month, fill = Total)) +</p>
+<p>geom_tile(color = “white”) +</p>
+<p>ggtitle(“Heat Map by Month and Day”)</p>
+<p><strong>Input Screenshot 18:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.1-Heatmap-Month-and-Day.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.1-Heatmap-Month-and-Day.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Heatmap Month and Day</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Month-and-Day-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Month-and-Day-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Heat map by Month and Day</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(month_weekday, aes(dayofweek, month, fill = Total)) +</p>
+<p>geom_tile(color = “white”) +</p>
+<p>ggtitle(“Heat Map by Month and Day of Week”)</p>
+<p><strong>Input Screenshot 19:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.2-Heatmap-Month-and-Day-of-Week.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.2-Heatmap-Month-and-Day-of-Week.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Heatmap Month and Day of Week</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Month-and-Day-of-Week-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Month-and-Day-of-Week-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Month and Day of Week</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>month_base &lt;- data_2014 %&gt;%</p>
+<p>group_by(Base, month) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>day0fweek_bases &lt;- data_2014 %&gt;%</p>
+<p>group_by(Base, dayofweek) %&gt;%</p>
+<p>dplyr::summarize(Total = n())</p>
+<p>ggplot(month_base, aes(Base, month, fill = Total)) +</p>
+<p>geom_tile(color = “white”) +</p>
+<p>ggtitle(“Heat Map by Month and Bases”)</p>
+<p><strong>Input Screenshot 20:</strong></p>
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.3-Heatmap-Month-and-Bases.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.3-Heatmap-Month-and-Bases.png" class="img-fluid" alt="Heatmap Month and Bases"></a> <strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Month-and-Bases-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Month-and-Bases-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Month and Bases Output</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Code:</strong></p>
+<p>ggplot(day0fweek_bases, aes(Base, dayofweek, fill = Total)) +</p>
+<p>geom_tile(color = “white”) +</p>
+<p>ggtitle(“Heat Map by Bases and Day of Week”)</p>
+<p><strong>Input Screenshot 21:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.4-Days-and-Base-of-Week.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/5.4-Days-and-Base-of-Week.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Days and Base of Week</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Bases-and-Days-of-Weeks-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Bases-and-Days-of-Weeks-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Bases and Days of Weeks</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="creating-a-map-visualization-of-rides-in-new-york" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-map-visualization-of-rides-in-new-york">Creating a map visualization of rides in New York</h3>
+<p>In the final section, we will visualize the rides in New York city by creating a geo-plot that will help us to visualize the rides during 2014 (Apr – Sep) and by the bases in the same period.</p>
+<p><strong>Code:</strong></p>
+<p>min_lat &lt;- 40.5774</p>
+<p>max_lat &lt;- 40.9176</p>
+<p>min_long &lt;- -74.15</p>
+<p>max_long &lt;- -73.7004</p>
+<p>ggplot(data_2014, aes(x=Lon, y=Lat)) +</p>
+<p>geom_point(size=1, color = “blue”) +</p>
+<p>scale_x_continuous(limits=c(min_long, max_long)) +</p>
+<p>scale_y_continuous(limits=c(min_lat, max_lat)) +</p>
+<p>theme_map() +</p>
+<p>ggtitle(“NYC MAP BASED ON UBER RIDES DURING 2014 (APR-SEP)”)</p>
+<p>ggplot(data_2014, aes(x=Lon, y=Lat, color = Base)) +</p>
+<p>geom_point(size=1) +</p>
+<p>scale_x_continuous(limits=c(min_long, max_long)) +</p>
+<p>scale_y_continuous(limits=c(min_lat, max_lat)) +</p>
+<p>theme_map() +</p>
+<p>ggtitle(“NYC MAP BASED ON UBER RIDES DURING 2014 (APR-SEP) by BASE”)</p>
+<p><strong>Input Screenshot 22:</strong></p>
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/creating-a-map-visualization.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/creating-a-map-visualization.png" class="img-fluid" alt="creating a map visualization"></a> <strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/NYC-Map-1-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/NYC-Map-1-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Creating a map visualization</figcaption><p></p>
+</figure>
+</div>
+<p>Uber data analysis using R</p>
+<p><strong>Output:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Map-2-Output.png"><img src="https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/07/Map-2-Output.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Uber data analyis using R</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>At the end of the Uber data analysis R project, we observed how to create data visualizations. We made use of packages like ggplot2 that allowed us to plot various types of visualizations that pertained to several time-frames of the year. With this, we could conclude how time affected customer trips. Finally, we made a geo plot of New York that provided us with the details of how various users made trips from different bases.</p>
+<p>Hope you enjoyed the above R Data Science Project. Keep visiting <strong>DataFlair</strong> for more interesting projects related to the latest technologies like Big Data, R and Data Science. If you face any issue while practicing the same, comment us below. We will definitely help.</p>
+<p><strong><em>Master R technology for Free – Check <a href="https://data-flair.training/blogs/r-tutorials-home/">R Tutorials Series</a></em></strong></p>
+<p><strong>We work very hard to provide you quality material</strong> Could you take 15 seconds and share your happy experience on <strong><a href="https://g.page/DataFlair/review?kd">Google</a></strong> and Follow us on <strong><a href="https://www.youtube.com/@Dataflair?sub_confirmation=1">YouTube</a></strong></p>
+<p>Tags: <a href="https://data-flair.training/blogs/tag/data-science-project/">data science project</a><a href="https://data-flair.training/blogs/tag/r-project/">R project</a><a href="https://data-flair.training/blogs/tag/uber-data-analysis-project/">uber data analysis project</a></p>
+<section id="responses" class="level3">
+<h3 class="anchored" data-anchor-id="responses">47 Responses</h3>
+<ul>
+<li><a href="#commentlist-container">Comments9</a></li>
+<li><a href="#pinglist-container">Pingbacks0</a></li>
+</ul>
+<ol type="1">
+<li><p>Eid Heba</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-57792">February 28, 2021 at 7:37 pm</a></p>
+<p>Hello! thank you for this amazing explanation. How many observations is this and how many variables? Can you please send me the rmd file (full code in R) Thank you!</p>
+<p><a href="#comment-57792">Reply</a></p></li>
+<li><p>Ezekiel Ibrahim Mbaya</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-58013">March 22, 2021 at 4:48 am</a></p>
+<p>Base on the last code (input screenshot 22) is showing “Warning message: Removed 71701 rows containing missing values (geom_point).” and the plot is blank. What will be the problem and the possible solution? Thank you for your great support.</p>
+<p><a href="#comment-58013">Reply</a></p></li>
+<li><p>Santhosh S</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-58966">May 10, 2021 at 12:34 pm</a></p>
+<p>can u send the dataset for this</p>
+<p><a href="#comment-58966">Reply</a></p></li>
+<li><p>Scraper</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-59547">July 3, 2021 at 2:09 am</a></p>
+<p>Hey can anyone please give me the ER diagram of this project</p>
+<p><a href="#comment-59547">Reply</a></p></li>
+<li><p>Ashique Zaman</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-60941">January 6, 2022 at 6:27 am</a></p>
+<p>Warning message: Removed 71701 rows containing missing values (geom_point).” and the plot is blank. Please help me sir , give me the solution to fix this …screenshot 21 and 22 .</p>
+<p><a href="#comment-60941">Reply</a></p>
+<ul>
+<li><p>sri</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-63399">February 8, 2023 at 9:31 pm</a></p>
+<p>I also got this error, please fix this error.</p>
+<p><a href="#comment-63399">Reply</a></p>
+<ul>
+<li><p>AAYUSH GAUTAM</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-63669">March 6, 2023 at 6:03 am</a></p>
+<p>For this task, we have to use the coord_cartesian argument. Within the coord_cartesian argument, we are defining the axis limits of our ggplot2 plot:</p>
+<p><a href="#comment-63669">Reply</a></p></li>
+</ul></li>
+</ul></li>
+<li><p>sri</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-63400">February 8, 2023 at 9:33 pm</a></p>
+<p>Warning message: Removed 71701 rows containing missing values (geom_point).” please fix this error</p>
+<p><a href="#comment-63400">Reply</a></p></li>
+<li><p>sandeep kaur</p>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-2/#comment-63911">March 23, 2023 at 6:18 am</a></p>
+<p>What data sets/packages/libraries were used to implement the project? Why? What visualizations were employed to delineate the data? Why were these used compared to other options? How was the final project visualized (e.g., plot, visual report, etc.)? Do you feel this was the best way? Support your rationale. What type of data science project idea do you feel would be worth conducting in your specific field or industry? Explain your choice.</p>
+<p><a href="#comment-63911">Reply</a></p></li>
+</ol>
+<p><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/comment-page-1/#comments">« Older Comments</a></p>
+</section>
+<section id="leave-a-reply" class="level3">
+<h3 class="anchored" data-anchor-id="leave-a-reply">Leave a Reply</h3>
+<p>Comment *</p>
+<p>Name *</p>
+<p>Email *</p>
+<p>R Tutorials</p>
+<ul>
+<li><p><a href="https://data-flair.training/blogs/data-analytics-tutorial/">R – Data Analytics Tutorial</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-tutorial/">R – Introduction</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-programming-language/">R – Comprehensive Guide</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/learn-r-programming/">R – Master Guide</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/features-of-r-programming/">R – Features</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/pros-and-cons-of-r-programming-language/">R – Pros and Cons</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/why-learn-r/">R – Why Learn R</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-careers/">R – Future Scope</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-applications/">R – Applications</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/data-science-projects-code/">R – Projects</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/how-to-install-r/">R – Installation</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-hadoop-integration/">R – Hadoop Integration</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-data-types/">R – Data Types</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/ols-regression-in-r/">R – OLS Regression</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/rstudio-tutorial/">R – RStudio</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/data-structures-in-r/">R – Data Structures</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-vector/">R – Vectors</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-list-tutorial/">R – Lists</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-matrix-operations-applications/">R – Matrix</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-array/">R – Arrays</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-data-frame/">R – Data Frame</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-factor-functions/">R – Factor</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-control-structures/">R – Control Statements</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-function/">R – Functions</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-vector-functions/">R – Vector Functions</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-numeric-and-character-functions/">R – Numeric &amp; Character Functions</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-matrix-functions/">R – Matrix Function</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-recursive-function/">R – Recursive Functions</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-arguments-introduction/">R – Arguments</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-packages-tutorial/">R – Packages</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-packages-for-data-science/">R – Packages for Data Science</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/list-of-r-packages/">R – List of Packages</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-statistics/">R – Statistics</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/principal-components-and-factor-analysis-in-r/">R – Factor Analysis</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-data-reshaping-function-package/">R – Data Reshaping</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/object-oriented-programming-in-r/">R – Object Oriented Programming</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/bootstrapping-in-r/">R – Bootstraping</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/debugging-in-r-programming/">R – Debugging</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/input-output-features-in-r/">R – Input / Output Features</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-string-manipulation/">R – String Manipulation</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/data-manipulation-in-r/">R – Data Manipulation</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/descriptive-statistics-in-r/">R – Descriptive Statistics</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-contingency-tables/">R – Contingency Tables</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-graphical-models-tutorial/">R – Graphical Models</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/generalized-linear-models-in-r/">R – Generalized Linear Models(GLM)</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/graphical-models-applications/">R – Graphical Models Applications</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/graphical-data-analysis-with-r/">R – Graphical Analysis</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/data-visualization-in-r/">R – Data Visualization</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/bar-chart-in-r/">R – Bar Chart</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-lattice-package/">R – Lattice Package</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/save-graphs-to-files-in-r/">R – Save graphs To Files</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-performance-tuning-techniques/">R – Performance Tuning</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/hypothesis-testing-in-r/">R – Hypothesis Testing</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-linear-regression-tutorial/">R – Linear Regression</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-nonlinear-regression/">R – Nonlinear Regression</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/logistic-regression-in-r/">R – Logistic Regression</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-decision-trees/">R – Decision Trees</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/random-forest-in-r/">R – Random Forest</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/clustering-in-r-tutorial/">R – Clustering</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/classification-in-r/">R – Classification</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/e1071-in-r/">R – SVM Training &amp; Testing Models</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/bayesian-network-in-r/">R – Bayesian Network</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/bayesian-methods-introduction/">R – Bayesian Methods</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/bayesian-networks-inference/">R – Bayesian Inference</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/bayesian-network-applications/">R – Bayesian Network Applications</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/normal-distribution-in-r/">R – Normal Distribution</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/binomial-and-poisson-distribution/">R – Binomial &amp; Poisson Distribution</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/importing-data-in-r/">R – Importing Data</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/exporting-data-from-r/">R – Exporting Data</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-predictive-and-descriptive-analytics/">R – Predictive &amp; Descriptive Analytics</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/survival-analysis-in-r/">R – Survival Analysis</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/t-tests-in-r/">R – T-tests</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/anova-in-r/">R – ANOVA</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/chi-square-test-in-r/">R – Chi-Square test</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/using-r-for-data-science/">R – R For Data Science</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/machine-learning-for-r-programming/">R – Machine Learning</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-books/">R – List of Best Books</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-vs-python/">R vs Python</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/r-python-or-sas-for-data-science/">R vs Python vs SAS</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/data-analytics-tools/">Data Analytics Tools – R vs SAS vs SPSS</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/data-analytics-with-r-tableau-excel/">R vs Tableau vs Excel</a></p></li>
+</ul>
+<p>R Projects</p>
+<ul>
+<li><a href="https://data-flair.training/blogs/machine-learning-datasets/">R – 70+ Project Ideas &amp; Datasets</a></li>
+<li><a href="https://data-flair.training/blogs/data-science-r-sentiment-analysis-project/">R Project – Sentiment Analysis</a></li>
+<li><a href="https://data-flair.training/blogs/r-data-science-project-uber-data-analysis/">R Project – Uber Data Analysis</a></li>
+<li><a href="https://data-flair.training/blogs/data-science-machine-learning-project-credit-card-fraud-detection/">R Project – Credit Card Fraud Detection</a></li>
+<li><a href="https://data-flair.training/blogs/data-science-r-movie-recommendation/">R Project – Movie Recommendation System</a></li>
+<li><a href="https://data-flair.training/blogs/r-data-science-project-customer-segmentation/">R Project – Customer Segmentation</a></li>
+</ul>
+<p>R Interview Questions</p>
+<ul>
+<li><a href="https://data-flair.training/blogs/r-interview-questions-and-answers/">R – Beginners Interview Questions</a></li>
+<li><a href="https://data-flair.training/blogs/r-programming-interview-questions/">R – Intermediates Interview Questions</a></li>
+<li><a href="https://data-flair.training/blogs/r-data-science-interview-questions/">R – Experts Interview Questions</a></li>
+</ul>
+<p>R Quiz</p>
+<ul>
+<li><a href="https://data-flair.training/blogs/r-programming-quiz-part-1/">R Quiz – Part 1</a></li>
+<li><a href="https://data-flair.training/blogs/r-multiple-choice-questions-and-answers/">R Quiz – Part 2</a></li>
+</ul>
+<p><a href="https://data-flair.training/">Home</a> <a href="https://data-flair.training/about-us/">About us</a> <a href="https://data-flair.training/contact-us/">Contact us</a> <a href="https://data-flair.training/terms-and-conditions/">Terms and Conditions</a> <a href="https://data-flair.training/privacy-policy/">Privacy Policy</a> <a href="https://data-flair.training/disclaimer/">Disclaimer</a> <a href="https://data-flair.training/blogs/write-for-us/">Write For Us</a> <a href="https://data-flair.training/success-stories/">Success Stories</a></p>
+<p><a id="back-to-top"></a><a href="#"></a></p>
+<p>DataFlair © 2023. All Rights Reserved.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,11 @@
+*.r linguist-language=R
+*.[Rr]md linguist-language=R
+*.ipynb linguist-language=R
+*.py linguist-language=Python
+*.ipynb linguist-language=Python
+*.ipynb linguist-detectable=true
+*.js linguist-detectable=false
+*.html linguist-detectable=false 
+*.css linguist-detectable=false
+*.json linguist-detectable=false
+*.js linguist-vendored

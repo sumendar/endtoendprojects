@@ -1,0 +1,11 @@
+{
+  "hash": "feb2b8df3799bd27247a56056a1b28d6",
+  "result": {
+    "markdown": "---\ntitle: Presentaion\nformat: revealjs\nincremental: true\nslide-level: 2\n---\n\n::: {.cell execution_count=1}\n\n::: {.cell-output .cell-output-stdout}\n```\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n```\n:::\n:::\n\n\n-   One\n\n-   Two\n\n-   Three\n\n-   $y =mx+c$\n\n![](images/A-Gentle-Introduction-to-Ensemble-Learning-Algorithms.jpg)\n\n",
+    "supporting": [
+      "Present_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

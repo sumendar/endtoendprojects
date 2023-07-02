@@ -1,9 +1,13 @@
 ---
-title: "Post With Code (created here within qmd file edited updated within this file only)"
+title: "sample Post With Code (created here within qmd file edited updated within this file only)"
 author: "Sumendar"
-date: "2022-08-15"
+date: "2023-03-09"
 categories: [news, code, analysis]
 image: "image.jpg"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
 ---
 
 This is a post with executable code check
@@ -223,3 +227,10 @@ plt.show()
 ### Power BI Embed
 
 **Embedding Power BI Report in iFrame source:** <iframe title="Retail Analysis Sample" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=3c39e898-69bf-48d1-b1bf-6e1c3d002e32&autoAuth=true&ctid=ae3b8cb6-b13b-4a99-b88d-91dd3741be50" frameborder="0" allowFullScreen="true"></iframe>
+
+```{python}
+import pandas as pd
+for i in range(10):
+    print(i)
+```
+
