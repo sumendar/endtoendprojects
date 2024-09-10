@@ -1,0 +1,163 @@
+{
+  "main": {
+    "id": "c47711b6cd52fbbf",
+    "type": "split",
+    "children": [
+      {
+        "id": "6694ca59fd1ea851",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "781248ec043d146a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d342df8c2db5322a",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d32fb5b2e1985ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "36d03d788c63fab0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a3d1eaae6e346a07",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "ggplot",
+                "matchingCase": false,
+                "explainSearch": true,
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "71d68344826d5314",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "25a83c9911addf8b",
+    "type": "split",
+    "children": [
+      {
+        "id": "056f9cfa72bd8e0d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "caf46df0f4d97b13",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "44d3ba23927b4c56",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c2d8005b4d1a0b9c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "53383d559cc9b13a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian42-brat:BRAT": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "781248ec043d146a",
+  "lastOpenFiles": [
+    "posts/Untitled.md",
+    "posts/post-with-code5/Sample.qmd",
+    "posts/post-with-code5/pswrd_oracle2.gif",
+    "posts/post-with-code5/sample.md",
+    "posts/post-with-code5/sample_files/mediabag",
+    "posts/post-with-code5/sample_files",
+    "posts/post-with-code5/sample2.qmd",
+    "posts/post-with-code5/tmpug13zukn.qmd",
+    "posts/post-with-code5/Election_EPS.avif",
+    "posts/post-with-code5/getting-started.png",
+    "posts/post-with-code5/image.jpg",
+    "Untitled.canvas",
+    "profile.jpg",
+    "1702866636423.jpg",
+    "Untitled 1.canvas",
+    "2024-01-10.md",
+    "posts/project_template/README.md"
+  ]
+}

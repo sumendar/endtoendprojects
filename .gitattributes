@@ -9,3 +9,13 @@
 *.css linguist-detectable=false
 *.json linguist-detectable=false
 *.js linguist-vendored
+
+endtoendprojects/endtoendprojects/app/static/modules/* linguist-vendored
+
+endtoendprojects/endtoendprojects/app/static/js/handlebars.js linguist-vendored
+endtoendprojects/endtoendprojects/app/static/js/highlight.pack.js linguist-vendored
+endtoendprojects/endtoendprojects/app/static/js/select2.min.js linguist-vendored
+
+endtoendprojects/endtoendprojects/app/static/css/highlight/* linguist-vendored
+endtoendprojects/endtoendprojects/app/static/css/codehilite-friendly.css linguist-vendored
+endtoendprojects/endtoendprojects/app/static/css/select2.min.css lingust-vendored

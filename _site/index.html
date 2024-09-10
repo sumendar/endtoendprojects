@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>End to End Projects - The world of data needs you; since It defines the way we live and work!</title>
+<title>End to End Projects - The world of data needs you; since It defines the way we live, interact and work!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -90,44 +98,64 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
-</head>
+<link rel="alternate" type="application/rss+xml" title="End to End Projects" href="index.xml" data-external="1"></head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">End to End Projects</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
- <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/sumendar"><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/sumendar"><i class="bi bi-twitter" role="img">
-</i> 
- <span class="menu-text"></span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -135,12 +163,12 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title"><span style="text-align:center;"><sub><sup><sup><em>The world of data needs you; since It defines the way we live and work!</em></sup></sup></sub></span></h1>
+      <h1 class="title"><span style="text-align:center;"><sub><sup><sup><em>The world of data needs you; since It defines the way we live, interact and work!</em></sup></sup></sub></span></h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -153,9 +181,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div><div class="category" data-category="Census">Census <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Education">Education <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Elections">Elections <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Health">Health <span class="quarto-category-count">(1)</span></div><div class="category" data-category="KCR Kits">KCR Kits <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MPTC">MPTC <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Telangana">Telangana <span class="quarto-category-count">(2)</span></div><div class="category" data-category="agriculture">agriculture <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(5)</span></div><div class="category" data-category="census">census <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(4)</span></div><div class="category" data-category="colleges">colleges <span class="quarto-category-count">(1)</span></div><div class="category" data-category="demographic">demographic <span class="quarto-category-count">(2)</span></div><div class="category" data-category="elections results">elections results <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kids health">kids health <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mandals">mandals <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(5)</span></div><div class="category" data-category="population">population <span class="quarto-category-count">(1)</span></div><div class="category" data-category="telangana">telangana <span class="quarto-category-count">(2)</span></div><div class="category" data-category="visualizations">visualizations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="world">world <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(18)</span></div><div class="category" data-category="AP Assembly Elections - 2024">AP Assembly Elections - 2024 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="AP Parliamentary Election Results - 2024">AP Parliamentary Election Results - 2024 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="AndhraPradesh Elections">AndhraPradesh Elections <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Anganwadicenters">Anganwadicenters <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Cricket">Cricket <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Analytics">Data Analytics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Data Visualizations">Data Visualizations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="DataWrapper">DataWrapper <span class="quarto-category-count">(6)</span></div><div class="category" data-category="EDA">EDA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Education">Education <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Grama Panchayithees">Grama Panchayithees <span class="quarto-category-count">(1)</span></div><div class="category" data-category="HR Data Analysis">HR Data Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="IPL 2024">IPL 2024 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SQL">SQL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tableau">Tableau <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Telangana Elections">Telangana Elections <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Telangana Lok Sabha Elections - Parliamentary">Telangana Lok Sabha Elections - Parliamentary <span class="quarto-category-count">(1)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="census">census <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(3)</span></div><div class="category" data-category="colleges">colleges <span class="quarto-category-count">(1)</span></div><div class="category" data-category="demographic">demographic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="kids counts">kids counts <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mandals">mandals <span class="quarto-category-count">(2)</span></div><div class="category" data-category="new born babies count">new born babies count <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(4)</span></div><div class="category" data-category="rural">rural <span class="quarto-category-count">(1)</span></div><div class="category" data-category="telangana">telangana <span class="quarto-category-count">(1)</span></div><div class="category" data-category="telangana anganwadi">telangana anganwadi <span class="quarto-category-count">(1)</span></div><div class="category" data-category="telangana kids">telangana kids <span class="quarto-category-count">(1)</span></div><div class="category" data-category="villages">villages <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
 
 
 
@@ -183,61 +212,38 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1683144602006" data-listing-reading-time-sort="0">
+<div class="quarto-post image-right" data-index="0" data-categories="Tableau,Cricket,IPL 2024" data-listing-date-sort="1723401000000" data-listing-file-modified-sort="1725966569762" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
 <div class="thumbnail">
-<a href="./posts/post-with-code6/IPL2023_Analysis.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/post-with-code6/IPL2023_Analysis.html"></a></p>
+<p><a href="./posts/Batting Scores of the Players in IPL 2024/Notebook.html" class="no-external"></a></p><a href="./posts/Batting Scores of the Players in IPL 2024/Notebook.html" class="no-external">
+<p><img src="./posts/Batting Scores of the Players in IPL 2024/IPL-2024.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/Batting Scores of the Players in IPL 2024/Notebook.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/post-with-code6/IPL2023_Analysis.html">
 <h3 class="no-anchor listing-title">
+<a href="./posts/Batting Scores of the Players in IPL 2024/Notebook.html" class="no-external"><sub>Batting Scores of the Players in IPL 2024</sub></a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/Batting Scores of the Players in IPL 2024/Notebook.html" class="no-external"></a>
 </div>
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code6/IPL2023_Analysis.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Health,Telangana" data-listing-date-sort="1684175400000" data-listing-file-modified-sort="1684471889706" data-listing-reading-time-sort="0.035">
-<div class="thumbnail">
-<p><a href="./posts/HealthCentresTS/HealthCentresInTS.html"> <img src="./posts/HealthCentresTS/Basti_Hospital.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/HealthCentresTS/HealthCentresInTS.html">
-<h3 class="no-anchor listing-title">
-<sub>Health Centres Information in Telangana State, India (in Each Village/City/Town) by sumendar</sub>
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Health'); return false;">
-Health
+<div class="listing-category" onclick="window.quartoListingCategory('Tableau'); return false;">
+Tableau
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Telangana'); return false;">
-Telangana
+<div class="listing-category" onclick="window.quartoListingCategory('Cricket'); return false;">
+Cricket
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('IPL 2024'); return false;">
+IPL 2024
 </div>
 </div>
-<a href="./posts/HealthCentresTS/HealthCentresInTS.html">
 <div class="listing-description">
-
+<a href="./posts/Batting Scores of the Players in IPL 2024/Notebook.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/Batting Scores of the Players in IPL 2024/Notebook.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/HealthCentresTS/HealthCentresInTS.html">
+<a href="./posts/Batting Scores of the Players in IPL 2024/Notebook.html" class="no-external">
 <div class="listing-date">
-May 16, 2023
+Aug 12, 2024
 </div>
 <div class="listing-author">
 Sumendar
@@ -245,19 +251,451 @@ Sumendar
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Education,colleges" data-listing-date-sort="1684089000000" data-listing-file-modified-sort="1684247713056" data-listing-reading-time-sort="0.02">
+<div class="quarto-post image-right" data-index="1" data-categories="DataWrapper,AP Parliamentary Election Results - 2024" data-listing-date-sort="1717957800000" data-listing-file-modified-sort="1725969083039" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
 <div class="thumbnail">
-<p><a href="./posts/CollegesListInTS/CollegesListInTS.html"> <img src="./posts/CollegesListInTS/1663673120phpZGekLv.jpeg" class="thumnail-image"> </a></p>
+<p><a href="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html" class="no-external"></a></p><a href="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html" class="no-external">
+<p><img src="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/imgs/2014-MP_Elections.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/CollegesListInTS/CollegesListInTS.html">
 <h3 class="no-anchor listing-title">
-<sub>Colleges List in Telangana State (Each District’s) by sumendar</sub>
+<a href="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html" class="no-external"><sub>Parliamentary Election Results June-2024 Andhra Pradesh</sub></a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DataWrapper'); return false;">
+DataWrapper
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('AP Parliamentary Election Results - 2024'); return false;">
+AP Parliamentary Election Results - 2024
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html" class="no-external">
+<div class="listing-date">
+Jun 10, 2024
+</div>
+<div class="listing-author">
+Sumendar
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="DataWrapper,AP Assembly Elections - 2024" data-listing-date-sort="1717698600000" data-listing-file-modified-sort="1725969042928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<div class="thumbnail">
+<p><a href="./posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html" class="no-external"></a></p><a href="./posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html" class="no-external">
+<p><img src="./posts/AndhraPradesh-Assembly-Election-Results-2024/imgs/2019-vs-2024.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html" class="no-external"><sub>Assembly Election Results June-2024 Andhra Pradesh</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DataWrapper'); return false;">
+DataWrapper
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('AP Assembly Elections - 2024'); return false;">
+AP Assembly Elections - 2024
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html" class="no-external">
+<div class="listing-date">
+Jun 7, 2024
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="DataWrapper,Telangana Lok Sabha Elections - Parliamentary" data-listing-date-sort="1716143400000" data-listing-file-modified-sort="1725966900665" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39">
+<div class="thumbnail">
+<p><a href="./posts/ParlimentaryElections_2019_Vs_2024/Notebook.html" class="no-external"></a></p><a href="./posts/ParlimentaryElections_2019_Vs_2024/Notebook.html" class="no-external">
+<p><img src="./posts/ParlimentaryElections_2019_Vs_2024/imgs/2019_Telangana_Parliment_Election_Image.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/ParlimentaryElections_2019_Vs_2024/Notebook.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/ParlimentaryElections_2019_Vs_2024/Notebook.html" class="no-external"><sub>Telangana Lok Sabha Elections Parliamentary - 2019 –&gt; 2024 (?)</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/ParlimentaryElections_2019_Vs_2024/Notebook.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DataWrapper'); return false;">
+DataWrapper
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Telangana Lok Sabha Elections - Parliamentary'); return false;">
+Telangana Lok Sabha Elections - Parliamentary
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/ParlimentaryElections_2019_Vs_2024/Notebook.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/ParlimentaryElections_2019_Vs_2024/Notebook.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/ParlimentaryElections_2019_Vs_2024/Notebook.html" class="no-external">
+<div class="listing-date">
+May 20, 2024
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="DataWrapper,AndhraPradesh Elections" data-listing-date-sort="1710181800000" data-listing-file-modified-sort="1725966519093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
+<div class="thumbnail">
+<p><a href="./posts/AP_Assembly_Elections/Notebook.html" class="no-external"></a></p><a href="./posts/AP_Assembly_Elections/Notebook.html" class="no-external">
+<p><img src="./posts/AP_Assembly_Elections/imgs/2019_Andhra_Pradesh_Legislative_Assembly_election_image_with_zoomed_in.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/AP_Assembly_Elections/Notebook.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/AP_Assembly_Elections/Notebook.html" class="no-external"><sub>Andhra Pradesh Legislative Assembly elections - 2019 —&gt; 2024 (?)</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/AP_Assembly_Elections/Notebook.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DataWrapper'); return false;">
+DataWrapper
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('AndhraPradesh Elections'); return false;">
+AndhraPradesh Elections
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/AP_Assembly_Elections/Notebook.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/AP_Assembly_Elections/Notebook.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/AP_Assembly_Elections/Notebook.html" class="no-external">
+<div class="listing-date">
+Mar 12, 2024
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="DataWrapper,Telangana Elections" data-listing-date-sort="1703788200000" data-listing-file-modified-sort="1725966932919" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
+<div class="thumbnail">
+<p><a href="./posts/Party Wise Highest Majority Votes from/Notebook2.html" class="no-external"></a></p><a href="./posts/Party Wise Highest Majority Votes from/Notebook2.html" class="no-external">
+<p><img src="./posts/Party Wise Highest Majority Votes from/image2.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/Party Wise Highest Majority Votes from/Notebook2.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook2.html" class="no-external"><sub>Count of Extra Votes Received by Each Elected Telangana legislator (MLA) against their first defendant (Highest First) - Telangana Elections-Dec-2023</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook2.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DataWrapper'); return false;">
+DataWrapper
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Telangana Elections'); return false;">
+Telangana Elections
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook2.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/Party Wise Highest Majority Votes from/Notebook2.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook2.html" class="no-external">
+<div class="listing-date">
+Dec 29, 2023
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="DataWrapper,Telangana Elections" data-listing-date-sort="1703701800000" data-listing-file-modified-sort="1725966920723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="75">
+<div class="thumbnail">
+<p><a href="./posts/Party Wise Highest Majority Votes from/Notebook1.html" class="no-external"></a></p><a href="./posts/Party Wise Highest Majority Votes from/Notebook1.html" class="no-external">
+<p><img src="./posts/Party Wise Highest Majority Votes from/image1.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/Party Wise Highest Majority Votes from/Notebook1.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook1.html" class="no-external"><sub>Party Wise Highest Majority Votes of MLAs in Telangana Elections - Dec-2023</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook1.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('DataWrapper'); return false;">
+DataWrapper
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Telangana Elections'); return false;">
+Telangana Elections
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook1.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/Party Wise Highest Majority Votes from/Notebook1.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Party Wise Highest Majority Votes from/Notebook1.html" class="no-external">
+<div class="listing-date">
+Dec 28, 2023
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="HR Data Analysis,Data Analytics,SQL" data-listing-date-sort="1692642600000" data-listing-file-modified-sort="1725966743329" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="65">
+<div class="thumbnail">
+<p><a href="./posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html" class="no-external"></a></p><a href="./posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html" class="no-external">
+<p><img src="./posts/HR Data Analyst Portfolio Project/HR-Analytics.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html" class="no-external"><sub>HR Data Analysis Project with SQL-PostgreSQL</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('HR Data Analysis'); return false;">
+HR Data Analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Data Analytics'); return false;">
+Data Analytics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SQL'); return false;">
+SQL
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html" class="no-external">
+<div class="listing-date">
+Aug 22, 2023
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="Data Analytics,Data Visualizations,EDA,Python" data-listing-date-sort="1692297000000" data-listing-file-modified-sort="1725966685659" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="209">
+<div class="thumbnail">
+<p><a href="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html" class="no-external"></a></p><a href="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html" class="no-external">
+<p><img src="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/23hyngg_Dhanteras  09.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html" class="no-external"><sub>Exploratory Data Analysis On Diwali Sales - మన భారతదేశం లో దీపావళి అమ్మాకాలు ఎలా ఉంటాయి, విశ్లేషణ</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Analytics'); return false;">
+Data Analytics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualizations'); return false;">
+Data Visualizations
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('EDA'); return false;">
+EDA
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html" class="no-external">
+<div class="listing-date">
+Aug 18, 2023
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="Tableau,new born babies count,telangana kids,kids counts,rural" data-listing-date-sort="1691433000000" data-listing-file-modified-sort="1725966811701" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="thumbnail">
+<p><a href="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html" class="no-external"></a></p><a href="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html" class="no-external">
+<p><img src="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html" class="no-external"><sub>Newly Born Babies from 2014 to July 2023 - Telangana Panchayat wise Count in each of the Panchayat Raj from Rural Areas</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tableau'); return false;">
+Tableau
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('new born babies count'); return false;">
+new born babies count
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('telangana kids'); return false;">
+telangana kids
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('kids counts'); return false;">
+kids counts
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rural'); return false;">
+rural
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html" class="no-external">
+<div class="listing-date">
+Aug 8, 2023
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="Tableau,Anganwadicenters,telangana anganwadi,mandals,villages" data-listing-date-sort="1691346600000" data-listing-file-modified-sort="1725966126931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="thumbnail">
+<p><a href="./posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"></a></p><a href="./posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external">
+<p><img src="./posts/AnganwadiCentresInTelangana/anganwadi.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"><sub>తెలంగాణ జిల్లాలో ఉన్న అన్ని అంగన్వాడి కేంద్రాలు (మీ ఊరుతో) by sumendar</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tableau'); return false;">
+Tableau
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Anganwadicenters'); return false;">
+Anganwadicenters
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('telangana anganwadi'); return false;">
+telangana anganwadi
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mandals'); return false;">
+mandals
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('villages'); return false;">
+villages
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external">
+<div class="listing-date">
+Aug 7, 2023
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="Tableau,Grama Panchayithees,telangana,mandals,villages" data-listing-date-sort="1690223400000" data-listing-file-modified-sort="1725966879995" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="thumbnail">
+<p><a href="./posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"></a></p><a href="./posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external">
+<p><img src="./posts/Panchayithi Centeres in TS1/grama_pachayath_2118.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"><sub>తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tableau'); return false;">
+Tableau
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Grama Panchayithees'); return false;">
+Grama Panchayithees
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('telangana'); return false;">
+telangana
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mandals'); return false;">
+mandals
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('villages'); return false;">
+villages
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html --></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html" class="no-external">
+<div class="listing-date">
+Jul 25, 2023
+</div>
+<div class="listing-author">
+Sumendar
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="Education,colleges" data-listing-date-sort="1684089000000" data-listing-file-modified-sort="1725966615645" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="thumbnail">
+<p><a href="./posts/CollegesListInTS/CollegesListInTS.html" class="no-external"></a></p><a href="./posts/CollegesListInTS/CollegesListInTS.html" class="no-external">
+<p><img src="./posts/CollegesListInTS/1663673120phpZGekLv.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/CollegesListInTS/CollegesListInTS.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/CollegesListInTS/CollegesListInTS.html" class="no-external"><sub>Colleges List in Telangana State (Each District’s) by sumendar</sub></a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/CollegesListInTS/CollegesListInTS.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Education'); return false;">
 Education
@@ -266,14 +704,12 @@ Education
 colleges
 </div>
 </div>
-<a href="./posts/CollegesListInTS/CollegesListInTS.html">
 <div class="listing-description">
-
+<a href="./posts/CollegesListInTS/CollegesListInTS.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/CollegesListInTS/CollegesListInTS.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/CollegesListInTS/CollegesListInTS.html">
+<a href="./posts/CollegesListInTS/CollegesListInTS.html" class="no-external">
 <div class="listing-date">
 May 15, 2023
 </div>
@@ -283,197 +719,23 @@ Sumendar
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="KCR Kits,telangana,kids health" data-listing-date-sort="1683225000000" data-listing-file-modified-sort="1684240739907" data-listing-reading-time-sort="0.02">
+<div class="quarto-post image-right" data-index="13" data-categories="Tableau,demographic,census,analysis" data-listing-date-sort="1678818600000" data-listing-file-modified-sort="1725966981464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
 <div class="thumbnail">
-<p><a href="./posts/post-with-code7/KCR-Kits-Aug21-Mar23.html"> <img src="./posts/post-with-code7/KCR_Kits.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/post-with-code2/Telangana_Census.html" class="no-external"></a></p><a href="./posts/post-with-code2/Telangana_Census.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/post-with-code2/Telangana_Census.html -->
+</a><p><a href="./posts/post-with-code2/Telangana_Census.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/post-with-code7/KCR-Kits-Aug21-Mar23.html">
 <h3 class="no-anchor listing-title">
-<sub>KCR Kits - తెలంగానలోని అన్ని గ్రామాల మరియు మండలాల వారీగా KCR Kits కి సంబందించిన వివరాలు August 2021 నుండి March 2023 వరకు</sub>
+<a href="./posts/post-with-code2/Telangana_Census.html" class="no-external"><sub>తెలంగాణలోని… అన్ని జిల్లాల్లోని రెవెన్యూ డివిజన్లో, మరియు మండలాల్లో మొత్తం జనాభా</sub></a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/post-with-code2/Telangana_Census.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('KCR Kits'); return false;">
-KCR Kits
+<div class="listing-category" onclick="window.quartoListingCategory('Tableau'); return false;">
+Tableau
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('telangana'); return false;">
-telangana
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('kids health'); return false;">
-kids health
-</div>
-</div>
-<a href="./posts/post-with-code7/KCR-Kits-Aug21-Mar23.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code7/KCR-Kits-Aug21-Mar23.html">
-<div class="listing-date">
-May 5, 2023
-</div>
-<div class="listing-author">
-Sumendar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="elections results,MPTC,telangana,mandals" data-listing-date-sort="1680373800000" data-listing-file-modified-sort="1683144755721" data-listing-reading-time-sort="0.02">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code4/Telangana_Past_MPTC_Election_Results.html"> <img src="./posts/post-with-code4/163291-mptc.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code4/Telangana_Past_MPTC_Election_Results.html">
-<h3 class="no-anchor listing-title">
-<sub>తెలంగాణ రాష్ట్రంలో అన్ని జిల్లాల, మండల మరియు ఊళ్ళకి సంబంధించిన MPTC లపేర్లు గత ఎన్నికలకి చెందిన వివరాలు</sub>
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('elections results'); return false;">
-elections results
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('MPTC'); return false;">
-MPTC
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('telangana'); return false;">
-telangana
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('mandals'); return false;">
-mandals
-</div>
-</div>
-<a href="./posts/post-with-code4/Telangana_Past_MPTC_Election_Results.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code4/Telangana_Past_MPTC_Election_Results.html">
-<div class="listing-date">
-Apr 2, 2023
-</div>
-<div class="listing-author">
-Sumendar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="MPTC,visualizations,Elections,Telangana" data-listing-date-sort="1680287400000" data-listing-file-modified-sort="1683056197781" data-listing-reading-time-sort="1.23">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code5/పార్టీల వారీగా మొత్తం MPTCల సంఖ్య.html"> <img src="./posts/post-with-code5/Election_EPS.avif" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code5/పార్టీల వారీగా మొత్తం MPTCల సంఖ్య.html">
-<h3 class="no-anchor listing-title">
-<sub>2019 పార్టీల వారీగా మొత్తం MPTCల సంఖ్య</sub>
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('MPTC'); return false;">
-MPTC
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('visualizations'); return false;">
-visualizations
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Elections'); return false;">
-Elections
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Telangana'); return false;">
-Telangana
-</div>
-</div>
-<a href="./posts/post-with-code5/పార్టీల వారీగా మొత్తం MPTCల సంఖ్య.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code5/పార్టీల వారీగా మొత్తం MPTCల సంఖ్య.html">
-<div class="listing-date">
-Apr 1, 2023
-</div>
-<div class="listing-author">
-Sumendar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="demographic,population,Census,world" data-listing-date-sort="1680114600000" data-listing-file-modified-sort="1681549072566" data-listing-reading-time-sort="0.055">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code5/World_Population_Count.html"> <img src="./posts/post-with-code5/pswrd_oracle2.gif " class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code5/World_Population_Count.html">
-<h3 class="no-anchor listing-title">
-<sub>World’s Population Yearly Cumulatively Added Count [Animation (Play Forward/Backward)]</sub>
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('demographic'); return false;">
-demographic
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('population'); return false;">
-population
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Census'); return false;">
-Census
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('world'); return false;">
-world
-</div>
-</div>
-<a href="./posts/post-with-code5/World_Population_Count.html">
-<div class="listing-description">
-<strong>Project Original Source:</strong>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code5/World_Population_Count.html">
-<div class="listing-date">
-Mar 30, 2023
-</div>
-<div class="listing-author">
-Sumendar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="demographic,census,analysis" data-listing-date-sort="1678818600000" data-listing-file-modified-sort="1679560445964" data-listing-reading-time-sort="0.02">
-<div class="thumbnail">
-<a href="./posts/post-with-code2/Telangana_Census.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/post-with-code2/Telangana_Census.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code2/Telangana_Census.html">
-<h3 class="no-anchor listing-title">
-<sub>తెలంగాణలోని… అన్ని జిల్లాల్లోని రెవెన్యూ డివిజన్లో, మరియు మండలాల్లో మొత్తం జనాభా</sub>
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('demographic'); return false;">
 demographic
 </div>
@@ -484,14 +746,12 @@ census
 analysis
 </div>
 </div>
-<a href="./posts/post-with-code2/Telangana_Census.html">
 <div class="listing-description">
-
+<a href="./posts/post-with-code2/Telangana_Census.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/post-with-code2/Telangana_Census.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/post-with-code2/Telangana_Census.html">
+<a href="./posts/post-with-code2/Telangana_Census.html" class="no-external">
 <div class="listing-date">
 Mar 15, 2023
 </div>
@@ -501,67 +761,19 @@ Sumendar
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="agriculture,news,code,analysis" data-listing-date-sort="1678818600000" data-listing-file-modified-sort="1680504204144" data-listing-reading-time-sort="0.02">
+<div class="quarto-post image-right" data-index="14" data-categories="news,code,analysis" data-listing-date-sort="1678386600000" data-listing-file-modified-sort="1725966964625" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="358">
 <div class="thumbnail">
-<a href="./posts/post-with-code3/Telangana_Aggri_Commodities.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/post-with-code3/Telangana_Aggri_Commodities.html"></a></p>
+<p><a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"></a></p><a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/post-with-code/1-SQLServerNotebook.html -->
+</a><p><a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/post-with-code3/Telangana_Aggri_Commodities.html">
 <h3 class="no-anchor listing-title">
-<sub>తెలంగాణలో…అన్ని మార్కెట్ యార్డులో 01-Feb-2023 నుండి 28-Feb-2023 మధ్య వ్యవసాయ పంటలకి రోజువారీ ధరలు</sub>
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"><sub>All Tools Combinations applied in this post for Data Science</sub></a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"></a>
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('agriculture'); return false;">
-agriculture
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post-with-code3/Telangana_Aggri_Commodities.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code3/Telangana_Aggri_Commodities.html">
-<div class="listing-date">
-Mar 15, 2023
-</div>
-<div class="listing-author">
-Sumendar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="news,code,analysis" data-listing-date-sort="1678386600000" data-listing-file-modified-sort="1683228519505" data-listing-reading-time-sort="1.79">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/1-SQLServerNotebook.html"> <img src="https://i.imgur.com/Q2k1r4W.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code/1-SQLServerNotebook.html">
-<h3 class="no-anchor listing-title">
-<sub>All Tools Combinations applied in this post for Data Science</sub>
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
 news
@@ -573,14 +785,12 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/post-with-code/1-SQLServerNotebook.html">
 <div class="listing-description">
-
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/post-with-code/1-SQLServerNotebook.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/post-with-code/1-SQLServerNotebook.html">
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external">
 <div class="listing-date">
 Mar 10, 2023
 </div>
@@ -590,19 +800,19 @@ Sumendar
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="news,code,analysis" data-listing-date-sort="1678300200000" data-listing-file-modified-sort="1679724255865" data-listing-reading-time-sort="3.93">
+<div class="quarto-post image-right" data-index="15" data-categories="news,code,analysis" data-listing-date-sort="1678386600000" data-listing-file-modified-sort="1725966964650" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="635">
 <div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/image.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"></a></p><a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/post-with-code/1-SQLServerNotebook.html -->
+</a><p><a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/post-with-code/index.html">
 <h3 class="no-anchor listing-title">
-sample Post With Code (created here within qmd file edited updated within this file only)
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"><sub>All Tools Combinations applied in this post for Data Science</sub></a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
 news
@@ -614,16 +824,14 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/post-with-code/index.html">
 <div class="listing-description">
-This is a post with executable code check
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/post-with-code/1-SQLServerNotebook.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/post-with-code/index.html">
+<a href="./posts/post-with-code/1-SQLServerNotebook.html" class="no-external">
 <div class="listing-date">
-Mar 9, 2023
+Mar 10, 2023
 </div>
 <div class="listing-author">
 Sumendar
@@ -631,19 +839,19 @@ Sumendar
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="news,code,analysis" data-listing-date-sort="1678300200000" data-listing-file-modified-sort="1683229328595" data-listing-reading-time-sort="39.55">
+<div class="quarto-post image-right" data-index="16" data-categories="news,code,analysis" data-listing-date-sort="1678300200000" data-listing-file-modified-sort="1716171927733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="778">
 <div class="thumbnail">
-<p><a href="./posts/post-with-code5/Sample.html"> <img src="./posts/post-with-code5/image.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/post-with-code/index.html" class="no-external"></a></p><a href="./posts/post-with-code/index.html" class="no-external">
+<p><img src="./posts/post-with-code/image.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/post-with-code/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/post-with-code5/Sample.html">
 <h3 class="no-anchor listing-title">
-Sample
+<a href="./posts/post-with-code/index.html" class="no-external">sample Post With Code (created with qmd file edited and modified content itself to deploy)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/post-with-code/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
 news
@@ -655,14 +863,12 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/post-with-code5/Sample.html">
 <div class="listing-description">
-The mtcars dataset has 32 rows
+<a href="./posts/post-with-code/index.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/post-with-code/index.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/post-with-code5/Sample.html">
+<a href="./posts/post-with-code/index.html" class="no-external">
 <div class="listing-date">
 Mar 9, 2023
 </div>
@@ -672,32 +878,30 @@ Sumendar
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="news" data-listing-date-sort="1660242600000" data-listing-file-modified-sort="1677981140118" data-listing-reading-time-sort="0.3">
+<div class="quarto-post image-right" data-index="17" data-categories="news" data-listing-date-sort="1660242600000" data-listing-file-modified-sort="1725970693929" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="60">
 <div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/thumbnail.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
+<!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/welcome/index.html -->
+</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/welcome/index.html">
 <h3 class="no-anchor listing-title">
-Welcome To My Blog
+<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/welcome/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
 news
 </div>
 </div>
-<a href="./posts/welcome/index.html">
 <div class="listing-description">
-This is the first post in a Quarto blog. Welcome!
+<a href="./posts/welcome/index.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/welcome/index.html --></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/welcome/index.html">
+<a href="./posts/welcome/index.html" class="no-external">
 <div class="listing-date">
 Aug 12, 2022
 </div>
@@ -739,9 +943,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -777,10 +995,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.endtoendprojects\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -790,8 +1025,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -803,9 +1047,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -846,6 +1326,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

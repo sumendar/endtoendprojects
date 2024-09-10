@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>End to End Projects</title>
+<link>https://www.endtoendprojects.com/</link>
+<atom:link href="https://www.endtoendprojects.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>End to End Projects</description>
+<generator>quarto-1.4.555</generator>
+<lastBuildDate>Sun, 11 Aug 2024 18:30:00 GMT</lastBuildDate>
+<item>
+  <title>{B4F502887207:/posts/Batting Scores of the Players in IPL 2024/Notebook.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/Batting Scores of the Players in IPL 2024/Notebook.html</link>
+  <description>{B4F502887207:/posts/Batting Scores of the Players in IPL 2024/Notebook.html}</description>
+  <category>Tableau</category>
+  <category>Cricket</category>
+  <category>IPL 2024</category>
+  <guid>https://www.endtoendprojects.com/posts/Batting Scores of the Players in IPL 2024/Notebook.html</guid>
+  <pubDate>Sun, 11 Aug 2024 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/Batting Scores of the Players in IPL 2024/IPL-2024.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html</link>
+  <description>{B4F502887207:/posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html}</description>
+  <category>DataWrapper</category>
+  <category>AP Parliamentary Election Results - 2024</category>
+  <guid>https://www.endtoendprojects.com/posts/AndhraPradesh-Parlimentary-Election-Results-2024/Notebook.html</guid>
+  <pubDate>Sun, 09 Jun 2024 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/AndhraPradesh-Parlimentary-Election-Results-2024/imgs/2014-MP_Elections.png" medium="image" type="image/png" height="139" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html</link>
+  <description>{B4F502887207:/posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html}</description>
+  <category>DataWrapper</category>
+  <category>AP Assembly Elections - 2024</category>
+  <guid>https://www.endtoendprojects.com/posts/AndhraPradesh-Assembly-Election-Results-2024/Notebook.html</guid>
+  <pubDate>Thu, 06 Jun 2024 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/AndhraPradesh-Assembly-Election-Results-2024/imgs/2019-vs-2024.png" medium="image" type="image/png" height="66" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/ParlimentaryElections_2019_Vs_2024/Notebook.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/ParlimentaryElections_2019_Vs_2024/Notebook.html</link>
+  <description>{B4F502887207:/posts/ParlimentaryElections_2019_Vs_2024/Notebook.html}</description>
+  <category>DataWrapper</category>
+  <category>Telangana Lok Sabha Elections - Parliamentary</category>
+  <guid>https://www.endtoendprojects.com/posts/ParlimentaryElections_2019_Vs_2024/Notebook.html</guid>
+  <pubDate>Sun, 19 May 2024 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/ParlimentaryElections_2019_Vs_2024/imgs/2019_Telangana_Parliment_Election_Image.png" medium="image" type="image/png" height="125" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/AP_Assembly_Elections/Notebook.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/AP_Assembly_Elections/Notebook.html</link>
+  <description>{B4F502887207:/posts/AP_Assembly_Elections/Notebook.html}</description>
+  <category>DataWrapper</category>
+  <category>AndhraPradesh Elections</category>
+  <guid>https://www.endtoendprojects.com/posts/AP_Assembly_Elections/Notebook.html</guid>
+  <pubDate>Mon, 11 Mar 2024 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/AP_Assembly_Elections/imgs/2019_Andhra_Pradesh_Legislative_Assembly_election_image_with_zoomed_in.png" medium="image" type="image/png" height="116" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Party Wise Highest Majority Votes from/Notebook2.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/Party Wise Highest Majority Votes from/Notebook2.html</link>
+  <description>{B4F502887207:/posts/Party Wise Highest Majority Votes from/Notebook2.html}</description>
+  <category>DataWrapper</category>
+  <category>Telangana Elections</category>
+  <guid>https://www.endtoendprojects.com/posts/Party Wise Highest Majority Votes from/Notebook2.html</guid>
+  <pubDate>Thu, 28 Dec 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/Party Wise Highest Majority Votes from/image2.png" medium="image" type="image/png" height="87" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Party Wise Highest Majority Votes from/Notebook1.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/Party Wise Highest Majority Votes from/Notebook1.html</link>
+  <description>{B4F502887207:/posts/Party Wise Highest Majority Votes from/Notebook1.html}</description>
+  <category>DataWrapper</category>
+  <category>Telangana Elections</category>
+  <guid>https://www.endtoendprojects.com/posts/Party Wise Highest Majority Votes from/Notebook1.html</guid>
+  <pubDate>Wed, 27 Dec 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/Party Wise Highest Majority Votes from/image1.png" medium="image" type="image/png" height="62" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html</link>
+  <description>{B4F502887207:/posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html}</description>
+  <category>HR Data Analysis</category>
+  <category>Data Analytics</category>
+  <category>SQL</category>
+  <guid>https://www.endtoendprojects.com/posts/HR Data Analyst Portfolio Project/HR Data Analyst Portfolio Project.html</guid>
+  <pubDate>Mon, 21 Aug 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/HR Data Analyst Portfolio Project/HR-Analytics.png" medium="image" type="image/png" height="76" width="144"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html</link>
+  <description>{B4F502887207:/posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html}</description>
+  <category>Data Analytics</category>
+  <category>Data Visualizations</category>
+  <category>EDA</category>
+  <category>Python</category>
+  <guid>https://www.endtoendprojects.com/posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/Diwali_Sales_Analysis.html</guid>
+  <pubDate>Thu, 17 Aug 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/Exploratory Data Analysis Project Using Python  Data Analyst Project/23hyngg_Dhanteras  09.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html</link>
+  <description>{B4F502887207:/posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html}</description>
+  <category>Tableau</category>
+  <category>new born babies count</category>
+  <category>telangana kids</category>
+  <category>kids counts</category>
+  <category>rural</category>
+  <guid>https://www.endtoendprojects.com/posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict_2014-2023.html</guid>
+  <pubDate>Mon, 07 Aug 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/NewBornKidsInEachDistrict/NewBornKidsInEachDistrict.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html</link>
+  <description>{B4F502887207:/posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html}</description>
+  <category>Tableau</category>
+  <category>Anganwadicenters</category>
+  <category>telangana anganwadi</category>
+  <category>mandals</category>
+  <category>villages</category>
+  <guid>https://www.endtoendprojects.com/posts/AnganwadiCentresInTelangana/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html</guid>
+  <pubDate>Sun, 06 Aug 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/AnganwadiCentresInTelangana/anganwadi.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html</link>
+  <description>{B4F502887207:/posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html}</description>
+  <category>Tableau</category>
+  <category>Grama Panchayithees</category>
+  <category>telangana</category>
+  <category>mandals</category>
+  <category>villages</category>
+  <guid>https://www.endtoendprojects.com/posts/Panchayithi Centeres in TS1/తెలంగాణ జిల్లా లో ఉన్న అన్ని గ్రామాల్లో పంచాయితీలు by sumendar.html</guid>
+  <pubDate>Mon, 24 Jul 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/Panchayithi Centeres in TS1/grama_pachayath_2118.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/CollegesListInTS/CollegesListInTS.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/CollegesListInTS/CollegesListInTS.html</link>
+  <description>{B4F502887207:/posts/CollegesListInTS/CollegesListInTS.html}</description>
+  <category>Education</category>
+  <category>colleges</category>
+  <guid>https://www.endtoendprojects.com/posts/CollegesListInTS/CollegesListInTS.html</guid>
+  <pubDate>Sun, 14 May 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/CollegesListInTS/1663673120phpZGekLv.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/post-with-code2/Telangana_Census.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/post-with-code2/Telangana_Census.html</link>
+  <description>{B4F502887207:/posts/post-with-code2/Telangana_Census.html}</description>
+  <category>Tableau</category>
+  <category>demographic</category>
+  <category>census</category>
+  <category>analysis</category>
+  <guid>https://www.endtoendprojects.com/posts/post-with-code2/Telangana_Census.html</guid>
+  <pubDate>Tue, 14 Mar 2023 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/post-with-code/1-SQLServerNotebook.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/post-with-code/1-SQLServerNotebook.html</link>
+  <description>{B4F502887207:/posts/post-with-code/1-SQLServerNotebook.html}</description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://www.endtoendprojects.com/posts/post-with-code/1-SQLServerNotebook.html</guid>
+  <pubDate>Thu, 09 Mar 2023 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/post-with-code/1-SQLServerNotebook.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/post-with-code/1-SQLServerNotebook.html</link>
+  <description>{B4F502887207:/posts/post-with-code/1-SQLServerNotebook.html}</description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://www.endtoendprojects.com/posts/post-with-code/1-SQLServerNotebook.html</guid>
+  <pubDate>Thu, 09 Mar 2023 18:30:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/post-with-code/index.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/post-with-code/</link>
+  <description>{B4F502887207:/posts/post-with-code/index.html}</description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://www.endtoendprojects.com/posts/post-with-code/</guid>
+  <pubDate>Wed, 08 Mar 2023 18:30:00 GMT</pubDate>
+  <media:content url="https://www.endtoendprojects.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>{B4F502887207:/posts/welcome/index.html}</title>
+  <dc:creator>Sumendar </dc:creator>
+  <link>https://www.endtoendprojects.com/posts/welcome/</link>
+  <description>{B4F502887207:/posts/welcome/index.html}</description>
+  <category>news</category>
+  <guid>https://www.endtoendprojects.com/posts/welcome/</guid>
+  <pubDate>Thu, 11 Aug 2022 18:30:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

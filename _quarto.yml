@@ -3,13 +3,15 @@ project:
 
 website:
   title: "End to End Projects"
+  site-url: https://www.endtoendprojects.com
+  description: "End to End Projects"
   navbar:
     right:
       - about.qmd
-      - icon: github
-        href: https://github.com/sumendar
-      - icon: twitter
-        href: https://twitter.com/sumendar
+      #- icon: github
+      #  href: https://github.com/sumendar
+      #- icon: twitter
+      #  href: https://twitter.com/sumendar
 format:
   html:
     page-layout: full
