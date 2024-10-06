@@ -11,8 +11,12 @@
             "id": "781248ec043d146a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "index.qmd",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 296.5
   },
   "right": {
     "id": "25a83c9911addf8b",
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "index.qmd",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "index.qmd",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "index.qmd"
+              }
             }
           }
         ]
@@ -140,8 +148,10 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "781248ec043d146a",
+  "active": "36d03d788c63fab0",
   "lastOpenFiles": [
+    "about.qmd",
+    "posts/welcome/index.qmd",
     "posts/Untitled.md",
     "posts/post-with-code5/Sample.qmd",
     "posts/post-with-code5/pswrd_oracle2.gif",

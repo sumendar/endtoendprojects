@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: Eleven-set-Venn-diagram-Color1.png
+image: Eleven-set-Venn-diagram-Color5.png
 about:
   template: trestles # previous template is jolla
   image-width: 15em
@@ -20,4 +20,5 @@ about:
     # href: https://karupakala.netlify.app
 ---
 
-To achieve socio-economic empowerment in the fields of education, agriculture, healthcare, retail, sports, marketing, finance, telecom, media, communications, entertainment, manufacturing, construction, and other areas for the society, this website offers end-to-end data analytics, data science, and machine learning project simulations (POCs/prototypes/pilot programs) to harnessing with foundation models (FMs)  to pre-trained multimodals and large language models (LLMs) to build ai applications.
+This platform delivers end-to-end solutions in data analytics, business intelligence, data science, and machine learning, incorporating project simulations such as proofs of concept, prototypes, and pilot programs by leveraging the power of base models, foundation models (FMs), pre-trained multimodels, and large language models (LLMs) to create AI-driven products, services, and applications using cutting-edge tools and technologies. The core mission is to leverage socio-economic empowerment across various sectors—such as education, agriculture, healthcare, retail, sports, marketing, finance, telecommunications, and media—through actionable data insights and innovative solutions.
+
